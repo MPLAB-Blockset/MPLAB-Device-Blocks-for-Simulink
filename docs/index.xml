@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/</link><description>Recent content on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 06 Nov 2025 11:24:30 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/index.xml" rel="self" type="application/rss+xml"/><item><title>ADC - Standard ADC Block</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</guid><description>&lt;div class="block-icon-container"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/</link><description>Recent content on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 06 Nov 2025 21:16:02 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/index.xml" rel="self" type="application/rss+xml"/><item><title>ADC - Standard ADC Block</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/analog/ADC.png" alt="Adc Block Icon"&gt;
  &lt;/picture&gt;
@@ -1649,10 +1649,23 @@ While the current i_q is set by the motor torque to be supplied:
 &lt;/div&gt;
 &lt;!-- Workflow Diagram --&gt;
 &lt;div style="flex: 0 0 450px;"&gt;
-&lt;a href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/toolbox_concepts/MCHP_MBD_Overview.png" target="_blank"&gt;
-&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/toolbox_concepts/MCHP_MBD_Overview.png" alt="Model-Based Design Workflow" style="width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; cursor: pointer;" title="Click to enlarge"&gt;
-&lt;/a&gt;
-&lt;p style="text-align: center; font-size: 0.9em; color: #666; margin-top: 5px;"&gt;&lt;em&gt;Model-Based Design Workflow&lt;/em&gt;&lt;/p&gt;</description></item><item><title>MCHP DAC SAMx Documentation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</guid><description>&lt;div class="block-icon-container"&gt;
+&lt;figure style="max-width: 100%; margin: 20px auto; display: flex; flex-direction: column; align-items: center;"&gt;&lt;a href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" target="_blank" style="width: 100%; display: block; text-decoration: none;"&gt;
+ &lt;picture style="width: 100%; display: block;"&gt;&lt;source srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_fd906080b05830cf.webp" type="image/webp"&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" alt="Model-Based Design Workflow" style="width: 100%; height: auto; display: block; cursor: pointer;"&gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ &lt;figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 10px; width: 100%;"&gt;
+ Model-Based Design Workflow
+ &lt;/figcaption&gt;
+ &lt;/figure&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="note" style="background-color: #f0f8ff; border-left: 4px solid #0076A8; padding: 15px; margin: 20px 0;"&gt;
+ &lt;strong&gt;Required Microchip software tools are free.&lt;/strong&gt; Free compilers support optimization up to &lt;code&gt;-O2&lt;/code&gt;; &lt;code&gt;-O3&lt;/code&gt; and &lt;code&gt;-Os&lt;/code&gt; require paid license.
+&lt;/div&gt;
+
+&lt;h2 id="hardware-requirements"&gt;Hardware Requirements&lt;/h2&gt;
+&lt;h3 id="target-board"&gt;Target Board&lt;/h3&gt;
+&lt;p&gt;The blockset supports &lt;strong&gt;any board&lt;/strong&gt; equipped with a compatible dsPIC DSC, PIC32 or SAM microcontroller.&lt;/p&gt;</description></item><item><title>MCHP DAC SAMx Documentation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/analog/DAC_SAMx.png" alt="DAC SAMx Block Icon"&gt;
  &lt;/picture&gt;
