@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PWM on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/</link><description>Recent content in PWM on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 05 Nov 2025 16:38:59 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/index.xml" rel="self" type="application/rss+xml"/><item><title>MCPWM</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/mcpwm/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/mcpwm/</guid><description>&lt;div class="block-icon-container"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PWM on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/</link><description>Recent content in PWM on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/index.xml" rel="self" type="application/rss+xml"/><item><title>MCPWM</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/mcpwm/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/mcpwm/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/pwm/MCPWM.png" alt="Mcpwm Block Icon"&gt;
  &lt;/picture&gt;
@@ -783,7 +783,7 @@
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="sam-family-pwm-capabilities"&gt;SAM Family PWM Capabilities&lt;/h3&gt;
+&lt;h2 id="sam-family-pwm-capabilities"&gt;SAM Family PWM Capabilities&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1044,7 +1044,7 @@
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="tcc-instance-availability"&gt;TCC Instance Availability&lt;/h3&gt;
+&lt;h2 id="tcc-instance-availability"&gt;TCC Instance Availability&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;

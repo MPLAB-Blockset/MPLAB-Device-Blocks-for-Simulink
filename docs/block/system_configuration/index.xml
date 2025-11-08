@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System Configuration on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/</link><description>Recent content in System Configuration on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 05 Nov 2025 15:09:59 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>CompilerOptimisation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/compiler_options/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/compiler_options/</guid><description>&lt;div class="block-icon-container"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System Configuration on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/</link><description>Recent content in System Configuration on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/index.xml" rel="self" type="application/rss+xml"/><item><title>CompilerOptimisation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/compiler_options/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/compiler_options/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/system_configuration/CompilerOptimisation.png" alt="Compiler Options Block Icon"&gt;
  &lt;/picture&gt;
@@ -345,7 +345,7 @@ GC_SECTIONS: Remove unused
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="16-bit-dscmcu-families"&gt;16-bit DSC/MCU Families&lt;/h3&gt;
+&lt;h2 id="16-bit-dscmcu-families"&gt;16-bit DSC/MCU Families&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/</link><description>Recent content in Getting Started on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 06 Nov 2025 21:16:02 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/index.xml" rel="self" type="application/rss+xml"/><item><title>MCHP Blockset Installation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</guid><description>&lt;h2 id="software-requirements"&gt;Software Requirements&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/</link><description>Recent content in Getting Started on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/index.xml" rel="self" type="application/rss+xml"/><item><title>MPLAB Blockset Installation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</guid><description>&lt;h2 id="software-requirements"&gt;Software Requirements&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Supported Operating Systems&lt;/strong&gt;: Windows and Linux&lt;/p&gt;
 &lt;div style="display: flex; gap: 20px; margin: 20px auto; max-width: 1200px; align-items: center;"&gt;
 &lt;!-- Requirements Table --&gt;
@@ -12,8 +12,7 @@
  &lt;/thead&gt;
  &lt;tbody&gt;
  &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;1. MATLAB/Simulink&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.mathworks.com" target="_blank"&gt;&lt;a href="https://www.mathworks.com"&gt;www.mathworks.com&lt;/a&gt;
-&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;1. MATLAB/Simulink&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.mathworks.com" target="_blank"&gt;MathWorks&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;&lt;strong&gt;Required:&lt;/strong&gt;&lt;br&gt;• &lt;strong&gt;MATLAB&lt;/strong&gt; &lt;span title="Contact us through the forum for older release support"&gt;R2018b to R2025b&lt;/span&gt;&lt;br&gt;• &lt;strong&gt;Simulink&lt;/strong&gt;&lt;br&gt;• &lt;strong&gt;Embedded Coder&lt;/strong&gt; (includes &lt;strong&gt;Simulink Coder&lt;/strong&gt;)&lt;br&gt;&lt;br&gt;&lt;strong&gt;Optional:&lt;/strong&gt;&lt;br&gt;• Fixed-Point Designer&lt;br&gt;• MATLAB Coder&lt;br&gt;• Stateflow / Stateflow Coder&lt;br&gt;• Motor Control Blockset&lt;br&gt;• System Identification Toolbox&lt;br&gt;• DSP System Toolbox&lt;br&gt;• Signal Processing Toolbox&lt;br&gt;• Control System Toolbox&lt;br&gt;• Optimization Toolbox&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
@@ -21,13 +20,11 @@
  &lt;td style="text-align: left"&gt;• Peripheral blocks (PWM, ADC, UART, Timers, etc.)&lt;br&gt;• Board Templates&lt;br&gt;• Standalone, External-Mode, PIL&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;3. Microchip Compiler&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/compilers" target="_blank"&gt;&lt;a href="https://www.microchip.com/compilers"&gt;www.microchip.com/compilers&lt;/a&gt;
-&lt;/a&gt;&lt;br&gt;&lt;em&gt;(Free - no time/size limits)&lt;/em&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;3. Microchip Compiler&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/compilers" target="_blank"&gt;XC Compilers&lt;/a&gt;&lt;br&gt;&lt;em&gt;(Free - no time/size limits)&lt;/em&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;• &lt;a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc-dsc#downloads" target="_blank"&gt;&lt;strong&gt;XC-DSC&lt;/strong&gt;&lt;/a&gt; for &lt;strong&gt;dsPIC30F/33F/33E/33C/33A&lt;/strong&gt;&lt;br&gt;• &lt;a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc32#downloads" target="_blank"&gt;&lt;strong&gt;XC32&lt;/strong&gt;&lt;/a&gt; for &lt;strong&gt;PIC32/PIC32A/SAM&lt;/strong&gt; (ARM)&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;4. MPLAB X IDE&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/mplab" target="_blank"&gt;&lt;a href="https://www.microchip.com/mplab"&gt;www.microchip.com/mplab&lt;/a&gt;
-&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;4. MPLAB X IDE&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/mplab" target="_blank"&gt;MPLAB X&lt;/a&gt;&lt;/td&gt;
  &lt;td style="text-align: left"&gt;• Programming/debugging tool&lt;br&gt;• Supports ICD4, ICD5, PICkit4, PICkit5, PKOB4, Snap&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
@@ -36,7 +33,16 @@
 &lt;!-- Workflow Diagram --&gt;
 &lt;div style="flex: 0 0 450px;"&gt;
 &lt;figure style="max-width: 100%; margin: 20px auto; display: flex; flex-direction: column; align-items: center;"&gt;&lt;a href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" target="_blank" style="width: 100%; display: block; text-decoration: none;"&gt;
- &lt;picture style="width: 100%; display: block;"&gt;&lt;source srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_fd906080b05830cf.webp" type="image/webp"&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" alt="Model-Based Design Workflow" style="width: 100%; height: auto; display: block; cursor: pointer;"&gt;
+ &lt;picture style="width: 100%; display: block;"&gt;&lt;source
+ srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_5547f041a934d8c3.webp 100w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_db0f21cfc9c24220.webp 300w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_5334ae04ca29df1.webp 500w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_f8fd29f888d6eac.webp 700w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_36b34ca7f86ef970.webp 900w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_a583ce960e9f602e.webp 1200w"
+ sizes="(max-width: 400px) 300px, (max-width: 768px) 500px, (max-width: 1024px) 700px, 900px"
+ type="image/webp"&gt;&lt;img
+ src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_28f54b22719ecb52.png"
+ srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_2c6cf9f96e6a8d85.png 100w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_140d2b4a20890be8.png 300w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_28f54b22719ecb52.png 500w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_e152809d478716df.png 700w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_7a397012068b5e06.png 900w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_41af5abbb3f2d92c.png 1200w"
+ sizes="(max-width: 400px) 300px, (max-width: 768px) 500px, (max-width: 1024px) 700px, 900px"
+ alt="Model-Based Design Workflow"
+ loading="eager" fetchpriority="high"
+ style="width: 100%; height: auto; display: block; cursor: pointer;"&gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  &lt;figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 10px; width: 100%;"&gt;
@@ -172,7 +178,7 @@
  &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id="available-board-templates"&gt;Available Board Templates&lt;/h2&gt;
-&lt;p&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/toolbox_concepts/MCHP_i_Board_MCLV_2.png" alt="MCLV-2 Development Board" style="max-width: 100%; height: auto;"&gt;&lt;/p&gt;</description></item><item><title>Motor Control Examples - MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</guid><description>&lt;h3 id="-third-party-educational-content"&gt;⚠️ Third-Party Educational Content&lt;/h3&gt;
+&lt;p&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/toolbox_concepts/MCHP_i_Board_MCLV_2.png" alt="MCLV-2 Development Board" style="max-width: 100%; height: auto;"&gt;&lt;/p&gt;</description></item><item><title>Motor Control Examples</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</guid><description>&lt;h2 id="-third-party-educational-content"&gt;⚠️ Third-Party Educational Content&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;The motor control examples and algorithms presented in this guide are provided by the ctrl-elec project, an educational initiative from INSA Lyon (France).&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Attribution:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -183,7 +189,7 @@
 &lt;li&gt;&lt;strong&gt;RCP Platform:&lt;/strong&gt;[http://rcp.ctrl-elec.fr/]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;License:&lt;/strong&gt; Educational use - Please refer to the ctrl-elec website for specific licensing terms.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;This content is included in the MPLAB Device Blocks for Simulink documentation to demonstrate real-world motor control applications. Microchip Technology and the MPLAB Device Blocks toolbox are separate from the ctrl-elec project.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Scheduler &amp; Multitasking - MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink includes a sophisticated scheduler that enables efficient execution of multi-rate Simulink models on resource-constrained microcontrollers. This guide explains the scheduler concepts, configuration options, and best practices for optimal performance.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This content is included in the MPLAB Device Blocks for Simulink documentation to demonstrate real-world motor control applications. Microchip Technology and the MPLAB Device Blocks toolbox are separate from the ctrl-elec project.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Scheduler &amp; Multitasking</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink includes a sophisticated scheduler that enables efficient execution of multi-rate Simulink models on resource-constrained microcontrollers. This guide explains the scheduler concepts, configuration options, and best practices for optimal performance.&lt;/p&gt;
 &lt;h2 id="single-rate-vs-multi-rate-models"&gt;Single-Rate vs Multi-Rate Models&lt;/h2&gt;
 &lt;p&gt;Simulink models can be designed with blocks executing at the same rate (single-rate) or at different rates (multi-rate):&lt;/p&gt;
 &lt;table&gt;
@@ -217,7 +223,7 @@ Multi-rate models reduce CPU load by executing slow tasks (e.g., temperature mon
 &lt;/div&gt;
 
 &lt;h2 id="single-tasking-vs-multi-tasking-implementation"&gt;Single-Tasking vs Multi-Tasking Implementation&lt;/h2&gt;
-&lt;p&gt;For multi-rate models, the MPLAB Device Blocks toolbox offers two execution modes:&lt;/p&gt;</description></item><item><title>External Mode &amp; PIL Testing - MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink provides two powerful tools for testing and validating embedded algorithms:&lt;/p&gt;
+&lt;p&gt;For multi-rate models, the MPLAB Device Blocks toolbox offers two execution modes:&lt;/p&gt;</description></item><item><title>External Mode &amp; PIL Testing</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink provides two powerful tools for testing and validating embedded algorithms:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;External Mode&lt;/strong&gt;: Real-time parameter tuning and data visualization during code execution&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PIL (Processor-in-the-Loop)&lt;/strong&gt;: Verification of code generation accuracy and performance analysis&lt;/li&gt;

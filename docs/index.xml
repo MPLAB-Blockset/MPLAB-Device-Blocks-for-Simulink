@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/</link><description>Recent content on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 06 Nov 2025 21:16:02 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/index.xml" rel="self" type="application/rss+xml"/><item><title>ADC - Standard ADC Block</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</guid><description>&lt;div class="block-icon-container"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/</link><description>Recent content on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/index.xml" rel="self" type="application/rss+xml"/><item><title>ADC - Standard ADC Block</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/analog/ADC.png" alt="Adc Block Icon"&gt;
  &lt;/picture&gt;
@@ -34,7 +34,7 @@
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="device-family-support-matrix"&gt;Device Family Support Matrix&lt;/h3&gt;
+&lt;h2 id="device-family-support-matrix"&gt;Device Family Support Matrix&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -114,7 +114,7 @@
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="dspic33a-variant-support-matrix"&gt;dsPIC33A Variant Support Matrix&lt;/h3&gt;
+&lt;h2 id="dspic33a-variant-support-matrix"&gt;dsPIC33A Variant Support Matrix&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -451,13 +451,13 @@
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="pwm-blocks"&gt;[PWM Blocks]&lt;/h3&gt;
+&lt;h2 id="pwm-blocks"&gt;PWM Blocks&lt;/h2&gt;
 &lt;p&gt;Pulse Width Modulation blocks for motor control and power conversion.&lt;/p&gt;
-&lt;h3 id="adc-blocks"&gt;[ADC Blocks]&lt;/h3&gt;
+&lt;h2 id="adc-blocks"&gt;ADC Blocks&lt;/h2&gt;
 &lt;p&gt;Analog-to-Digital Converter blocks for sensor interfaces.&lt;/p&gt;
-&lt;h3 id="communication-blocks"&gt;[Communication Blocks]&lt;/h3&gt;
+&lt;h2 id="communication-blocks"&gt;Communication Blocks&lt;/h2&gt;
 &lt;p&gt;UART, SPI, I2C, CAN, and other communication interfaces.&lt;/p&gt;
-&lt;h3 id="timer-blocks"&gt;[Timer Blocks]&lt;/h3&gt;
+&lt;h2 id="timer-blocks"&gt;Timer Blocks&lt;/h2&gt;
 &lt;p&gt;Timer and interrupt configuration blocks.&lt;/p&gt;
 &lt;h2 id="see-also"&gt;See Also&lt;/h2&gt;
 &lt;p&gt;&lt;a href="../../getting_started/"&gt;Getting Started&lt;/a&gt;
@@ -713,12 +713,12 @@ Code for &amp;lsquo;%s&amp;rsquo; is from reusable function and cannot be traced
 &lt;/table&gt;
 &lt;h2 id="cn-peripheral-registers"&gt;CN Peripheral Registers&lt;/h2&gt;
 &lt;h3 id="dspic30f33f-type-0"&gt;dsPIC30F/33F (Type 0)&lt;/h3&gt;
-&lt;p&gt;// Enable CN module CNCONbits.ON = 1; // Enable specific CN pins CNEN1bits.CN0IE = 1; // Enable CN0 CNEN1bits.CN1IE = 1; // Enable CN1// Enable pull-ups CNPU1bits.CN0PUE = 1; // Pull-up on CN0// Interrupt configuration IFS1bits.CNIF = 0; // Clear interrupt flag IEC1bits.CNIE = 1; // Enable CN interrupt IPC4bits.CNIP = 5; // Priority level// Read current state state = PORTBbits.RB0; // Read pin state (if CN0 is on RB0)&lt;/p&gt;</description></item><item><title>Code Generation - User Guide</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</guid><description>&lt;h3 id="navigation"&gt;Navigation&lt;/h3&gt;
+&lt;p&gt;// Enable CN module CNCONbits.ON = 1; // Enable specific CN pins CNEN1bits.CN0IE = 1; // Enable CN0 CNEN1bits.CN1IE = 1; // Enable CN1// Enable pull-ups CNPU1bits.CN0PUE = 1; // Pull-up on CN0// Interrupt configuration IFS1bits.CNIF = 0; // Clear interrupt flag IEC1bits.CNIE = 1; // Enable CN interrupt IPC4bits.CNIP = 5; // Priority level// Read current state state = PORTBbits.RB0; // Read pin state (if CN0 is on RB0)&lt;/p&gt;</description></item><item><title>Code Generation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="user-guide-topics"&gt;User Guide Topics&lt;/h3&gt;
+&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
 &lt;/li&gt;
@@ -824,12 +824,12 @@ Code for &amp;lsquo;%s&amp;rsquo; is from reusable function and cannot be traced
 &lt;/table&gt;
 &lt;p&gt;Function: [Explorer16_33FJ256GP710_DataScaling_step]&lt;/p&gt;</description></item><item><title>Code replacements in Explorer16_33FJ256GP710_DataScaling</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_replacements/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_replacements/</guid><description>&lt;p&gt;Code replacements in Explorer16_33FJ256GP710_DataScaling&lt;/p&gt;
 &lt;p&gt;&lt;img src="hilite_warning.png" alt="" style="max-width: 100%; height: auto;"&gt;
-Code replacements report not generated. Select &amp;lsquo;Summarize which blocks triggered code replacements&amp;rsquo; in the Configuration Parameters &amp;gt; Code Generation &amp;gt; Report pane and then rebuild the model.&lt;/p&gt;</description></item><item><title>Compiler Setup - User Guide</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</guid><description>&lt;h3 id="navigation"&gt;Navigation&lt;/h3&gt;
+Code replacements report not generated. Select &amp;lsquo;Summarize which blocks triggered code replacements&amp;rsquo; in the Configuration Parameters &amp;gt; Code Generation &amp;gt; Report pane and then rebuild the model.&lt;/p&gt;</description></item><item><title>Compiler Setup</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="user-guide-topics"&gt;User Guide Topics&lt;/h3&gt;
+&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
 &lt;/li&gt;
@@ -1247,12 +1247,12 @@ GC_SECTIONS: Remove unused
  &lt;td&gt;Microchip community support&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
-&lt;/table&gt;</description></item><item><title>Explorer16 33Fj256Gp710 Datascaling Contents</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_contents/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_contents/</guid><description>&lt;p&gt;function rtwFileListShrink(o, category, numFiles) { var indent = document.getElementById(category + &amp;ldquo;_indent&amp;rdquo;); var fileTable = document.getElementById(category + &amp;ldquo;_table&amp;rdquo;); var catName = document.getElementById(category + &amp;ldquo;_name&amp;rdquo;); if (fileTable.style.display == &amp;ldquo;none&amp;rdquo;) { fileTable.style.display = &amp;ldquo;&amp;rdquo;; indent.style.display = &amp;ldquo;&amp;rdquo;; o.innerHTML = &amp;lsquo;&lt;span style="font-family:monospace" id = "' + category + '_button"&gt;[-]&lt;/span&gt;&amp;rsquo;; catName.innerHTML = &amp;ldquo;&lt;b&gt;&amp;rdquo; + category + &amp;ldquo;&lt;/b&gt;&amp;rdquo;; } else { fileTable.style.display = &amp;ldquo;none&amp;rdquo;; indent.style.display = &amp;ldquo;none&amp;rdquo;; o.innerHTML = &amp;lsquo;&lt;span style="font-family:monospace" id = "' + category + '_button"&gt;[+]&lt;/span&gt;&amp;rsquo;; catName.innerHTML = &amp;ldquo;&lt;b&gt;&amp;rdquo; + category + &amp;quot; (&amp;quot; + numFiles + &amp;ldquo;)&amp;rdquo; + &amp;ldquo;&lt;/b&gt;&amp;rdquo;; } } [][][][][][][]&lt;/p&gt;</description></item><item><title>Explorer16_33FJ256GP710_DataScaling Code Generation Report</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_codegen_rpt/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_codegen_rpt/</guid><description/></item><item><title>External Mode - User Guide</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</guid><description>&lt;h3 id="navigation"&gt;Navigation&lt;/h3&gt;
+&lt;/table&gt;</description></item><item><title>Explorer16 33Fj256Gp710 Datascaling Contents</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_contents/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_contents/</guid><description>&lt;p&gt;function rtwFileListShrink(o, category, numFiles) { var indent = document.getElementById(category + &amp;ldquo;_indent&amp;rdquo;); var fileTable = document.getElementById(category + &amp;ldquo;_table&amp;rdquo;); var catName = document.getElementById(category + &amp;ldquo;_name&amp;rdquo;); if (fileTable.style.display == &amp;ldquo;none&amp;rdquo;) { fileTable.style.display = &amp;ldquo;&amp;rdquo;; indent.style.display = &amp;ldquo;&amp;rdquo;; o.innerHTML = &amp;lsquo;&lt;span style="font-family:monospace" id = "' + category + '_button"&gt;[-]&lt;/span&gt;&amp;rsquo;; catName.innerHTML = &amp;ldquo;&lt;b&gt;&amp;rdquo; + category + &amp;ldquo;&lt;/b&gt;&amp;rdquo;; } else { fileTable.style.display = &amp;ldquo;none&amp;rdquo;; indent.style.display = &amp;ldquo;none&amp;rdquo;; o.innerHTML = &amp;lsquo;&lt;span style="font-family:monospace" id = "' + category + '_button"&gt;[+]&lt;/span&gt;&amp;rsquo;; catName.innerHTML = &amp;ldquo;&lt;b&gt;&amp;rdquo; + category + &amp;quot; (&amp;quot; + numFiles + &amp;ldquo;)&amp;rdquo; + &amp;ldquo;&lt;/b&gt;&amp;rdquo;; } } [][][][][][][]&lt;/p&gt;</description></item><item><title>Explorer16_33FJ256GP710_DataScaling Code Generation Report</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_codegen_rpt/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/figs/ressources/explorer16_33fj256gp710_datascaling.x/src/html/explorer16_33fj256gp710_datascaling_codegen_rpt/</guid><description/></item><item><title>External Mode</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="user-guide-topics"&gt;User Guide Topics&lt;/h3&gt;
+&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
 &lt;/li&gt;
@@ -1394,7 +1394,7 @@ While the current i_q is set by the motor torque to be supplied:
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="16-bit-dscmcu-families"&gt;16-bit DSC/MCU Families&lt;/h3&gt;
+&lt;h2 id="16-bit-dscmcu-families"&gt;16-bit DSC/MCU Families&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -1612,60 +1612,7 @@ While the current i_q is set by the motor torque to be supplied:
  Block display shows achieved MIPS/MHz on the diagram
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id="fuse-configuration-device-configuration-bits"&gt;Fuse Configuration (Device Configuration Bits)&lt;/h3&gt;
-&lt;p&gt;The Master block exposes device-specific configuration fuses extracted from Microchip XML specifications. Available fuses depend on the selected chip.&lt;/p&gt;</description></item><item><title>MCHP Blockset Installation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</guid><description>&lt;h2 id="software-requirements"&gt;Software Requirements&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Supported Operating Systems&lt;/strong&gt;: Windows and Linux&lt;/p&gt;
-&lt;div style="display: flex; gap: 20px; margin: 20px auto; max-width: 1200px; align-items: center;"&gt;
-&lt;!-- Requirements Table --&gt;
-&lt;div style="flex: 1; min-width: 500px;"&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th style="text-align: left"&gt;&lt;strong&gt;Component&lt;/strong&gt;&lt;/th&gt;
- &lt;th style="text-align: left"&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;1. MATLAB/Simulink&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.mathworks.com" target="_blank"&gt;&lt;a href="https://www.mathworks.com"&gt;www.mathworks.com&lt;/a&gt;
-&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;Required:&lt;/strong&gt;&lt;br&gt;• &lt;strong&gt;MATLAB&lt;/strong&gt; &lt;span title="Contact us through the forum for older release support"&gt;R2018b to R2025b&lt;/span&gt;&lt;br&gt;• &lt;strong&gt;Simulink&lt;/strong&gt;&lt;br&gt;• &lt;strong&gt;Embedded Coder&lt;/strong&gt; (includes &lt;strong&gt;Simulink Coder&lt;/strong&gt;)&lt;br&gt;&lt;br&gt;&lt;strong&gt;Optional:&lt;/strong&gt;&lt;br&gt;• Fixed-Point Designer&lt;br&gt;• MATLAB Coder&lt;br&gt;• Stateflow / Stateflow Coder&lt;br&gt;• Motor Control Blockset&lt;br&gt;• System Identification Toolbox&lt;br&gt;• DSP System Toolbox&lt;br&gt;• Signal Processing Toolbox&lt;br&gt;• Control System Toolbox&lt;br&gt;• Optimization Toolbox&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;2. MPLAB Device Blocks&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.mathworks.com/matlabcentral/fileexchange/71892" target="_blank"&gt;MATLAB File Exchange&lt;/a&gt; | &lt;a href="https://github.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/releases" target="_blank"&gt;GitHub Releases&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;• Peripheral blocks (PWM, ADC, UART, Timers, etc.)&lt;br&gt;• Board Templates&lt;br&gt;• Standalone, External-Mode, PIL&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;3. Microchip Compiler&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/compilers" target="_blank"&gt;&lt;a href="https://www.microchip.com/compilers"&gt;www.microchip.com/compilers&lt;/a&gt;
-&lt;/a&gt;&lt;br&gt;&lt;em&gt;(Free - no time/size limits)&lt;/em&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;• &lt;a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc-dsc#downloads" target="_blank"&gt;&lt;strong&gt;XC-DSC&lt;/strong&gt;&lt;/a&gt; for &lt;strong&gt;dsPIC30F/33F/33E/33C/33A&lt;/strong&gt;&lt;br&gt;• &lt;a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc32#downloads" target="_blank"&gt;&lt;strong&gt;XC32&lt;/strong&gt;&lt;/a&gt; for &lt;strong&gt;PIC32/PIC32A/SAM&lt;/strong&gt; (ARM)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td style="text-align: left"&gt;&lt;strong&gt;4. MPLAB X IDE&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/mplab" target="_blank"&gt;&lt;a href="https://www.microchip.com/mplab"&gt;www.microchip.com/mplab&lt;/a&gt;
-&lt;/a&gt;&lt;/td&gt;
- &lt;td style="text-align: left"&gt;• Programming/debugging tool&lt;br&gt;• Supports ICD4, ICD5, PICkit4, PICkit5, PKOB4, Snap&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;!-- Workflow Diagram --&gt;
-&lt;div style="flex: 0 0 450px;"&gt;
-&lt;figure style="max-width: 100%; margin: 20px auto; display: flex; flex-direction: column; align-items: center;"&gt;&lt;a href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" target="_blank" style="width: 100%; display: block; text-decoration: none;"&gt;
- &lt;picture style="width: 100%; display: block;"&gt;&lt;source srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_fd906080b05830cf.webp" type="image/webp"&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" alt="Model-Based Design Workflow" style="width: 100%; height: auto; display: block; cursor: pointer;"&gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- &lt;figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 10px; width: 100%;"&gt;
- Model-Based Design Workflow
- &lt;/figcaption&gt;
- &lt;/figure&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="note" style="background-color: #f0f8ff; border-left: 4px solid #0076A8; padding: 15px; margin: 20px 0;"&gt;
- &lt;strong&gt;Required Microchip software tools are free.&lt;/strong&gt; Free compilers support optimization up to &lt;code&gt;-O2&lt;/code&gt;; &lt;code&gt;-O3&lt;/code&gt; and &lt;code&gt;-Os&lt;/code&gt; require paid license.
-&lt;/div&gt;
-
-&lt;h2 id="hardware-requirements"&gt;Hardware Requirements&lt;/h2&gt;
-&lt;h3 id="target-board"&gt;Target Board&lt;/h3&gt;
-&lt;p&gt;The blockset supports &lt;strong&gt;any board&lt;/strong&gt; equipped with a compatible dsPIC DSC, PIC32 or SAM microcontroller.&lt;/p&gt;</description></item><item><title>MCHP DAC SAMx Documentation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</guid><description>&lt;div class="block-icon-container"&gt;
+&lt;p&gt;The Master block exposes device-specific configuration fuses extracted from Microchip XML specifications. Available fuses depend on the selected chip.&lt;/p&gt;</description></item><item><title>MCHP DAC SAMx Documentation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/analog/DAC_SAMx.png" alt="DAC SAMx Block Icon"&gt;
  &lt;/picture&gt;
@@ -2324,7 +2271,66 @@ In peak current mode control with D &amp;gt; 50%, the inductor current slope cre
 
 &lt;h2 id="coming-soon"&gt;Coming Soon&lt;/h2&gt;
 &lt;p&gt;This section will contain comprehensive guides for motor control applications using the MCHP Blockset.&lt;/p&gt;
-&lt;p&gt;[Return to Documentation Home]&lt;/p&gt;</description></item><item><title>MSI</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/msi/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/msi/</guid><description>&lt;div class="block-icon-container"&gt;
+&lt;p&gt;[Return to Documentation Home]&lt;/p&gt;</description></item><item><title>MPLAB Blockset Installation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</guid><description>&lt;h2 id="software-requirements"&gt;Software Requirements&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Supported Operating Systems&lt;/strong&gt;: Windows and Linux&lt;/p&gt;
+&lt;div style="display: flex; gap: 20px; margin: 20px auto; max-width: 1200px; align-items: center;"&gt;
+&lt;!-- Requirements Table --&gt;
+&lt;div style="flex: 1; min-width: 500px;"&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: left"&gt;&lt;strong&gt;Component&lt;/strong&gt;&lt;/th&gt;
+ &lt;th style="text-align: left"&gt;&lt;strong&gt;Requirements&lt;/strong&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;1. MATLAB/Simulink&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.mathworks.com" target="_blank"&gt;MathWorks&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;Required:&lt;/strong&gt;&lt;br&gt;• &lt;strong&gt;MATLAB&lt;/strong&gt; &lt;span title="Contact us through the forum for older release support"&gt;R2018b to R2025b&lt;/span&gt;&lt;br&gt;• &lt;strong&gt;Simulink&lt;/strong&gt;&lt;br&gt;• &lt;strong&gt;Embedded Coder&lt;/strong&gt; (includes &lt;strong&gt;Simulink Coder&lt;/strong&gt;)&lt;br&gt;&lt;br&gt;&lt;strong&gt;Optional:&lt;/strong&gt;&lt;br&gt;• Fixed-Point Designer&lt;br&gt;• MATLAB Coder&lt;br&gt;• Stateflow / Stateflow Coder&lt;br&gt;• Motor Control Blockset&lt;br&gt;• System Identification Toolbox&lt;br&gt;• DSP System Toolbox&lt;br&gt;• Signal Processing Toolbox&lt;br&gt;• Control System Toolbox&lt;br&gt;• Optimization Toolbox&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;2. MPLAB Device Blocks&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.mathworks.com/matlabcentral/fileexchange/71892" target="_blank"&gt;MATLAB File Exchange&lt;/a&gt; | &lt;a href="https://github.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/releases" target="_blank"&gt;GitHub Releases&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;• Peripheral blocks (PWM, ADC, UART, Timers, etc.)&lt;br&gt;• Board Templates&lt;br&gt;• Standalone, External-Mode, PIL&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;3. Microchip Compiler&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/compilers" target="_blank"&gt;XC Compilers&lt;/a&gt;&lt;br&gt;&lt;em&gt;(Free - no time/size limits)&lt;/em&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;• &lt;a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc-dsc#downloads" target="_blank"&gt;&lt;strong&gt;XC-DSC&lt;/strong&gt;&lt;/a&gt; for &lt;strong&gt;dsPIC30F/33F/33E/33C/33A&lt;/strong&gt;&lt;br&gt;• &lt;a href="https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc32#downloads" target="_blank"&gt;&lt;strong&gt;XC32&lt;/strong&gt;&lt;/a&gt; for &lt;strong&gt;PIC32/PIC32A/SAM&lt;/strong&gt; (ARM)&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: left"&gt;&lt;strong&gt;4. MPLAB X IDE&lt;/strong&gt;&lt;br&gt;&lt;a href="https://www.microchip.com/mplab" target="_blank"&gt;MPLAB X&lt;/a&gt;&lt;/td&gt;
+ &lt;td style="text-align: left"&gt;• Programming/debugging tool&lt;br&gt;• Supports ICD4, ICD5, PICkit4, PICkit5, PKOB4, Snap&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;!-- Workflow Diagram --&gt;
+&lt;div style="flex: 0 0 450px;"&gt;
+&lt;figure style="max-width: 100%; margin: 20px auto; display: flex; flex-direction: column; align-items: center;"&gt;&lt;a href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview.png" target="_blank" style="width: 100%; display: block; text-decoration: none;"&gt;
+ &lt;picture style="width: 100%; display: block;"&gt;&lt;source
+ srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_5547f041a934d8c3.webp 100w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_db0f21cfc9c24220.webp 300w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_5334ae04ca29df1.webp 500w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_f8fd29f888d6eac.webp 700w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_36b34ca7f86ef970.webp 900w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_a583ce960e9f602e.webp 1200w"
+ sizes="(max-width: 400px) 300px, (max-width: 768px) 500px, (max-width: 1024px) 700px, 900px"
+ type="image/webp"&gt;&lt;img
+ src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_28f54b22719ecb52.png"
+ srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_2c6cf9f96e6a8d85.png 100w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_140d2b4a20890be8.png 300w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_28f54b22719ecb52.png 500w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_e152809d478716df.png 700w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_7a397012068b5e06.png 900w, https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/images/toolbox_concepts/MCHP_MBD_Overview_hu_41af5abbb3f2d92c.png 1200w"
+ sizes="(max-width: 400px) 300px, (max-width: 768px) 500px, (max-width: 1024px) 700px, 900px"
+ alt="Model-Based Design Workflow"
+ loading="eager" fetchpriority="high"
+ style="width: 100%; height: auto; display: block; cursor: pointer;"&gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ &lt;figcaption style="text-align: center; font-style: italic; color: #666; margin-top: 10px; width: 100%;"&gt;
+ Model-Based Design Workflow
+ &lt;/figcaption&gt;
+ &lt;/figure&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="note" style="background-color: #f0f8ff; border-left: 4px solid #0076A8; padding: 15px; margin: 20px 0;"&gt;
+ &lt;strong&gt;Required Microchip software tools are free.&lt;/strong&gt; Free compilers support optimization up to &lt;code&gt;-O2&lt;/code&gt;; &lt;code&gt;-O3&lt;/code&gt; and &lt;code&gt;-Os&lt;/code&gt; require paid license.
+&lt;/div&gt;
+
+&lt;h2 id="hardware-requirements"&gt;Hardware Requirements&lt;/h2&gt;
+&lt;h3 id="target-board"&gt;Target Board&lt;/h3&gt;
+&lt;p&gt;The blockset supports &lt;strong&gt;any board&lt;/strong&gt; equipped with a compatible dsPIC DSC, PIC32 or SAM microcontroller.&lt;/p&gt;</description></item><item><title>MSI</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/msi/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/msi/</guid><description>&lt;div class="block-icon-container"&gt;
  &lt;div class="block-icon-image"&gt;
  &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/system_info/chip_webpage.png" alt="MSI Block Icon"&gt;
  &lt;/picture&gt;
@@ -2730,12 +2736,12 @@ In peak current mode control with D &amp;gt; 50%, the inductor current slope cre
 &lt;h2 id="hall-sensor-operation"&gt;Hall Sensor Operation&lt;/h2&gt;
 &lt;h3 id="3-phase-hall-sensor-interface"&gt;3-Phase Hall Sensor Interface&lt;/h3&gt;
 &lt;p&gt;PDEC decodes 3-wire Hall sensor signals for BLDC motor position:
-Hall Sensor States (6-step commutation): State | Hall A | Hall B | Hall C | Sector &amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;ndash; 1 | 0 | 0 | 1 | 0-60° 2 | 0 | 1 | 1 | 60-120° 3 | 0 | 1 | 0 | 120-180° 4 | 1 | 1 | 0 | 180-240° 5 | 1 | 0 | 0 | 240-300° 6 | 1 | 0 | 1 | 300-360° Valid transitions: 1→2→3→4→5→6→1 (CW) 1→6→5→4→3→2→1 (CCW)&lt;/p&gt;</description></item><item><title>PIL Testing - User Guide</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</guid><description>&lt;h3 id="navigation"&gt;Navigation&lt;/h3&gt;
+Hall Sensor States (6-step commutation): State | Hall A | Hall B | Hall C | Sector &amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;ndash; 1 | 0 | 0 | 1 | 0-60° 2 | 0 | 1 | 1 | 60-120° 3 | 0 | 1 | 0 | 120-180° 4 | 1 | 1 | 0 | 180-240° 5 | 1 | 0 | 0 | 240-300° 6 | 1 | 0 | 1 | 300-360° Valid transitions: 1→2→3→4→5→6→1 (CW) 1→6→5→4→3→2→1 (CCW)&lt;/p&gt;</description></item><item><title>PIL Testing</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="user-guide-topics"&gt;User Guide Topics&lt;/h3&gt;
+&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
 &lt;/li&gt;
@@ -3512,7 +3518,7 @@ PORT B:
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="sam-family-pwm-capabilities"&gt;SAM Family PWM Capabilities&lt;/h3&gt;
+&lt;h2 id="sam-family-pwm-capabilities"&gt;SAM Family PWM Capabilities&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -4954,7 +4960,7 @@ Static Code Metrics report is not generated. On the Configuration Parameters &am
  &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id="tcc-instance-availability"&gt;TCC Instance Availability&lt;/h3&gt;
+&lt;h2 id="tcc-instance-availability"&gt;TCC Instance Availability&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -6079,7 +6085,7 @@ Timer5: [Available]
 &lt;p&gt;The SPI protocol is a synchronous serial communication interface for short-distance communication, primarily used in embedded systems. SPI operates in full-duplex mode with a master-slave architecture. This single block handles both Master and Slave functionality.&lt;/p&gt;
 &lt;h2 id="block-modes"&gt;Block Modes&lt;/h2&gt;
 &lt;h3 id="master-mode"&gt;Master Mode&lt;/h3&gt;
-&lt;p&gt;In Master mode, the microcontroller controls the SPI bus:&lt;/p&gt;</description></item><item><title>Motor Control Examples - MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</guid><description>&lt;h3 id="-third-party-educational-content"&gt;⚠️ Third-Party Educational Content&lt;/h3&gt;
+&lt;p&gt;In Master mode, the microcontroller controls the SPI bus:&lt;/p&gt;</description></item><item><title>Motor Control Examples</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</guid><description>&lt;h2 id="-third-party-educational-content"&gt;⚠️ Third-Party Educational Content&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;The motor control examples and algorithms presented in this guide are provided by the ctrl-elec project, an educational initiative from INSA Lyon (France).&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Attribution:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -6090,7 +6096,7 @@ Timer5: [Available]
 &lt;li&gt;&lt;strong&gt;RCP Platform:&lt;/strong&gt;[http://rcp.ctrl-elec.fr/]&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;License:&lt;/strong&gt; Educational use - Please refer to the ctrl-elec website for specific licensing terms.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;This content is included in the MPLAB Device Blocks for Simulink documentation to demonstrate real-world motor control applications. Microchip Technology and the MPLAB Device Blocks toolbox are separate from the ctrl-elec project.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Scheduler &amp; Multitasking - MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink includes a sophisticated scheduler that enables efficient execution of multi-rate Simulink models on resource-constrained microcontrollers. This guide explains the scheduler concepts, configuration options, and best practices for optimal performance.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This content is included in the MPLAB Device Blocks for Simulink documentation to demonstrate real-world motor control applications. Microchip Technology and the MPLAB Device Blocks toolbox are separate from the ctrl-elec project.&lt;/em&gt;&lt;/p&gt;</description></item><item><title>Scheduler &amp; Multitasking</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/scheduler_multitasking/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink includes a sophisticated scheduler that enables efficient execution of multi-rate Simulink models on resource-constrained microcontrollers. This guide explains the scheduler concepts, configuration options, and best practices for optimal performance.&lt;/p&gt;
 &lt;h2 id="single-rate-vs-multi-rate-models"&gt;Single-Rate vs Multi-Rate Models&lt;/h2&gt;
 &lt;p&gt;Simulink models can be designed with blocks executing at the same rate (single-rate) or at different rates (multi-rate):&lt;/p&gt;
 &lt;table&gt;
@@ -6124,7 +6130,7 @@ Multi-rate models reduce CPU load by executing slow tasks (e.g., temperature mon
 &lt;/div&gt;
 
 &lt;h2 id="single-tasking-vs-multi-tasking-implementation"&gt;Single-Tasking vs Multi-Tasking Implementation&lt;/h2&gt;
-&lt;p&gt;For multi-rate models, the MPLAB Device Blocks toolbox offers two execution modes:&lt;/p&gt;</description></item><item><title>External Mode &amp; PIL Testing - MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink provides two powerful tools for testing and validating embedded algorithms:&lt;/p&gt;
+&lt;p&gt;For multi-rate models, the MPLAB Device Blocks toolbox offers two execution modes:&lt;/p&gt;</description></item><item><title>External Mode &amp; PIL Testing</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/external_mode_pil/</guid><description>&lt;p&gt;The MPLAB Device Blocks for Simulink provides two powerful tools for testing and validating embedded algorithms:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;External Mode&lt;/strong&gt;: Real-time parameter tuning and data visualization during code execution&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;PIL (Processor-in-the-Loop)&lt;/strong&gt;: Verification of code generation accuracy and performance analysis&lt;/li&gt;
