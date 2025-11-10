@@ -1,23 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timers on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/</link><description>Recent content in Timers on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 05 Nov 2025 15:09:59 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/index.xml" rel="self" type="application/rss+xml"/><item><title>TIMER Config - Timer Configuration Block</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_config/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_config/</guid><description>&lt;div class="block-icon-container"&gt;
- &lt;div class="block-icon-image"&gt;
- &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/Timer.png" alt="Timer Config Block Icon"&gt;
- &lt;/picture&gt;
- &lt;/div&gt;
-
- &lt;div class="block-icon-description"&gt;
- TIMER Config - Timer Configuration Block Timer Block Icon The &lt;strong&gt;MCHP_TIMER_Config&lt;/strong&gt; block provides a high-level interface for configuring hardware timers on Microchip microcontrollers. This block creates and manages named timer resources that can be shared across multiple peripherals in the model, providing automatic timer allocation and optimal prescaler selection. Unlike direct timer register access, this block manages the complete timer lifecycle including resource allocation, conflict resolution, and automatic prescaler calculation based on desired resolution and period requirements.
- &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;TIMER Config - Timer Configuration Block&lt;/p&gt;</description></item><item><title>TIMER PIL Profiling - PIL Timing Profiler</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_pil_profiling/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_pil_profiling/</guid><description>&lt;div class="block-icon-container"&gt;
- &lt;div class="block-icon-image"&gt;
- &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/Timer_PIL_Profiling.png" alt="Timer PIL Profiling Block Icon"&gt;
- &lt;/picture&gt;
- &lt;/div&gt;
-
- &lt;div class="block-icon-description"&gt;
- TIMER PIL Profiling - PIL Timing Profiler Timer_PIL_Profiling Block Icon The &lt;strong&gt;MCHP_TIMER_PIL_Profiling&lt;/strong&gt; block enables precise code execution timing measurement during Processor-in-the-Loop (PIL) simulations. It uses hardware timers to measure actual execution time of Simulink subsystems or blocks on target hardware. This block is essential for performance profiling, real-time constraint verification, and optimization of embedded code. It provides microsecond-level timing accuracy using the target&amp;rsquo;s hardware timer peripheral.
- &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;TIMER PIL Profiling - PIL Timing Profiler&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Timers on MPLAB Device Blocks for Simulink</title>
+    <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/</link>
+    <description>Recent content in Timers on MPLAB Device Blocks for Simulink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Nov 2025 15:09:59 +0100</lastBuildDate>
+    <atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TIMER Config - Timer Configuration Block</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_config/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_config/</guid>
+      <description>&lt;div class=&#34;block-icon-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;block-icon-image&#34;&gt;&#xD;&#xA;      &lt;picture&gt;&lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/Timer.png&#34; alt=&#34;Timer Config Block Icon&#34;&gt;&#xD;&#xA;      &lt;/picture&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;block-icon-description&#34;&gt;&#xD;&#xA;        TIMER Config - Timer Configuration Block  Timer Block Icon  The &lt;strong&gt;MCHP_TIMER_Config&lt;/strong&gt; block provides a high-level interface for configuring hardware timers on Microchip microcontrollers. This block creates and manages named timer resources that can be shared across multiple peripherals in the model, providing automatic timer allocation and optimal prescaler selection.    Unlike direct timer register access, this block manages the complete timer lifecycle including resource allocation, conflict resolution, and automatic prescaler calculation based on desired resolution and period requirements.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;p&gt;TIMER Config - Timer Configuration Block&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TIMER PIL Profiling - PIL Timing Profiler</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_pil_profiling/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_pil_profiling/</guid>
+      <description>&lt;div class=&#34;block-icon-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;block-icon-image&#34;&gt;&#xD;&#xA;      &lt;picture&gt;&lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/Timer_PIL_Profiling.png&#34; alt=&#34;Timer PIL Profiling Block Icon&#34;&gt;&#xD;&#xA;      &lt;/picture&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;block-icon-description&#34;&gt;&#xD;&#xA;        TIMER PIL Profiling - PIL Timing Profiler  Timer_PIL_Profiling Block Icon  The &lt;strong&gt;MCHP_TIMER_PIL_Profiling&lt;/strong&gt; block enables precise code execution timing measurement during Processor-in-the-Loop (PIL) simulations. It uses hardware timers to measure actual execution time of Simulink subsystems or blocks on target hardware.    This block is essential for performance profiling, real-time constraint verification, and optimization of embedded code. It provides microsecond-level timing accuracy using the target&amp;rsquo;s hardware timer peripheral.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;p&gt;TIMER PIL Profiling - PIL Timing Profiler&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

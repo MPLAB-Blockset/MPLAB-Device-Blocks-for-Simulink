@@ -1,197 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Block Reference on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/</link><description>Recent content in Block Reference on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/index.xml" rel="self" type="application/rss+xml"/><item><title>ADC Blocks - Analog-to-Digital Converter Reference</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc_blocks/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc_blocks/</guid><description>&lt;p&gt;The MCHP Blockset provides comprehensive ADC support for all Microchip microcontroller families. Each family has optimized ADC blocks tailored to the specific peripheral architecture and capabilities.&lt;/p&gt;
-&lt;h2 id="dspic--pic24-family-adc-blocks"&gt;dsPIC &amp;amp; PIC24 Family ADC Blocks&lt;/h2&gt;
-&lt;p&gt;[MCHP_ADC] Standard ADC for dsPIC30F, dsPIC33F, dsPIC33E, dsPIC33C, and PIC24 families. &lt;strong&gt;Resolution:&lt;/strong&gt; 10/12-bit&lt;strong&gt;Features:&lt;/strong&gt; Scan mode, simultaneous sampling, DMA support&lt;strong&gt;Best for:&lt;/strong&gt; General-purpose acquisition, motor control [MCHP_ADC_HighSpeed_SAR_dsPIC] High-speed SAR ADC for dsPIC33C with dedicated cores and shared ADC7. &lt;strong&gt;Resolution:&lt;/strong&gt; 6/8/10/12-bit&lt;strong&gt;Cores:&lt;/strong&gt; 3-6 dedicated + shared ADC7&lt;strong&gt;Speed:&lt;/strong&gt; Up to 3.25 Msps per core&lt;strong&gt;Best for:&lt;/strong&gt; High-speed multi-channel, simultaneous sampling [MCHP_ADC_HS_12b] 12-bit high-speed ADC with software sequencing for dsPIC33A family. &lt;strong&gt;Resolution:&lt;/strong&gt; 12-bit fixed&lt;strong&gt;Cores:&lt;/strong&gt; 2-5 (variant dependent)&lt;strong&gt;Sequencing:&lt;/strong&gt; 6 sequences × 6 conversions&lt;strong&gt;Devices:&lt;/strong&gt; Perseus, Pegasus, Blue Ridge, Serpens (33AK series)&lt;strong&gt;Best for:&lt;/strong&gt; Advanced FOC motor control, flexible multi-channel&lt;/p&gt;</description></item><item><title>Analog Signal Conditioning Blocks Documentation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog/</guid><description>&lt;p&gt;Integrated analog peripherals for signal amplification, buffering, and voltage generation&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;p&gt;Analog signal conditioning blocks provide access to integrated analog peripherals in Microchip microcontrollers, enabling precision signal processing without external components. These blocks eliminate the need for discrete amplifiers, comparators, and DACs in many applications, reducing BOM cost, board space, and improving signal integrity.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt; Integrated signal chain reduces external component count
- Direct connection to ADC for optimized analog front-end
- Software-configurable gain and operating modes
- Low noise and high precision for measurement applications
- Calibration capabilities for enhanced accuracy
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id="available-blocks"&gt;Available Blocks&lt;/h2&gt;
-&lt;p&gt;[&lt;/p&gt;</description></item><item><title>Block Reference</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/user_functions/c_function_call/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/user_functions/c_function_call/</guid><description>&lt;div class="block-icon-container"&gt;
- &lt;div class="block-icon-image"&gt;
- &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/user_functions/C_Function_Call.png" alt="C Function Call Block Icon"&gt;
- &lt;/picture&gt;
- &lt;/div&gt;
-
- &lt;div class="block-icon-description"&gt;
- Complete reference for all MCHP Blockset peripheral blocks.
- &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;h2 id="pwm-blocks"&gt;PWM Blocks&lt;/h2&gt;
-&lt;p&gt;Pulse Width Modulation blocks for motor control and power conversion.&lt;/p&gt;
-&lt;h2 id="adc-blocks"&gt;ADC Blocks&lt;/h2&gt;
-&lt;p&gt;Analog-to-Digital Converter blocks for sensor interfaces.&lt;/p&gt;
-&lt;h2 id="communication-blocks"&gt;Communication Blocks&lt;/h2&gt;
-&lt;p&gt;UART, SPI, I2C, CAN, and other communication interfaces.&lt;/p&gt;
-&lt;h2 id="timer-blocks"&gt;Timer Blocks&lt;/h2&gt;
-&lt;p&gt;Timer and interrupt configuration blocks.&lt;/p&gt;
-&lt;h2 id="see-also"&gt;See Also&lt;/h2&gt;
-&lt;p&gt;&lt;a href="../../getting_started/"&gt;Getting Started&lt;/a&gt;
- | &lt;a href="../../user_guide/"&gt;User Guide&lt;/a&gt;
-&lt;/p&gt;</description></item><item><title>CAN Communication Blocks</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/can/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/can/</guid><description>&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The &lt;strong&gt;CAN (Controller Area Network)&lt;/strong&gt; block family enables robust, multi-master communication on CAN bus networks. CAN is widely used in automotive, industrial automation, and embedded systems for reliable data exchange in electrically noisy environments.&lt;/p&gt;
-&lt;p&gt;The MCHP Blockset provides three blocks for CAN communication: &lt;strong&gt;CAN Config&lt;/strong&gt; for peripheral setup, &lt;strong&gt;CAN Tx&lt;/strong&gt; for message transmission, and &lt;strong&gt;CAN Rx&lt;/strong&gt; for message reception with flexible filtering. These blocks support both CAN 2.0 (standard) and CAN-FD (flexible data-rate) protocols.&lt;/p&gt;</description></item><item><title>PWM Blocks - Block Reference</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_blocks/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_blocks/</guid><description>&lt;p&gt;Comprehensive PWM (Pulse Width Modulation) blocks for motor control, power conversion, and signal generation across all MCHP Blockset supported families.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Device Family Support:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;dsPIC30F/33F/33E: → &lt;a href="pwm_io/pwm/"&gt;MCHP_PWM&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;dsPIC33C/CH/CK: → &lt;a href="pwm_io/pwm_highspeed/"&gt;MCHP_PWM_HighSpeed&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;dsPIC33A: → &lt;a href="pwm_io/pwm_hs_fep/"&gt;MCHP_PWM_HS_FEP&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;SAM/ARM: → &lt;a href="pwm_io/pwm_sam7x/"&gt;MCHP_PWM_SAM7x&lt;/a&gt;
- or &lt;a href="pwm_io/tcc_pwm/"&gt;MCHP_TCC_PWM&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="dspic-family-pwm-blocks"&gt;dsPIC Family PWM Blocks&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="pwm_io/pwm/"&gt;&lt;strong&gt;MCHP_PWM&lt;/strong&gt;&lt;/a&gt;
- - Standard PWM for dsPIC30F/33F/33E with dead-time and fault protection&lt;/li&gt;
-&lt;li&gt;&lt;a href="pwm_io/pwm_highspeed/"&gt;&lt;strong&gt;MCHP_PWM_HighSpeed&lt;/strong&gt;&lt;/a&gt;
- - High-Speed PWM with independent time bases and 4 output modes (dsPIC33C/CH/CK)&lt;/li&gt;
-&lt;li&gt;&lt;a href="pwm_io/pwm_highspeed_override/"&gt;&lt;strong&gt;MCHP_PWM_HighSpeed_Override&lt;/strong&gt;&lt;/a&gt;
- - PWM Override Control for emergency shutdown and diagnostics&lt;/li&gt;
-&lt;li&gt;&lt;a href="pwm_io/pwm_hs_fep/"&gt;&lt;strong&gt;MCHP_PWM_HS_FEP&lt;/strong&gt;&lt;/a&gt;
- - High-Speed PWM with Fine Edge Positioning, 16× resolution High-Resolution mode (dsPIC33A)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="motor-control-pwm"&gt;Motor Control PWM&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="pwm_io/mcpwm/"&gt;&lt;strong&gt;MCHP_MCPWM&lt;/strong&gt;&lt;/a&gt;
- - Motor Control PWM with advanced fault handling, dead-time compensation, and leading-edge blanking (PIC32MK, dsPIC33C, dsPIC33A)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="samarm-family-pwm-blocks"&gt;SAM/ARM Family PWM Blocks&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="pwm_io/pwm_sam7x/"&gt;&lt;strong&gt;MCHP_PWM_SAM7x&lt;/strong&gt;&lt;/a&gt;
- - SAM7x PWM peripheral for SAME5x/SAME7x/SAMC2x/SAMD2x families&lt;/li&gt;
-&lt;li&gt;&lt;a href="pwm_io/pwm_sam7x_override/"&gt;&lt;strong&gt;MCHP_PWM_SAM7x_Override&lt;/strong&gt;&lt;/a&gt;
- - SAM7x Override control for PWM outputs&lt;/li&gt;
-&lt;li&gt;&lt;a href="pwm_io/tcc_pwm/"&gt;&lt;strong&gt;MCHP_TCC_PWM&lt;/strong&gt;&lt;/a&gt;
- - Timer/Counter for Control PWM with pattern generation for BLDC motors (SAME5x, SAMC2x, SAMD2x)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="common-features"&gt;Common Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Output Modes:&lt;/strong&gt; Complementary, Redundant, Push-Pull, Independent&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Alignment:&lt;/strong&gt; Edge-aligned, Center-aligned (symmetric/asymmetric)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Dead-Time:&lt;/strong&gt; Configurable insertion for shoot-through protection&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Fault Protection:&lt;/strong&gt; Hardware fault inputs with configurable response&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ADC Synchronization:&lt;/strong&gt; Trigger outputs for precise current sampling&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;High Resolution:&lt;/strong&gt; Up to 16× enhanced timing precision (selected blocks)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="see-also"&gt;See Also&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="./"&gt;Block Reference Home&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="adc_blocks/"&gt;ADC Blocks&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="../getting_started/motor_control_examples/"&gt;Motor Control Application Guide&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="../examples/"&gt;PWM Examples&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>System Blocks</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system/system/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system/system/</guid><description>&lt;p&gt;System blocks configure the fundamental behavior of MCHP Blockset models, including target selection, clock configuration, multitasking scheduler, and runtime monitoring.&lt;/p&gt;
-&lt;h2 id="core-configuration-blocks"&gt;Core Configuration Blocks&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Block&lt;/th&gt;
- &lt;th&gt;Description&lt;/th&gt;
- &lt;th&gt;Required?&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_Master&lt;/td&gt;
- &lt;td&gt;Main configuration block - chip selection, clock, fuses, build settings&lt;/td&gt;
- &lt;td&gt;✓ Yes - ALWAYS required&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_Scheduler_Options&lt;/td&gt;
- &lt;td&gt;Rate monotonic scheduler configuration and overload behavior&lt;/td&gt;
- &lt;td&gt;Optional (default settings used)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_Interrupt&lt;/td&gt;
- &lt;td&gt;Interrupt service routine configuration for triggered subsystems&lt;/td&gt;
- &lt;td&gt;Optional (for ISR-driven tasks)&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="task-management-blocks"&gt;Task Management Blocks&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Block&lt;/th&gt;
- &lt;th&gt;Description&lt;/th&gt;
- &lt;th&gt;Purpose&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_IdleTask&lt;/td&gt;
- &lt;td&gt;Background task executed when CPU is idle&lt;/td&gt;
- &lt;td&gt;Power saving, watchdog, diagnostics&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_Tasks_State&lt;/td&gt;
- &lt;td&gt;Real-time task execution state monitoring&lt;/td&gt;
- &lt;td&gt;Debug timing, verify preemption&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="performance-monitoring-blocks"&gt;Performance Monitoring Blocks&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Block&lt;/th&gt;
- &lt;th&gt;Description&lt;/th&gt;
- &lt;th&gt;Output&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_MCU_LOAD&lt;/td&gt;
- &lt;td&gt;CPU utilization measurement (percentage)&lt;/td&gt;
- &lt;td&gt;0-100% CPU load&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_MCU_OVERLOAD&lt;/td&gt;
- &lt;td&gt;Task deadline miss detection and diagnostics&lt;/td&gt;
- &lt;td&gt;Overload flags, task ID, count&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="advanced-features"&gt;Advanced Features&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Block&lt;/th&gt;
- &lt;th&gt;Description&lt;/th&gt;
- &lt;th&gt;Applicability&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;MCHP_SECONDARY_CORE&lt;/td&gt;
- &lt;td&gt;Dual-core secondary (slave) core configuration&lt;/td&gt;
- &lt;td&gt;dsPIC33CH only&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id="typical-model-setup"&gt;Typical Model Setup&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Add MCHP_Master&lt;/strong&gt; - Select target chip, configure clock&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Add peripherals&lt;/strong&gt; - PWM, ADC, UART, etc.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Configure scheduling&lt;/strong&gt; - Add MCHP_Scheduler_Options if custom behavior needed&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Add monitoring&lt;/strong&gt; - MCHP_MCU_LOAD for performance validation&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Build and test&lt;/strong&gt; - Verify timing with MCHP_Tasks_State&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="see-also"&gt;See Also&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;[Block Reference Home](../&lt;/li&gt;
-&lt;li&gt;[Utility Blocks] - Compiler optimization, X2C debugging&lt;/li&gt;
-&lt;li&gt;[PWM Blocks] - Pulse-width modulation&lt;/li&gt;
-&lt;li&gt;[ADC Blocks] - Analog-to-digital conversion&lt;/li&gt;
-&lt;/ul&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Block Reference on MPLAB Device Blocks for Simulink</title>
+    <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/</link>
+    <description>Recent content in Block Reference on MPLAB Device Blocks for Simulink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate>
+    <atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ADC Blocks - Analog-to-Digital Converter Reference</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc_blocks/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc_blocks/</guid>
+      <description>&lt;p&gt;The MCHP Blockset provides comprehensive ADC support for all Microchip microcontroller families. Each family has optimized ADC blocks tailored to the specific peripheral architecture and capabilities.&lt;/p&gt;&#xA;&lt;h2 id=&#34;dspic--pic24-family-adc-blocks&#34;&gt;dsPIC &amp;amp; PIC24 Family ADC Blocks&lt;/h2&gt;&#xA;&lt;p&gt;[MCHP_ADC] Standard ADC for dsPIC30F, dsPIC33F, dsPIC33E, dsPIC33C, and PIC24 families. &lt;strong&gt;Resolution:&lt;/strong&gt; 10/12-bit&lt;strong&gt;Features:&lt;/strong&gt; Scan mode, simultaneous sampling, DMA support&lt;strong&gt;Best for:&lt;/strong&gt; General-purpose acquisition, motor control [MCHP_ADC_HighSpeed_SAR_dsPIC] High-speed SAR ADC for dsPIC33C with dedicated cores and shared ADC7. &lt;strong&gt;Resolution:&lt;/strong&gt; 6/8/10/12-bit&lt;strong&gt;Cores:&lt;/strong&gt; 3-6 dedicated + shared ADC7&lt;strong&gt;Speed:&lt;/strong&gt; Up to 3.25 Msps per core&lt;strong&gt;Best for:&lt;/strong&gt; High-speed multi-channel, simultaneous sampling [MCHP_ADC_HS_12b] 12-bit high-speed ADC with software sequencing for dsPIC33A family. &lt;strong&gt;Resolution:&lt;/strong&gt; 12-bit fixed&lt;strong&gt;Cores:&lt;/strong&gt; 2-5 (variant dependent)&lt;strong&gt;Sequencing:&lt;/strong&gt; 6 sequences × 6 conversions&lt;strong&gt;Devices:&lt;/strong&gt; Perseus, Pegasus, Blue Ridge, Serpens (33AK series)&lt;strong&gt;Best for:&lt;/strong&gt; Advanced FOC motor control, flexible multi-channel&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Analog Signal Conditioning Blocks Documentation</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog/</guid>
+      <description>&lt;p&gt;Integrated analog peripherals for signal amplification, buffering, and voltage generation&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Analog signal conditioning blocks provide access to integrated analog peripherals in Microchip microcontrollers, enabling precision signal processing without external components. These blocks eliminate the need for discrete amplifiers, comparators, and DACs in many applications, reducing BOM cost, board space, and improving signal integrity.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;                Integrated signal chain reduces external component count&#xA;                Direct connection to ADC for optimized analog front-end&#xA;                Software-configurable gain and operating modes&#xA;                Low noise and high precision for measurement applications&#xA;                Calibration capabilities for enhanced accuracy&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;h2 id=&#34;available-blocks&#34;&gt;Available Blocks&lt;/h2&gt;&#xA;&lt;p&gt;[&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Block Reference</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/user_functions/c_function_call/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/user_functions/c_function_call/</guid>
+      <description>&lt;div class=&#34;block-icon-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;block-icon-image&#34;&gt;&#xD;&#xA;      &lt;picture&gt;&lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/user_functions/C_Function_Call.png&#34; alt=&#34;C Function Call Block Icon&#34;&gt;&#xD;&#xA;      &lt;/picture&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;block-icon-description&#34;&gt;&#xD;&#xA;        Complete reference for all MCHP Blockset peripheral blocks.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;h2 id=&#34;pwm-blocks&#34;&gt;PWM Blocks&lt;/h2&gt;&#xA;&lt;p&gt;Pulse Width Modulation blocks for motor control and power conversion.&lt;/p&gt;&#xA;&lt;h2 id=&#34;adc-blocks&#34;&gt;ADC Blocks&lt;/h2&gt;&#xA;&lt;p&gt;Analog-to-Digital Converter blocks for sensor interfaces.&lt;/p&gt;&#xA;&lt;h2 id=&#34;communication-blocks&#34;&gt;Communication Blocks&lt;/h2&gt;&#xA;&lt;p&gt;UART, SPI, I2C, CAN, and other communication interfaces.&lt;/p&gt;&#xA;&lt;h2 id=&#34;timer-blocks&#34;&gt;Timer Blocks&lt;/h2&gt;&#xA;&lt;p&gt;Timer and interrupt configuration blocks.&lt;/p&gt;&#xA;&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../getting_started/&#34;&gt;Getting Started&lt;/a&gt;&#xA; | &lt;a href=&#34;../../user_guide/&#34;&gt;User Guide&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CAN Communication Blocks</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/can/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/can/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The &lt;strong&gt;CAN (Controller Area Network)&lt;/strong&gt; block family enables robust, multi-master communication on CAN bus networks. CAN is widely used in automotive, industrial automation, and embedded systems for reliable data exchange in electrically noisy environments.&lt;/p&gt;&#xA;&lt;p&gt;The MCHP Blockset provides three blocks for CAN communication: &lt;strong&gt;CAN Config&lt;/strong&gt; for peripheral setup, &lt;strong&gt;CAN Tx&lt;/strong&gt; for message transmission, and &lt;strong&gt;CAN Rx&lt;/strong&gt; for message reception with flexible filtering. These blocks support both CAN 2.0 (standard) and CAN-FD (flexible data-rate) protocols.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PWM Blocks - Block Reference</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_blocks/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_blocks/</guid>
+      <description>&lt;p&gt;Comprehensive PWM (Pulse Width Modulation) blocks for motor control, power conversion, and signal generation across all MCHP Blockset supported families.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Device Family Support:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;dsPIC30F/33F/33E: → &lt;a href=&#34;pwm_io/pwm/&#34;&gt;MCHP_PWM&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;dsPIC33C/CH/CK: → &lt;a href=&#34;pwm_io/pwm_highspeed/&#34;&gt;MCHP_PWM_HighSpeed&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;dsPIC33A: → &lt;a href=&#34;pwm_io/pwm_hs_fep/&#34;&gt;MCHP_PWM_HS_FEP&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;SAM/ARM: → &lt;a href=&#34;pwm_io/pwm_sam7x/&#34;&gt;MCHP_PWM_SAM7x&lt;/a&gt;&#xA; or &lt;a href=&#34;pwm_io/tcc_pwm/&#34;&gt;MCHP_TCC_PWM&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;dspic-family-pwm-blocks&#34;&gt;dsPIC Family PWM Blocks&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/pwm/&#34;&gt;&lt;strong&gt;MCHP_PWM&lt;/strong&gt;&lt;/a&gt;&#xA; - Standard PWM for dsPIC30F/33F/33E with dead-time and fault protection&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/pwm_highspeed/&#34;&gt;&lt;strong&gt;MCHP_PWM_HighSpeed&lt;/strong&gt;&lt;/a&gt;&#xA; - High-Speed PWM with independent time bases and 4 output modes (dsPIC33C/CH/CK)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/pwm_highspeed_override/&#34;&gt;&lt;strong&gt;MCHP_PWM_HighSpeed_Override&lt;/strong&gt;&lt;/a&gt;&#xA; - PWM Override Control for emergency shutdown and diagnostics&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/pwm_hs_fep/&#34;&gt;&lt;strong&gt;MCHP_PWM_HS_FEP&lt;/strong&gt;&lt;/a&gt;&#xA; - High-Speed PWM with Fine Edge Positioning, 16× resolution High-Resolution mode (dsPIC33A)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;motor-control-pwm&#34;&gt;Motor Control PWM&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/mcpwm/&#34;&gt;&lt;strong&gt;MCHP_MCPWM&lt;/strong&gt;&lt;/a&gt;&#xA; - Motor Control PWM with advanced fault handling, dead-time compensation, and leading-edge blanking (PIC32MK, dsPIC33C, dsPIC33A)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;samarm-family-pwm-blocks&#34;&gt;SAM/ARM Family PWM Blocks&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/pwm_sam7x/&#34;&gt;&lt;strong&gt;MCHP_PWM_SAM7x&lt;/strong&gt;&lt;/a&gt;&#xA; - SAM7x PWM peripheral for SAME5x/SAME7x/SAMC2x/SAMD2x families&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/pwm_sam7x_override/&#34;&gt;&lt;strong&gt;MCHP_PWM_SAM7x_Override&lt;/strong&gt;&lt;/a&gt;&#xA; - SAM7x Override control for PWM outputs&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pwm_io/tcc_pwm/&#34;&gt;&lt;strong&gt;MCHP_TCC_PWM&lt;/strong&gt;&lt;/a&gt;&#xA; - Timer/Counter for Control PWM with pattern generation for BLDC motors (SAME5x, SAMC2x, SAMD2x)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;common-features&#34;&gt;Common Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Output Modes:&lt;/strong&gt; Complementary, Redundant, Push-Pull, Independent&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Alignment:&lt;/strong&gt; Edge-aligned, Center-aligned (symmetric/asymmetric)&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Dead-Time:&lt;/strong&gt; Configurable insertion for shoot-through protection&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Fault Protection:&lt;/strong&gt; Hardware fault inputs with configurable response&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;ADC Synchronization:&lt;/strong&gt; Trigger outputs for precise current sampling&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;High Resolution:&lt;/strong&gt; Up to 16× enhanced timing precision (selected blocks)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;./&#34;&gt;Block Reference Home&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;adc_blocks/&#34;&gt;ADC Blocks&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../getting_started/motor_control_examples/&#34;&gt;Motor Control Application Guide&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../examples/&#34;&gt;PWM Examples&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>System Blocks</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system/system/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system/system/</guid>
+      <description>&lt;p&gt;System blocks configure the fundamental behavior of MCHP Blockset models, including target selection, clock configuration, multitasking scheduler, and runtime monitoring.&lt;/p&gt;&#xA;&lt;h2 id=&#34;core-configuration-blocks&#34;&gt;Core Configuration Blocks&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Block&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;          &lt;th&gt;Required?&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_Master&lt;/td&gt;&#xA;          &lt;td&gt;Main configuration block - chip selection, clock, fuses, build settings&lt;/td&gt;&#xA;          &lt;td&gt;✓ Yes - ALWAYS required&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_Scheduler_Options&lt;/td&gt;&#xA;          &lt;td&gt;Rate monotonic scheduler configuration and overload behavior&lt;/td&gt;&#xA;          &lt;td&gt;Optional (default settings used)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_Interrupt&lt;/td&gt;&#xA;          &lt;td&gt;Interrupt service routine configuration for triggered subsystems&lt;/td&gt;&#xA;          &lt;td&gt;Optional (for ISR-driven tasks)&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;task-management-blocks&#34;&gt;Task Management Blocks&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Block&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;          &lt;th&gt;Purpose&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_IdleTask&lt;/td&gt;&#xA;          &lt;td&gt;Background task executed when CPU is idle&lt;/td&gt;&#xA;          &lt;td&gt;Power saving, watchdog, diagnostics&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_Tasks_State&lt;/td&gt;&#xA;          &lt;td&gt;Real-time task execution state monitoring&lt;/td&gt;&#xA;          &lt;td&gt;Debug timing, verify preemption&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;performance-monitoring-blocks&#34;&gt;Performance Monitoring Blocks&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Block&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;          &lt;th&gt;Output&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_MCU_LOAD&lt;/td&gt;&#xA;          &lt;td&gt;CPU utilization measurement (percentage)&lt;/td&gt;&#xA;          &lt;td&gt;0-100% CPU load&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_MCU_OVERLOAD&lt;/td&gt;&#xA;          &lt;td&gt;Task deadline miss detection and diagnostics&lt;/td&gt;&#xA;          &lt;td&gt;Overload flags, task ID, count&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;advanced-features&#34;&gt;Advanced Features&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Block&lt;/th&gt;&#xA;          &lt;th&gt;Description&lt;/th&gt;&#xA;          &lt;th&gt;Applicability&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;MCHP_SECONDARY_CORE&lt;/td&gt;&#xA;          &lt;td&gt;Dual-core secondary (slave) core configuration&lt;/td&gt;&#xA;          &lt;td&gt;dsPIC33CH only&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;h2 id=&#34;typical-model-setup&#34;&gt;Typical Model Setup&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Add MCHP_Master&lt;/strong&gt; - Select target chip, configure clock&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Add peripherals&lt;/strong&gt; - PWM, ADC, UART, etc.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Configure scheduling&lt;/strong&gt; - Add MCHP_Scheduler_Options if custom behavior needed&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Add monitoring&lt;/strong&gt; - MCHP_MCU_LOAD for performance validation&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Build and test&lt;/strong&gt; - Verify timing with MCHP_Tasks_State&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;[Block Reference Home](../&lt;/li&gt;&#xA;&lt;li&gt;[Utility Blocks] - Compiler optimization, X2C debugging&lt;/li&gt;&#xA;&lt;li&gt;[PWM Blocks] - Pulse-width modulation&lt;/li&gt;&#xA;&lt;li&gt;[ADC Blocks] - Analog-to-digital conversion&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

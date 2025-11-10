@@ -1,34 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Input Capture / Output Compare on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/</link><description>Recent content in Input Capture / Output Compare on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/index.xml" rel="self" type="application/rss+xml"/><item><title>IC - Input Capture Block</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/input_capture/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/input_capture/</guid><description>&lt;div class="block-icon-container"&gt;
- &lt;div class="block-icon-image"&gt;
- &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/InputCapture.png" alt="Input Capture Block Icon"&gt;
- &lt;/picture&gt;
- &lt;/div&gt;
-
- &lt;div class="block-icon-description"&gt;
- IC - Input Capture Block InputCapture Block Icon The &lt;strong&gt;MCHP_IC&lt;/strong&gt; block captures hardware timer values when external events occur on input pins. It enables precise measurement of pulse widths, periods, frequencies, and event timestamps using dedicated Input Capture peripheral modules. Each IC channel can detect rising edges, falling edges, or both, and automatically capture the associated timer value. This is ideal for encoder interfaces, frequency measurement, and event timing applications.
- &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;IC - Input Capture Block&lt;/p&gt;</description></item><item><title>OC HW - Output Compare (Hardware)</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_hw/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_hw/</guid><description>&lt;div class="block-icon-container"&gt;
- &lt;div class="block-icon-image"&gt;
- &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/OutputCompare_HW.png" alt="Output Compare HW Block Icon"&gt;
- &lt;/picture&gt;
- &lt;/div&gt;
-
- &lt;div class="block-icon-description"&gt;
- The &lt;strong&gt;MCHP_OC_HW&lt;/strong&gt; block provides hardware-based output generation using the Output Compare (OC) peripheral. It generates PWM signals, toggles outputs, or creates precise timing events based on timer comparisons with &lt;strong&gt;no CPU overhead&lt;/strong&gt; during normal operation.
- &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The &lt;strong&gt;MCHP_OC_HW&lt;/strong&gt; block provides hardware-based output generation using the Output Compare (OC) peripheral. It generates PWM signals, toggles outputs, or creates precise timing events based on timer comparisons with &lt;strong&gt;no CPU overhead&lt;/strong&gt; during normal operation.&lt;/p&gt;</description></item><item><title>OC SW - Software Output Compare</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_sw/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_sw/</guid><description>&lt;div class="block-icon-container"&gt;
- &lt;div class="block-icon-image"&gt;
- &lt;picture&gt;&lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/OutputCompare_SW.png" alt="Output Compare SW Block Icon"&gt;
- &lt;/picture&gt;
- &lt;/div&gt;
-
- &lt;div class="block-icon-description"&gt;
- The &lt;strong&gt;MCHP_OC_SW&lt;/strong&gt; block provides &lt;strong&gt;interrupt-driven software output compare&lt;/strong&gt; functionality. Unlike hardware OC which operates autonomously, this block uses timer interrupts to precisely time output pin changes, offering &lt;strong&gt;greater flexibility&lt;/strong&gt; at the cost of CPU overhead.
- &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;p&gt;The &lt;strong&gt;MCHP_OC_SW&lt;/strong&gt; block provides &lt;strong&gt;interrupt-driven software output compare&lt;/strong&gt; functionality. Unlike hardware OC which operates autonomously, this block uses timer interrupts to precisely time output pin changes, offering &lt;strong&gt;greater flexibility&lt;/strong&gt; at the cost of CPU overhead.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Input Capture / Output Compare on MPLAB Device Blocks for Simulink</title>
+    <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/</link>
+    <description>Recent content in Input Capture / Output Compare on MPLAB Device Blocks for Simulink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate>
+    <atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IC - Input Capture Block</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/input_capture/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/input_capture/</guid>
+      <description>&lt;div class=&#34;block-icon-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;block-icon-image&#34;&gt;&#xD;&#xA;      &lt;picture&gt;&lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/InputCapture.png&#34; alt=&#34;Input Capture Block Icon&#34;&gt;&#xD;&#xA;      &lt;/picture&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;block-icon-description&#34;&gt;&#xD;&#xA;        IC - Input Capture Block  InputCapture Block Icon  The &lt;strong&gt;MCHP_IC&lt;/strong&gt; block captures hardware timer values when external events occur on input pins. It enables precise measurement of pulse widths, periods, frequencies, and event timestamps using dedicated Input Capture peripheral modules.    Each IC channel can detect rising edges, falling edges, or both, and automatically capture the associated timer value. This is ideal for encoder interfaces, frequency measurement, and event timing applications.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;p&gt;IC - Input Capture Block&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OC HW - Output Compare (Hardware)</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_hw/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_hw/</guid>
+      <description>&lt;div class=&#34;block-icon-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;block-icon-image&#34;&gt;&#xD;&#xA;      &lt;picture&gt;&lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/OutputCompare_HW.png&#34; alt=&#34;Output Compare HW Block Icon&#34;&gt;&#xD;&#xA;      &lt;/picture&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;block-icon-description&#34;&gt;&#xD;&#xA;        The &lt;strong&gt;MCHP_OC_HW&lt;/strong&gt; block provides hardware-based output generation using the Output Compare (OC) peripheral. It generates PWM signals, toggles outputs, or creates precise timing events based on timer comparisons with &lt;strong&gt;no CPU overhead&lt;/strong&gt; during normal operation.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;p&gt;The &lt;strong&gt;MCHP_OC_HW&lt;/strong&gt; block provides hardware-based output generation using the Output Compare (OC) peripheral. It generates PWM signals, toggles outputs, or creates precise timing events based on timer comparisons with &lt;strong&gt;no CPU overhead&lt;/strong&gt; during normal operation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OC SW - Software Output Compare</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_sw/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_sw/</guid>
+      <description>&lt;div class=&#34;block-icon-container&#34;&gt;&#xD;&#xA;    &lt;div class=&#34;block-icon-image&#34;&gt;&#xD;&#xA;      &lt;picture&gt;&lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/timers/OutputCompare_SW.png&#34; alt=&#34;Output Compare SW Block Icon&#34;&gt;&#xD;&#xA;      &lt;/picture&gt;&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&#xD;&#xA;    &lt;div class=&#34;block-icon-description&#34;&gt;&#xD;&#xA;        The &lt;strong&gt;MCHP_OC_SW&lt;/strong&gt; block provides &lt;strong&gt;interrupt-driven software output compare&lt;/strong&gt; functionality. Unlike hardware OC which operates autonomously, this block uses timer interrupts to precisely time output pin changes, offering &lt;strong&gt;greater flexibility&lt;/strong&gt; at the cost of CPU overhead.&#xD;&#xA;    &lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;p&gt;The &lt;strong&gt;MCHP_OC_SW&lt;/strong&gt; block provides &lt;strong&gt;interrupt-driven software output compare&lt;/strong&gt; functionality. Unlike hardware OC which operates autonomously, this block uses timer interrupts to precisely time output pin changes, offering &lt;strong&gt;greater flexibility&lt;/strong&gt; at the cost of CPU overhead.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

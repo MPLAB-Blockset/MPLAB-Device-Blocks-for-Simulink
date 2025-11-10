@@ -1,0 +1,36 @@
+# Security Headers for GitHub Pages
+# This file configures HTTP security headers for all pages
+
+/*
+  # Prevent clickjacking attacks by disallowing iframe embedding
+  X-Frame-Options: DENY
+
+  # Prevent MIME-sniffing attacks
+  X-Content-Type-Options: nosniff
+
+  # Enable XSS protection (legacy browsers)
+  X-XSS-Protection: 1; mode=block
+
+  # Control referrer information leakage
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Limit browser features (prevent unauthorized access to geolocation, microphone, camera)
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+
+  # Content Security Policy - Prevents XSS attacks
+  # Allow scripts and styles from same origin and inline (required for Hugo-generated inline CSS/JS)
+  # Allow images from same origin, data URIs, and HTTPS sources
+  # Allow MathJax from CDN for mathematical formulas
+  # Deny all frames (clickjacking protection)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+  # Enforce HTTPS (only after site is fully deployed on HTTPS)
+  # Uncomment the line below after verifying HTTPS is working on GitHub Pages
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # Cache control for static assets (1 year)
+  Cache-Control: public, max-age=31536000, immutable
+
+# Override cache control for HTML pages (revalidate)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

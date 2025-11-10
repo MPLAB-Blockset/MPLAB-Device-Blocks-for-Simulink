@@ -1,27 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Communication on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/</link><description>Recent content in Communication on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 05 Nov 2025 15:09:59 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/index.xml" rel="self" type="application/rss+xml"/><item><title>I2C Master/Slave - Communication Blocks</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/i2c/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/i2c/</guid><description>&lt;h2 id="i2c-masterslave-block"&gt;I2C Master/Slave Block&lt;/h2&gt;
-&lt;div style="text-align: center; margin: 20px 0;"&gt;
- &lt;picture&gt;
- &lt;source srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_i2c/BUS_I2C_MASTER.svg" type="image/svg+xml"&gt;
- &lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_i2c/BUS_I2C_MASTER.png" alt="I2C Block" style="max-width: 200px;"&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Status&lt;/strong&gt;: Documentation in progress.&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;p&gt;Configure and use I2C (Inter-Integrated Circuit) communication interface in either Master or Slave mode.&lt;/p&gt;
-&lt;p&gt;The I2C protocol is a synchronous, multi-master, multi-slave, packet-switched, single-ended serial communication bus commonly used for attaching lower-speed peripheral ICs to processors and microcontrollers. This single block handles both Master and Slave functionality.&lt;/p&gt;
-&lt;h2 id="block-modes"&gt;Block Modes&lt;/h2&gt;
-&lt;h3 id="master-mode"&gt;Master Mode&lt;/h3&gt;
-&lt;p&gt;In Master mode, the microcontroller initiates all communication on the I2C bus:&lt;/p&gt;</description></item><item><title>SPI Master/Slave - Communication Blocks</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/spi/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/spi/</guid><description>&lt;h2 id="spi-masterslave-block"&gt;SPI Master/Slave Block&lt;/h2&gt;
-&lt;div style="text-align: center; margin: 20px 0;"&gt;
- &lt;picture&gt;
- &lt;source srcset="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_spi/BUS_SPI.svg" type="image/svg+xml"&gt;
- &lt;img src="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_spi/BUS_SPI.png" alt="SPI Block" style="max-width: 200px;"&gt;
- &lt;/picture&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Status&lt;/strong&gt;: Documentation in progress.&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;p&gt;Configure and use SPI (Serial Peripheral Interface) communication in either Master or Slave mode.&lt;/p&gt;
-&lt;p&gt;The SPI protocol is a synchronous serial communication interface for short-distance communication, primarily used in embedded systems. SPI operates in full-duplex mode with a master-slave architecture. This single block handles both Master and Slave functionality.&lt;/p&gt;
-&lt;h2 id="block-modes"&gt;Block Modes&lt;/h2&gt;
-&lt;h3 id="master-mode"&gt;Master Mode&lt;/h3&gt;
-&lt;p&gt;In Master mode, the microcontroller controls the SPI bus:&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Communication on MPLAB Device Blocks for Simulink</title>
+    <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/</link>
+    <description>Recent content in Communication on MPLAB Device Blocks for Simulink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Nov 2025 15:09:59 +0100</lastBuildDate>
+    <atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>I2C Master/Slave - Communication Blocks</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/i2c/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/i2c/</guid>
+      <description>&lt;h2 id=&#34;i2c-masterslave-block&#34;&gt;I2C Master/Slave Block&lt;/h2&gt;&#xA;&lt;div style=&#34;text-align: center; margin: 20px 0;&#34;&gt;&#xD;&#xA;    &lt;picture&gt;&#xD;&#xA;        &lt;source srcset=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_i2c/BUS_I2C_MASTER.svg&#34; type=&#34;image/svg+xml&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_i2c/BUS_I2C_MASTER.png&#34; alt=&#34;I2C Block&#34; style=&#34;max-width: 200px;&#34;&gt;&#xD;&#xA;    &lt;/picture&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Status&lt;/strong&gt;: Documentation in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Configure and use I2C (Inter-Integrated Circuit) communication interface in either Master or Slave mode.&lt;/p&gt;&#xA;&lt;p&gt;The I2C protocol is a synchronous, multi-master, multi-slave, packet-switched, single-ended serial communication bus commonly used for attaching lower-speed peripheral ICs to processors and microcontrollers. This single block handles both Master and Slave functionality.&lt;/p&gt;&#xA;&lt;h2 id=&#34;block-modes&#34;&gt;Block Modes&lt;/h2&gt;&#xA;&lt;h3 id=&#34;master-mode&#34;&gt;Master Mode&lt;/h3&gt;&#xA;&lt;p&gt;In Master mode, the microcontroller initiates all communication on the I2C bus:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI Master/Slave - Communication Blocks</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/spi/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/spi/</guid>
+      <description>&lt;h2 id=&#34;spi-masterslave-block&#34;&gt;SPI Master/Slave Block&lt;/h2&gt;&#xA;&lt;div style=&#34;text-align: center; margin: 20px 0;&#34;&gt;&#xD;&#xA;    &lt;picture&gt;&#xD;&#xA;        &lt;source srcset=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_spi/BUS_SPI.svg&#34; type=&#34;image/svg+xml&#34;&gt;&#xD;&#xA;        &lt;img src=&#34;https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/assets/images/blocks/bus_spi/BUS_SPI.png&#34; alt=&#34;SPI Block&#34; style=&#34;max-width: 200px;&#34;&gt;&#xD;&#xA;    &lt;/picture&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;p&gt;&lt;strong&gt;Status&lt;/strong&gt;: Documentation in progress.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Configure and use SPI (Serial Peripheral Interface) communication in either Master or Slave mode.&lt;/p&gt;&#xA;&lt;p&gt;The SPI protocol is a synchronous serial communication interface for short-distance communication, primarily used in embedded systems. SPI operates in full-duplex mode with a master-slave architecture. This single block handles both Master and Slave functionality.&lt;/p&gt;&#xA;&lt;h2 id=&#34;block-modes&#34;&gt;Block Modes&lt;/h2&gt;&#xA;&lt;h3 id=&#34;master-mode&#34;&gt;Master Mode&lt;/h3&gt;&#xA;&lt;p&gt;In Master mode, the microcontroller controls the SPI bus:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,168 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>User Guide on MPLAB Device Blocks for Simulink</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/</link><description>Recent content in User Guide on MPLAB Device Blocks for Simulink</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate><atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/index.xml" rel="self" type="application/rss+xml"/><item><title>Code Generation</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="external_mode/"&gt;External Mode&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="pil_testing/"&gt;PIL Testing&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="compiler_setup/"&gt;Compiler Setup&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="../videos/"&gt;📹 Video Demos&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The MCHP Blockset automatically generates optimized C code from Simulink models for deployment on Microchip microcontrollers.&lt;/p&gt;
-&lt;h2 id="code-generation-workflow"&gt;Code Generation Workflow&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Model Design&lt;/strong&gt; - Create algorithm in Simulink&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Configuration&lt;/strong&gt; - Set up target hardware and compiler&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Build&lt;/strong&gt; - Generate and compile code&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Deploy&lt;/strong&gt; - Program device with generated firmware&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="model-configuration-parameters"&gt;Model Configuration Parameters&lt;/h2&gt;
-&lt;h3 id="system-target-file"&gt;System Target File&lt;/h3&gt;
-&lt;p&gt;Select the appropriate target for your device family:&lt;/p&gt;</description></item><item><title>Compiler Setup</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="external_mode/"&gt;External Mode&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="pil_testing/"&gt;PIL Testing&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="compiler_setup/"&gt;Compiler Setup&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="../videos/"&gt;📹 Video Demos&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Detailed instructions for installing and configuring Microchip compilers for code generation.&lt;/p&gt;
-&lt;h2 id="compiler-selection-by-family"&gt;Compiler Selection by Family&lt;/h2&gt;
-&lt;table&gt;
- &lt;thead&gt;
- &lt;tr&gt;
- &lt;th&gt;Device Family&lt;/th&gt;
- &lt;th&gt;Compiler&lt;/th&gt;
- &lt;th&gt;Min Version&lt;/th&gt;
- &lt;/tr&gt;
- &lt;/thead&gt;
- &lt;tbody&gt;
- &lt;tr&gt;
- &lt;td&gt;dsPIC 30F/33F/33E&lt;/td&gt;
- &lt;td&gt;XC16&lt;/td&gt;
- &lt;td&gt;v1.26+&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;dsPIC 33C/33A&lt;/td&gt;
- &lt;td&gt;XC-DSC&lt;/td&gt;
- &lt;td&gt;v3.20+&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;PIC32&lt;/td&gt;
- &lt;td&gt;XC32&lt;/td&gt;
- &lt;td&gt;v2.40+&lt;/td&gt;
- &lt;/tr&gt;
- &lt;tr&gt;
- &lt;td&gt;SAM (ARM)&lt;/td&gt;
- &lt;td&gt;XC32&lt;/td&gt;
- &lt;td&gt;v2.40+&lt;/td&gt;
- &lt;/tr&gt;
- &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;div class="note" style="background-color: #f0f8ff; border-left: 4px solid #0076A8; padding: 15px; margin: 20px 0;"&gt;
- Note: XC32 is based on ARM GCC and supports both PIC32 (MIPS-based) and SAM (ARM Cortex-M) devices. The compiler automatically adapts to the target architecture.
-&lt;/div&gt;
-
-&lt;h2 id="installation-paths"&gt;Installation Paths&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Windows (Default):&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>External Mode</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="external_mode/"&gt;External Mode&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="pil_testing/"&gt;PIL Testing&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="compiler_setup/"&gt;Compiler Setup&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="../videos/"&gt;📹 Video Demos&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;External Mode enables real-time parameter tuning and signal monitoring on running hardware through a communication link between Simulink and the target device.&lt;/p&gt;
-&lt;h2 id="overview"&gt;Overview&lt;/h2&gt;
-&lt;p&gt;Key capabilities:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Modify parameters in real-time without rebuilding&lt;/li&gt;
-&lt;li&gt;Monitor signals and scopes while application runs&lt;/li&gt;
-&lt;li&gt;Capture data from hardware to Simulink workspace&lt;/li&gt;
-&lt;li&gt;Compare simulation vs. hardware behavior&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="setup-steps"&gt;Setup Steps&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Configure communication interface (UART, USB, etc.)&lt;/li&gt;
-&lt;li&gt;Enable External Mode in model configuration&lt;/li&gt;
-&lt;li&gt;Build and download model to hardware&lt;/li&gt;
-&lt;li&gt;Connect to target and start monitoring&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="../"&gt;Home&lt;/a&gt;
- | &lt;a href="../user_guide/"&gt;User Guide&lt;/a&gt;
- | &lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
- | &lt;a href="pil_testing/"&gt;PIL Testing&lt;/a&gt;
- | &lt;a href="compiler_setup/"&gt;Compiler Setup&lt;/a&gt;
- | &lt;a href="../videos/"&gt;Video Demos&lt;/a&gt;
- | &lt;a href="../block/"&gt;Block Reference&lt;/a&gt;
-&lt;/p&gt;</description></item><item><title>PIL Testing</title><link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</link><pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate><guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</guid><description>&lt;h2 id="navigation"&gt;Navigation&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="../"&gt;🏠 Home&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="user-guide-topics"&gt;User Guide Topics&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="external_mode/"&gt;External Mode&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="pil_testing/"&gt;PIL Testing&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="compiler_setup/"&gt;Compiler Setup&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="../videos/"&gt;📹 Video Demos&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;PIL testing verifies generated code by executing it on actual hardware and comparing results with simulation.&lt;/p&gt;
-&lt;h2 id="benefits"&gt;Benefits&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Verify code generation correctness&lt;/li&gt;
-&lt;li&gt;Measure execution time and performance&lt;/li&gt;
-&lt;li&gt;Detect numerical differences between simulation and hardware&lt;/li&gt;
-&lt;li&gt;Profile code for optimization&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="pil-workflow"&gt;PIL Workflow&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Create PIL block from subsystem&lt;/li&gt;
-&lt;li&gt;Configure communication interface&lt;/li&gt;
-&lt;li&gt;Run simulation with PIL block&lt;/li&gt;
-&lt;li&gt;Compare results with normal simulation&lt;/li&gt;
-&lt;li&gt;Analyze performance metrics&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href="../"&gt;Home&lt;/a&gt;
- | &lt;a href="../user_guide/"&gt;User Guide&lt;/a&gt;
- | &lt;a href="code_generation/"&gt;Code Generation&lt;/a&gt;
- | &lt;a href="external_mode/"&gt;External Mode&lt;/a&gt;
- | &lt;a href="compiler_setup/"&gt;Compiler Setup&lt;/a&gt;
- | &lt;a href="../videos/"&gt;Video Demos&lt;/a&gt;
- | &lt;a href="../block/"&gt;Block Reference&lt;/a&gt;
-&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>User Guide on MPLAB Device Blocks for Simulink</title>
+    <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/</link>
+    <description>Recent content in User Guide on MPLAB Device Blocks for Simulink</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 08 Nov 2025 00:43:32 +0100</lastBuildDate>
+    <atom:link href="https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code Generation</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/code_generation/</guid>
+      <description>&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../&#34;&gt;🏠 Home&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;user-guide-topics&#34;&gt;User Guide Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;code_generation/&#34;&gt;Code Generation&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;external_mode/&#34;&gt;External Mode&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pil_testing/&#34;&gt;PIL Testing&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;compiler_setup/&#34;&gt;Compiler Setup&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../videos/&#34;&gt;📹 Video Demos&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The MCHP Blockset automatically generates optimized C code from Simulink models for deployment on Microchip microcontrollers.&lt;/p&gt;&#xA;&lt;h2 id=&#34;code-generation-workflow&#34;&gt;Code Generation Workflow&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model Design&lt;/strong&gt; - Create algorithm in Simulink&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Configuration&lt;/strong&gt; - Set up target hardware and compiler&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Build&lt;/strong&gt; - Generate and compile code&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Deploy&lt;/strong&gt; - Program device with generated firmware&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;model-configuration-parameters&#34;&gt;Model Configuration Parameters&lt;/h2&gt;&#xA;&lt;h3 id=&#34;system-target-file&#34;&gt;System Target File&lt;/h3&gt;&#xA;&lt;p&gt;Select the appropriate target for your device family:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Compiler Setup</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</guid>
+      <description>&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../&#34;&gt;🏠 Home&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;user-guide-topics&#34;&gt;User Guide Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;code_generation/&#34;&gt;Code Generation&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;external_mode/&#34;&gt;External Mode&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pil_testing/&#34;&gt;PIL Testing&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;compiler_setup/&#34;&gt;Compiler Setup&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../videos/&#34;&gt;📹 Video Demos&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Detailed instructions for installing and configuring Microchip compilers for code generation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;compiler-selection-by-family&#34;&gt;Compiler Selection by Family&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Device Family&lt;/th&gt;&#xA;          &lt;th&gt;Compiler&lt;/th&gt;&#xA;          &lt;th&gt;Min Version&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;dsPIC 30F/33F/33E&lt;/td&gt;&#xA;          &lt;td&gt;XC16&lt;/td&gt;&#xA;          &lt;td&gt;v1.26+&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;dsPIC 33C/33A&lt;/td&gt;&#xA;          &lt;td&gt;XC-DSC&lt;/td&gt;&#xA;          &lt;td&gt;v3.20+&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;PIC32&lt;/td&gt;&#xA;          &lt;td&gt;XC32&lt;/td&gt;&#xA;          &lt;td&gt;v2.40+&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;SAM (ARM)&lt;/td&gt;&#xA;          &lt;td&gt;XC32&lt;/td&gt;&#xA;          &lt;td&gt;v2.40+&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;hr&gt;&#xA;&lt;div class=&#34;note&#34; style=&#34;background-color: #f0f8ff; border-left: 4px solid #0076A8; padding: 15px; margin: 20px 0;&#34;&gt;&#xD;&#xA;    Note: XC32 is based on ARM GCC and supports both PIC32 (MIPS-based) and SAM (ARM Cortex-M) devices. The compiler automatically adapts to the target architecture.&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xA;&lt;h2 id=&#34;installation-paths&#34;&gt;Installation Paths&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Windows (Default):&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>External Mode</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/external_mode/</guid>
+      <description>&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../&#34;&gt;🏠 Home&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;user-guide-topics&#34;&gt;User Guide Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;code_generation/&#34;&gt;Code Generation&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;external_mode/&#34;&gt;External Mode&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pil_testing/&#34;&gt;PIL Testing&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;compiler_setup/&#34;&gt;Compiler Setup&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../videos/&#34;&gt;📹 Video Demos&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;External Mode enables real-time parameter tuning and signal monitoring on running hardware through a communication link between Simulink and the target device.&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Key capabilities:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Modify parameters in real-time without rebuilding&lt;/li&gt;&#xA;&lt;li&gt;Monitor signals and scopes while application runs&lt;/li&gt;&#xA;&lt;li&gt;Capture data from hardware to Simulink workspace&lt;/li&gt;&#xA;&lt;li&gt;Compare simulation vs. hardware behavior&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;setup-steps&#34;&gt;Setup Steps&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Configure communication interface (UART, USB, etc.)&lt;/li&gt;&#xA;&lt;li&gt;Enable External Mode in model configuration&lt;/li&gt;&#xA;&lt;li&gt;Build and download model to hardware&lt;/li&gt;&#xA;&lt;li&gt;Connect to target and start monitoring&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../&#34;&gt;Home&lt;/a&gt;&#xA; | &lt;a href=&#34;../user_guide/&#34;&gt;User Guide&lt;/a&gt;&#xA; | &lt;a href=&#34;code_generation/&#34;&gt;Code Generation&lt;/a&gt;&#xA; | &lt;a href=&#34;pil_testing/&#34;&gt;PIL Testing&lt;/a&gt;&#xA; | &lt;a href=&#34;compiler_setup/&#34;&gt;Compiler Setup&lt;/a&gt;&#xA; | &lt;a href=&#34;../videos/&#34;&gt;Video Demos&lt;/a&gt;&#xA; | &lt;a href=&#34;../block/&#34;&gt;Block Reference&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PIL Testing</title>
+      <link>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</link>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/pil_testing/</guid>
+      <description>&lt;h2 id=&#34;navigation&#34;&gt;Navigation&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../&#34;&gt;🏠 Home&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;user-guide-topics&#34;&gt;User Guide Topics&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;code_generation/&#34;&gt;Code Generation&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;external_mode/&#34;&gt;External Mode&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;pil_testing/&#34;&gt;PIL Testing&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;compiler_setup/&#34;&gt;Compiler Setup&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;../videos/&#34;&gt;📹 Video Demos&lt;/a&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;PIL testing verifies generated code by executing it on actual hardware and comparing results with simulation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;benefits&#34;&gt;Benefits&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Verify code generation correctness&lt;/li&gt;&#xA;&lt;li&gt;Measure execution time and performance&lt;/li&gt;&#xA;&lt;li&gt;Detect numerical differences between simulation and hardware&lt;/li&gt;&#xA;&lt;li&gt;Profile code for optimization&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;pil-workflow&#34;&gt;PIL Workflow&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Create PIL block from subsystem&lt;/li&gt;&#xA;&lt;li&gt;Configure communication interface&lt;/li&gt;&#xA;&lt;li&gt;Run simulation with PIL block&lt;/li&gt;&#xA;&lt;li&gt;Compare results with normal simulation&lt;/li&gt;&#xA;&lt;li&gt;Analyze performance metrics&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../&#34;&gt;Home&lt;/a&gt;&#xA; | &lt;a href=&#34;../user_guide/&#34;&gt;User Guide&lt;/a&gt;&#xA; | &lt;a href=&#34;code_generation/&#34;&gt;Code Generation&lt;/a&gt;&#xA; | &lt;a href=&#34;external_mode/&#34;&gt;External Mode&lt;/a&gt;&#xA; | &lt;a href=&#34;compiler_setup/&#34;&gt;Compiler Setup&lt;/a&gt;&#xA; | &lt;a href=&#34;../videos/&#34;&gt;Video Demos&lt;/a&gt;&#xA; | &lt;a href=&#34;../block/&#34;&gt;Block Reference&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
