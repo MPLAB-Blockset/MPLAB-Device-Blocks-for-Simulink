@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" width="320" height="120">
+  <!-- Background -->
+  <rect width="320" height="120" fill="#fafafa" rx="4"/>
+
+  <!-- Title -->
+  <text x="160" y="14" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle" font-weight="bold">Center-Aligned: Timer counts UP then DOWN</text>
+
+  <!-- Timer count triangle waveform -->
+  <polyline points="30,90 110,30 190,90 270,30" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- PWM output waveform -->
+  <polyline points="30,70 50,70 50,45 170,45 170,70 210,70 210,45 290,45" fill="none" stroke="#0066cc" stroke-width="2"/>
+
+  <!-- Period bracket (full) -->
+  <line x1="30" y1="105" x2="190" y2="105" stroke="#666" stroke-width="1"/>
+  <line x1="30" y1="102" x2="30" y2="108" stroke="#666" stroke-width="1"/>
+  <line x1="190" y1="102" x2="190" y2="108" stroke="#666" stroke-width="1"/>
+  <text x="110" y="117" font-family="Arial, sans-serif" font-size="9" fill="#666" text-anchor="middle">Period (2 × PWMxmax_halved)</text>
+
+  <!-- Half period annotation -->
+  <line x1="30" y1="30" x2="110" y2="30" stroke="#cc3300" stroke-width="1" stroke-dasharray="2,2"/>
+  <text x="70" y="26" font-family="Arial, sans-serif" font-size="8" fill="#cc3300" text-anchor="middle">PWMxmax (halved)</text>
+
+  <!-- Labels -->
+  <text x="15" y="35" font-family="Arial, sans-serif" font-size="8" fill="#999">max</text>
+  <text x="15" y="93" font-family="Arial, sans-serif" font-size="8" fill="#999">0</text>
+</svg>

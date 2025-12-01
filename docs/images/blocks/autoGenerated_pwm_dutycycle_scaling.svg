@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 100" width="320" height="100">
+  <!-- Background -->
+  <rect width="320" height="100" fill="#fafafa" rx="4"/>
+
+  <!-- PWM Waveform - Period -->
+  <line x1="20" y1="70" x2="300" y2="70" stroke="#333" stroke-width="1"/>
+
+  <!-- Rising edge -->
+  <polyline points="40,70 40,30 160,30 160,70 280,70" fill="none" stroke="#0066cc" stroke-width="2"/>
+
+  <!-- Period bracket -->
+  <line x1="40" y1="85" x2="280" y2="85" stroke="#666" stroke-width="1"/>
+  <line x1="40" y1="82" x2="40" y2="88" stroke="#666" stroke-width="1"/>
+  <line x1="280" y1="82" x2="280" y2="88" stroke="#666" stroke-width="1"/>
+  <text x="160" y="97" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">PWMxmax (Period)</text>
+
+  <!-- DutyCycle bracket -->
+  <line x1="40" y1="20" x2="160" y2="20" stroke="#cc3300" stroke-width="1"/>
+  <line x1="40" y1="17" x2="40" y2="23" stroke="#cc3300" stroke-width="1"/>
+  <line x1="160" y1="17" x2="160" y2="23" stroke="#cc3300" stroke-width="1"/>
+  <text x="100" y="14" font-family="Arial, sans-serif" font-size="10" fill="#cc3300" text-anchor="middle">DutyCycle_raw</text>
+
+  <!-- Annotation: 50% example -->
+  <text x="100" y="50" font-family="Arial, sans-serif" font-size="9" fill="#0066cc" text-anchor="middle">0.5 × PWMxmax</text>
+</svg>
