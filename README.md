@@ -79,7 +79,7 @@ The installer provides flexible destination configuration for systems with restr
 
 ### Getting Started Resources
 
-- 🎥 **[Video Tutorials](#-resources--support)** - Webinars from MathWorks and Microchip
+- 🎥 **[Video Tutorials](#-video-tutorials)** - Webinars from MathWorks and Microchip
 - 💬 **[Microchip MATLAB® Forum](https://forum.microchip.com/s/sub-forums?&subForumId=a553l000000J2rNAAS&forumId=a553l000000J2pvAAC&subForumName=MATLAB&page=1&offset=0)** - Community support and discussions
 
 ---
