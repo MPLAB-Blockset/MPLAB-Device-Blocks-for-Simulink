@@ -4,13 +4,47 @@
 
 ### Model-Based Design for Microchip Microcontrollers
 
-**Automatic embedded C code generation from Simulink® models for dsPIC®, PIC32®, and SAM microcontrollers**
+**Simulink® hardware support package for automatic embedded C code generation and rapid prototyping targeting dsPIC®, PIC32®, and SAM microcontrollers**
 
 ![MATLAB Versions](https://img.shields.io/badge/MATLAB-R2017b%20to%20R2025b-blue)
 ![Devices](https://img.shields.io/badge/Devices-710%20MCUs-green)
 ![License](https://img.shields.io/badge/License-Microchip-red)
+![Free](https://img.shields.io/badge/Cost-FREE-brightgreen)
 
-[![View MPLAB® Device Blocks for Simulink®: dsPIC® DSCs, PIC32® and SAM MCUs on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://fr.mathworks.com/matlabcentral/fileexchange/71892-mplab-device-blocks-for-simulink-dspic-pic32-and-sam-mcu)
+[![View MPLAB® Device Blocks for Simulink®: dsPIC® DSCs, PIC32® and SAM MCUs on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/71892)
+
+---
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_BlockLibrary.png" width="48%">
+  <img src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Templates.png" width="48%">
+</p>
+
+*Comprehensive Simulink block library (left) and ready-to-use board templates (right)*
+
+<p align="center">
+🚀 <b><a href="https://www.mathworks.com/matlabcentral/fileexchange/71892">Install Now from File Exchange</a></b> | 📖 <b><a href="#-quick-start">Quick Start Guide</a></b>
+</p>
+
+---
+
+## 💡 Why MPLAB® Device Blocks?
+
+| | |
+|---|---|
+| **710+ Devices** | Largest MCU coverage in one toolbox — dsPIC®, PIC32®, and SAM families |
+| **Multi-Architecture** | 16-bit DSC + 32-bit MIPS + ARM® Cortex®-M in a single Simulink blockset |
+| **Unmatched Compatibility** | Supports MATLAB® R2017b and earlier through R2025b — 9+ years of backward compatibility |
+| **Application-Optimized Cores** | dsPIC® DSC for motor/power, dsPIC33A DSC for high-performance, MIPS for general-purpose, ARM® Cortex®-M for connectivity |
+| **Advanced Peripherals** | High-resolution PWM, 12-bit ADC with hardware oversampling, QEI — optimized for motor control and power conversion |
+
+*Available at no cost from MathWorks File Exchange*
+
+### 📈 Trusted By the Community
+- **10+ years** of continuous development and updates
+- **7,200+ downloads** from MathWorks File Exchange
+- **University collaborations** including INSA Lyon research projects
+- **Active community** with dedicated Microchip forum support
 
 ---
 
@@ -54,33 +88,40 @@ The installer provides flexible destination configuration for systems with restr
 
 ### 🎯 Wide Device Support
 - **710+ Microcontrollers** supported across 12 device families
-- **dsPIC®** DSCs: 30F, 33F, 33E, 33C, 33CH, **33A** (NEW - 32-bit with FPU)
+- **dsPIC® 33A** (NEW): 200 MHz 32-bit CPU with FPU, hardware sin/cos/sqrt
+- **dsPIC®** DSCs: 30F, 33F, 33E, 33C, 33CH families
 - **PIC32®** MCUs: MK, MZ, MX, AK series
 - **SAM** MCUs: SAME5x, SAME7x, SAMC2x, SAMD2x (ARM® Cortex®-M)
 
 ### ⚡ Automatic Code Generation
 - **One-click deployment**: Simulink model → Embedded C → .hex file
-- **MPLAB® X IDE** project generation
+- **One toolbox for 12 device families** — no need for multiple Simulink support packages
+- **MPLAB® X IDE** and **VSCode** project generation (MPLAB® VSCode Extension)
 - **Optimized code** with assembly replacements for DSP operations (dsPIC®)
 - **CMSIS DSP** library support for ARM® devices
+- **Backward compatible** with legacy designs from R2017b and earlier
 
 ### 🔧 Peripheral Configuration
 Graphical interface blocks for all major peripherals:
-- **PWM** (High-Resolution with Fine Edge Placement for dsPIC® 33A)
-- **ADC** (synchronized with PWM, multiple conversion modes)
+- **PWM** — High-Resolution with Fine Edge Placement (dsPIC® 33A/33C)
+- **ADC** — Synchronized with PWM, multiple conversion modes
 - **Communication**: UART, SPI, I2C, CAN
-- **Timers**, Input Capture, Output Compare, QEI
-- **Op-Amps**, Comparators, DAC
+- **Timers**, Input Capture, Output Compare, QEI (Quadrature Encoder)
+- **Op-Amps**, Comparators with Slope Compensation, DAC
 - **Change Notification**, GPIO
 
 Advanced ADC/PWM synchronization: PWM can trigger ADC sampling at any specified instant. End of ADC conversion triggers the model base rate (no delay from ADC sampling & conversion).
 
 The custom **C Function** block allows including any user-defined C code within your Simulink model.
 
-### 🔄 Real-Time Testing
+### 🔄 Real-Time Prototyping
 - **External Mode**: Real-time parameter tuning and data visualization
-- **Processor-in-the-Loop (PIL)**: On-target code verification
 - **picgui Interface**: MATLAB®-based data logging and visualization
+
+### 🧪 Processor-in-the-Loop (PIL) Verification
+- **Numerical validation**: Compare on-target execution results against Simulink simulation
+- **Execution profiling**: Fine-grained timing measurement of generated code
+- **Stack analysis**: Monitor and validate stack usage during execution
 
 ### 📊 Advanced Scheduler
 
@@ -93,24 +134,24 @@ The custom **C Function** block allows including any user-defined C code within 
   - Configurable overload handling
 
 ### 💻 Code Optimization
-- **Code Replacement**: Optimized sin/cos/atan2 for dsPIC® DSP engine
+- **Hardware sin/cos/sqrt** (dsPIC® 33A): Computed in 1-2 clock cycles using dedicated hardware instructions
+- **Code Replacement Library** (dsPIC® 30F/33F/33E/33C): Optimized routines that execute faster and with higher accuracy than Simulink® generated code (typically 1-2 LSB difference from true value):
+  - Trigonometric: sin, cos, sincos, atan2
+  - Square root: 16-bit and 32-bit fixed-point
+  - Saturation: optimized type conversions with overflow handling
+  - Absolute value, mixed signed/unsigned multiply
 - **Fast memory operations**: Assembly-optimized memcpy
-- **Fixed-point math**: Hardware MAC utilization
-- **Link-time optimization** for reduced code size
+- **Link-time optimization** for reduced code size (SAMx)
 
 ---
 
 ## 📦 What's Included
-
-<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_BlockLibrary.png" width="450">
 
 ### Simulink® Block Library
 
 Complete peripheral driver blocks with intuitive GUI configuration. No low-level programming required.
 
 ### Board Templates
-
-<img src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Templates.png" width="450">
 
 Pre-configured models for popular development boards:
 - dsPIC® 33A/33C/33CK Curiosity boards
@@ -149,7 +190,7 @@ Pre-configured models for popular development boards:
 - MPLAB® X IDE - [Download](https://www.microchip.com/MPLABX)
 
 **Compilers:**
-- **XC-DSC** for dsPIC® DSCs - [Download](https://www.microchip.com/xcdsc)
+- **XC-DSC** for dsPIC® DSCs - [Download](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/xc-dsc)
 - **XC32** for PIC32® and SAM MCUs - [Download](https://www.microchip.com/xc32)
 
 **Programmers/Debuggers:**
@@ -167,23 +208,23 @@ Pre-configured models for popular development boards:
 ### 🎥 Video Tutorials
 
 **Recent Webinars:**
-- **[Power Factor Correction on dsPIC® 33A](https://www.mathworks.com/videos/implementing-power-factor-correction-on-a-microchip-dspic33a-digital-signal-controller-1734709897715.html)** (2023) - Latest dsPIC® 33A with FPU
-- **[Motor Control Deployment](https://www.mathworks.com/videos/motor-control-with-embedded-coder-for-microchip-mcus-1488570451176.html)** (2023) - FOC algorithms for dsPIC®/PIC32®/SAM
-- **[PMSM Position Control](https://www.mathworks.com/videos/position-control-of-a-pmsm-with-simulink-and-microchip-32-bit-mcus-1679516692608.html)** (2021) - 32-bit motor control
+- **[Power Factor Correction on dsPIC® 33A](https://www.mathworks.com/videos/implementing-power-factor-correction-on-a-microchip-dspic33a-digital-signal-controller-1734709897715.html)** (2024) - Latest dsPIC® 33A with FPU
+- **[Motor Control Deployment](https://www.mathworks.com/videos/motor-control-with-embedded-coder-for-microchip-mcus-1488570451176.html)** (2021) - FOC algorithms for dsPIC®/PIC32®/SAM
+- **[PMSM Position Control](https://www.mathworks.com/videos/position-control-of-a-pmsm-with-simulink-and-microchip-32-bit-mcus-1679516692608.html)** (2023) - 32-bit motor control
 - **[External Mode Tutorial](https://www.microchip.com/en-us/about/media-center/videos/wuzLmORk1M0)** (2016) - Real-time debugging with dsPIC®
 
-### 📖 Documentation
+### 🎓 Education
 - **[ctrl-elec Motor Control Tutorials](https://www.ctrl-elec.fr)** - Advanced FOC techniques by INSA Lyon
 
 ### 💬 Community Support
 - **[Microchip MATLAB® Forum](https://forum.microchip.com/s/sub-forums?&subForumId=a553l000000J2rNAAS&forumId=a553l000000J2pvAAC&subForumName=MATLAB&page=1&offset=0)** - Ask questions and share experiences
-- **[GitHub Repository](https://github.com/LubinKerhuel/MPLAB-Device-Blocks-for-Simulink)** - Examples and wiki
+- **[GitHub Repository](https://github.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink)** - Examples and wiki
 
 ---
 
 ## 📝 Recent Release Notes
 
-### v3.63 (Current)
+### v3.63.01 (Current)
 **PWM HS FEP Improvements:**
 - **Added**: Hi-Resolution (FEP) support for dsPIC® 33A and 33C families
 - **Fixed**: Trigger handling in Center Aligned mode with Hi-Resolution enabled
@@ -248,7 +289,8 @@ Pre-configured models for popular development boards:
 | **dsPIC® 33E/EP** | 100+ | 16-bit DSC, Hi-Speed ADC | 33EP256MC506, 33EP512GM710 |
 | **dsPIC® 33F/FJ** | 80+ | 16-bit DSC, Motor Control PWM | 33FJ256GP710, 33FJ128MC506 |
 | **dsPIC® 30F** | 21 | 16-bit DSC, Legacy support | 30F6015, 30F4013 |
-| **PIC32® AK/MK/MZ** | 90+ | 32-bit MIPS, Motor Control | 32MK1024MCF064, 32MZ2048EFM100 |
+| **PIC32® AK** | 9 | 32-bit dsPIC® 33A core | 32AK6416GC41064 |
+| **PIC32® MK/MZ** | 80+ | 32-bit MIPS, Motor Control | 32MK1024MCF064, 32MZ2048EFM100 |
 | **PIC32® CZ** | 15 | 32-bit Arm® Cortex®-M7 | PIC32CZ5125CA70144 |
 | **SAM C/D/E/S/V** | 200+ | Arm® Cortex®-M0+/M4/M7 | SAME54P20A, SAME70Q21B, SAMC21J18A |
 
@@ -265,6 +307,12 @@ Pre-configured models for popular development boards:
 
 **dsPIC® 33AK MPS Series**
 33AK256MPS205, 33AK256MPS206, 33AK256MPS208, 33AK256MPS210, 33AK256MPS212, 33AK256MPS505, 33AK256MPS506, 33AK256MPS508, 33AK256MPS510, 33AK256MPS512, 33AK512MPS205, 33AK512MPS206, 33AK512MPS208, 33AK512MPS210, 33AK512MPS212, 33AK512MPS505, 33AK512MPS506, 33AK512MPS508, 33AK512MPS510, 33AK512MPS512
+
+**dsPIC® 33AK MPS Series (Ongoing Support)**
+33AK128MPS103, 33AK128MPS105, 33AK128MPS106, 33AK128MPS303, 33AK128MPS305, 33AK128MPS306, 33AK256MPS103, 33AK256MPS105, 33AK256MPS106, 33AK256MPS303, 33AK256MPS305, 33AK256MPS306
+
+**dsPIC® 33AKV GMS Series (Ongoing Support)**
+33AKV256GMS205, 33AKV256GMS206, 33AKV256GMS208, 33AKV256GMS210, 33AKV256GMS505, 33AKV256GMS506, 33AKV256GMS508, 33AKV256GMS510, 33AKV512GMS205, 33AKV512GMS206, 33AKV512GMS208, 33AKV512GMS210, 33AKV512GMS505, 33AKV512GMS506, 33AKV512GMS508, 33AKV512GMS510
 
 ### dsPIC® 33C Family (170+ devices)
 
@@ -359,17 +407,13 @@ SAMRH707F18A, SAMRH71F20B, SAMRH71F20C
 
 ## 🎯 Target Applications
 
-### ⚡ Motor Control
-PMSM/BLDC control, Field-Oriented Control (FOC), sensorless algorithms, field weakening
-
-### 🔋 Power Electronics
-Digital power supplies, Power Factor Correction (PFC), inverters, DC-DC converters
-
-### 🏭 Industrial Automation
-PLC applications, sensor interfaces, communication protocols, real-time control
-
-### 🎛️ Embedded Systems
-Signal processing, data acquisition, control loops, IoT applications
+| Application | Examples |
+|-------------|----------|
+| **⚡ Motor Control** | PMSM/BLDC, Field-Oriented Control (FOC), sensorless algorithms, field weakening |
+| **🔋 Power Electronics** | Digital power control, PFC, inverters, DC-DC converters, solar/wind |
+| **🏭 Industrial** | PLC applications, robotics, CNC, sensor interfaces, real-time control |
+| **🎛️ Embedded Systems** | Signal processing, data acquisition, control loops, IoT connectivity |
+| **🚗 Automotive** | EV inverters, battery monitoring, HVAC control, sensor fusion |
 
 ---
 
@@ -377,17 +421,13 @@ Signal processing, data acquisition, control loops, IoT applications
 
 **Developed by:** Microchip Technology Inc.
 
-**Contributors:**
-- Lubin KERHUEL (Microchip Technology Inc.)
-- Romain DELPOUX (INSA Lyon, Laboratoire Ampère) - Motor control examples
-
 **License:** Microchip Technology End User License Agreement
 
 ---
 
 ## 🔗 Important Links
 
-- **[GitHub Repository](https://github.com/LubinKerhuel/MPLAB-Device-Blocks-for-Simulink)** - Source code and examples
+- **[GitHub Repository](https://github.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink)** - Examples and releases
 - **[MathWorks File Exchange](https://www.mathworks.com/matlabcentral/fileexchange/71892)** - Download and reviews
 - **[Microchip Forums](https://forum.microchip.com/s/sub-forums?&subForumId=a553l000000J2rNAAS)** - Community support
 - **[ctrl-elec Project](https://www.ctrl-elec.fr)** - Advanced motor control tutorials
@@ -401,7 +441,7 @@ Signal processing, data acquisition, control loops, IoT applications
 
 *Empowering embedded systems development with Model-Based Design*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/LubinKerhuel/MPLAB-Device-Blocks-for-Simulink)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink)
 [![File Exchange](https://img.shields.io/badge/MATLAB-File%20Exchange-orange?logo=mathworks)](https://www.mathworks.com/matlabcentral/fileexchange/71892)
 [![Forum](https://img.shields.io/badge/Microchip-Forum-blue?logo=microchip)](https://forum.microchip.com/s/sub-forums?&subForumId=a553l000000J2rNAAS)
 
