@@ -2,6 +2,8 @@
 
 <img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/mplab-deviceblocksforsimulink-whitebackground.png" width="150">
 
+<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_BlockLibrary.png" width="400">
+
 ### Model-Based Design for Microchip Microcontrollers
 
 **Simulink® hardware support package for automatic embedded C code generation and rapid prototyping targeting dsPIC®, PIC32®, and SAM microcontrollers**
@@ -16,13 +18,6 @@
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_BlockLibrary.png" width="48%">
-  <img src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Templates.png" width="48%">
-</p>
-
-*Comprehensive Simulink block library (left) and ready-to-use board templates (right)*
-
-<p align="center">
 🚀 <b><a href="https://www.mathworks.com/matlabcentral/fileexchange/71892">Install Now from File Exchange</a></b> | 📖 <b><a href="#-quick-start">Quick Start Guide</a></b>
 </p>
 
@@ -30,11 +25,23 @@
 
 ## 💡 Why MPLAB® Device Blocks?
 
+### Seamless MATLAB®/Simulink® Integration
+**Work entirely within the familiar MATLAB®/Simulink® environment you already know.** All chip configuration, peripheral setup, and code generation is handled directly from the Simulink® interface, allowing you to leverage your existing Model-Based Design expertise without additional toolchain complexity. Advanced users can optionally integrate with MPLAB® X IDE for detailed debugging and optimization.
+
+**Benefits:**
+- **Accelerated time-to-market** — Leverage your existing Simulink® expertise to start developing immediately
+- **Unified workflow** — Design, simulate, configure, and deploy from a single integrated environment
+- **Seamless code generation** — Automatic translation of Simulink® models to optimized embedded C code
+- **Intelligent toolchain integration** — Automatic configuration of Microchip compilers and MPLAB® tools, with full access available when you need advanced control
+
+### Unmatched Device Coverage & Compatibility
+
 | | |
 |---|---|
 | **710+ Devices** | Largest MCU coverage in one toolbox — dsPIC®, PIC32®, and SAM families |
-| **Multi-Architecture** | 16-bit DSC + 32-bit MIPS + ARM® Cortex®-M in a single Simulink blockset |
-| **Unmatched Compatibility** | Supports MATLAB® R2017b and earlier through R2025b — 9+ years of backward compatibility |
+| **Multi-Architecture** | 16-bit DSC + 32-bit MIPS + ARM® Cortex®-M in a single Simulink® blockset |
+| **Cross-Platform** | Supports both Windows and Linux development environments |
+| **9+ Years Backward Compatibility** | Supports MATLAB® R2017b and earlier through R2025b |
 | **Application-Optimized Cores** | dsPIC® DSC for motor/power, dsPIC33A DSC for high-performance, MIPS for general-purpose, ARM® Cortex®-M for connectivity |
 | **Advanced Peripherals** | High-resolution PWM, 12-bit ADC with hardware oversampling, QEI — optimized for motor control and power conversion |
 
@@ -90,11 +97,11 @@ The installer provides flexible destination configuration for systems with restr
 
 ### ⚡ Automatic Code Generation
 - **One-click deployment**: Simulink model → Embedded C → .hex file
-- **One toolbox for 12 device families** — no need for multiple Simulink support packages
+- **Unified toolbox for 12 device families** — All Microchip architectures in a single integrated package
 - **MPLAB® X IDE** and **VSCode** project generation (MPLAB® VSCode Extension)
 - **Optimized code** with assembly replacements for DSP operations (dsPIC®)
 - **CMSIS DSP** library support for ARM® devices
-- **Backward compatible** with legacy designs from R2017b and earlier
+- **Long-term compatibility** — Support for MATLAB® versions from R2017b forward, protecting your investment
 
 ### 🔧 Peripheral Configuration
 Graphical interface blocks for all major peripherals:
@@ -130,7 +137,7 @@ The custom **C Function** block allows including any user-defined C code within 
 
 ### 💻 Code Optimization
 - **Hardware sin/cos/sqrt** (dsPIC® 33A): Computed in 1-2 clock cycles using dedicated hardware instructions
-- **Code Replacement Library** (dsPIC® 30F/33F/33E/33C): Optimized routines that execute faster and with higher accuracy than Simulink® generated code (typically 1-2 LSB difference from true value):
+- **Code Replacement Library** (dsPIC® 30F/33F/33E/33C): Hardware-optimized assembly routines providing exceptional execution speed and near-ideal accuracy (typically 1-2 LSB difference from true value):
   - Trigonometric: sin, cos, sincos, atan2
   - Square root: 16-bit and 32-bit fixed-point
   - Saturation: optimized type conversions with overflow handling
@@ -144,18 +151,24 @@ The custom **C Function** block allows including any user-defined C code within 
 
 ### Simulink® Block Library
 
-Complete peripheral driver blocks with intuitive GUI configuration. No low-level programming required.
+Complete peripheral driver blocks with intuitive GUI configuration — Graphical interface accelerates development while maintaining full access to low-level control when needed.
+
+<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Templates.png" width="400">
 
 ### Board Templates
 
 Pre-configured models for popular development boards:
-- dsPIC® 33A/33C/33CK Curiosity boards
-- MCLV-48V-300W Motor Control board
-- MCLV-2 Motor Control board
-- LVMC Low-Voltage Motor Control board
-- Explorer 16/32 development boards
-- SAME70/SAME54 Xplained Ultra boards
-- PIC32MZ/PIC32MK Curiosity boards
+
+**Motor Control Boards:**
+- **MCLV-2** — Multiple PIM variants (dsPIC® 33CK256MP508, 33CK64MC105, 33EP256MC506)
+- **MCLV 48V 300W** — High-power variants (dsPIC® 33AK128MC106, 33CK256MP508, 33CK64MC105)
+- **LVMC** — Low Voltage Motor Control (dsPIC® 33CK)
+- **Motor Control Dev Board** — Dual-core (dsPIC® 33CDVL64MC106)
+- **Portable Power Tool Reference Design**
+
+**Development Boards:**
+- **Curiosity Development Board** (dsPIC® 33AK128MC106)
+- **Curiosity Nano** (dsPIC® 33AK512MPS506)
 
 ### Examples & Tutorials
 - Motor control (FOC, sensorless, field weakening)
@@ -219,7 +232,14 @@ Pre-configured models for popular development boards:
 
 ## 📝 Recent Release Notes
 
-### v3.63.01 (Current)
+### v3.63.02 (Current)
+- **Fixed**: Compatibility issue with MATLAB R2025b Update 2 and other recent MATLAB updates - compatible with all MATLAB releases (R2017b to R2025b)
+- **Fixed**: PIL stack analysis for MATLAB versions prior to 2022b
+- **Added**: Curiosity Nano board template for dsPIC33AK512MPS506 (EV17P63A)
+- **Added**: Portable MPLAB X project (.Xi) support - enables project portability for complex projects using internal MathWorks resources
+- **Improved**: DFP validation for newer compiler versions
+
+### v3.63.01
 **PWM HS FEP Improvements:**
 - **Added**: Hi-Resolution (FEP) support for dsPIC® 33A and 33C families
 - **Fixed**: Trigger handling in Center Aligned mode with Hi-Resolution enabled
