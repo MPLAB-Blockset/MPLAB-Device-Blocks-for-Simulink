@@ -96,12 +96,12 @@ The installer provides flexible destination configuration for systems with restr
 - **SAM** MCUs: SAME5x, SAME7x, SAMC2x, SAMD2x (ARM® Cortex®-M)
 
 ### ⚡ Automatic Code Generation
-- **One-click deployment**: Simulink model → Embedded C → .hex file
+- **One-click deployment**: Simulink model → Embedded C → .elf file
 - **Unified toolbox for 12 device families** — All Microchip architectures in a single integrated package
 - **MPLAB® X IDE** and **VSCode** project generation (MPLAB® VSCode Extension)
 - **Optimized code** with assembly replacements for DSP operations (dsPIC®)
 - **CMSIS DSP** library support for ARM® devices
-- **Long-term compatibility** — Support for MATLAB® versions from R2017b forward, protecting your investment
+- **Long-term compatibility** — Support for MATLAB® versions from R2017b forward
 
 ### 🔧 Peripheral Configuration
 Graphical interface blocks for all major peripherals:
