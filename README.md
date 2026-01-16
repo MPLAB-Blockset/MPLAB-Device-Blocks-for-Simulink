@@ -2,8 +2,6 @@
 
 <img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/mplab-deviceblocksforsimulink-whitebackground.png" width="150">
 
-<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_BlockLibrary.png" width="400">
-
 ### Model-Based Design for Microchip Microcontrollers
 
 **Simulink® hardware support package for automatic embedded C code generation and rapid prototyping targeting dsPIC®, PIC32®, and SAM microcontrollers**
@@ -24,6 +22,8 @@
 ---
 
 ## 💡 Why MPLAB® Device Blocks?
+
+<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_BlockLibrary.png" width="600">
 
 ### Seamless MATLAB®/Simulink® Integration
 **Work entirely within the familiar MATLAB®/Simulink® environment you already know.** All chip configuration, peripheral setup, and code generation is handled directly from the Simulink® interface, allowing you to leverage your existing Model-Based Design expertise without additional toolchain complexity. Advanced users can optionally integrate with MPLAB® X IDE for detailed debugging and optimization.
@@ -127,7 +127,7 @@ The custom **C Function** block allows including any user-defined C code within 
 
 ### 📊 Advanced Scheduler
 
-<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Scheduler_MultiTasking_Scope.png" width="500">
+<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Scheduler_MultiTasking_Scope.png" width="600">
 
 - **Single-tasking** mode for simple applications
 - **Multi-tasking** rate monotonic scheduler with:
@@ -153,7 +153,7 @@ The custom **C Function** block allows including any user-defined C code within 
 
 Complete peripheral driver blocks with intuitive GUI configuration — Graphical interface accelerates development while maintaining full access to low-level control when needed.
 
-<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Templates.png" width="400">
+<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/Templates.png" width="600">
 
 ### Board Templates
 
@@ -183,7 +183,7 @@ Pre-configured models for popular development boards:
 
 ## 📋 Requirements
 
-<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_MBD_Overview.png" width="450">
+<img align="right" src="https://raw.githubusercontent.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/master/MCHP_MBD_Overview.png" width="600">
 
 ### MathWorks Products (R2017b to R2025b)
 - MATLAB®
