@@ -426,9 +426,9 @@ SAMRH707F18A, SAMRH71F20B, SAMRH71F20C
 |-------------|----------|
 | **⚡ Motor Control** | PMSM/BLDC, Field-Oriented Control (FOC), sensorless algorithms, field weakening |
 | **🔋 Power Electronics** | Digital power control, PFC, inverters, DC-DC converters, solar/wind |
-| **🏭 Industrial** | PLC applications, robotics, CNC, sensor interfaces, real-time control |
-| **🎛️ Embedded Systems** | Signal processing, data acquisition, control loops, IoT connectivity |
-| **🚗 Automotive** | EV inverters, battery monitoring, HVAC control, sensor fusion |
+| **🏭 Industrial** | robotics, sensor interfaces, real-time control |
+| **🎛️ Embedded Systems** | Signal processing, data acquisition, control loops |
+| **🚗 Automotive** | EV inverters, battery monitoring, sensor fusion |
 
 ---
 
