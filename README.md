@@ -70,9 +70,9 @@
 For older MATLAB® versions (pre-R2016b) or manual installation:
 
 1. Download the latest release from [GitHub Releases](https://github.com/MPLAB-Blockset/MPLAB-Device-Blocks-for-Simulink/releases)
-2. Run the `install.p` script in MATLAB®
+2. Run the `install.p` script in MATLAB® or the .mltbx installer
 
-The installer provides flexible destination configuration for systems with restricted permissions.
+The .p installer provides flexible destination configuration for systems with restricted permissions.
 
 ### Essential Commands
 
@@ -232,7 +232,10 @@ Pre-configured models for popular development boards:
 
 ## 📝 Recent Release Notes
 
-### v3.63.02 (Current)
+### v3.63.03
+- **Fixed**: PWM peripheral block for dsPIC33EP/EV (PWM High Speed) fails to open and generate code
+
+### v3.63.02
 - **Fixed**: Compatibility issue with MATLAB R2025b Update 2 and other recent MATLAB updates - compatible with all MATLAB releases (R2017b to R2025b)
 - **Fixed**: PIL stack analysis for MATLAB versions prior to 2022b
 - **Added**: Curiosity Nano board template for dsPIC33AK512MPS506 (EV17P63A)
