@@ -1,0 +1,43 @@
+# Automatic Sitemap Notification Workflow
+# Notifies search engines (Google, Bing) when sitemap.xml is updated
+name: Notify Search Engines
+
+on:
+  # Trigger when sitemap changes are pushed to master
+  push:
+    branches: ["master"]
+    paths:
+      - 'docs/sitemap.xml'
+
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+# Minimal permissions needed
+permissions:
+  contents: read
+
+jobs:
+  ping-search-engines:
+    name: Ping Sitemap to Search Engines
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Google
+        run: |
+          echo "Pinging Google with updated sitemap..."
+          curl -f -s -o /dev/null -w "Google: HTTP %{http_code}\n" \
+            "https://www.google.com/ping?sitemap=https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/sitemap.xml" \
+            || echo "Google ping failed (this is normal - Google may rate-limit pings)"
+
+      - name: Notify Bing
+        run: |
+          echo "Pinging Bing with updated sitemap..."
+          curl -f -s -o /dev/null -w "Bing: HTTP %{http_code}\n" \
+            "https://www.bing.com/ping?sitemap=https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/sitemap.xml" \
+            || echo "Bing ping failed (this is normal - Bing may rate-limit pings)"
+
+      - name: Summary
+        run: |
+          echo "✅ Search engine notification complete"
+          echo "📍 Sitemap URL: https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/sitemap.xml"
+          echo "⏱️  Search engines typically re-crawl within 24-48 hours"
