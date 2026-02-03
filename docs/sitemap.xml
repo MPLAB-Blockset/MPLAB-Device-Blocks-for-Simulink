@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -33,37 +33,37 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc_highspeed_sar/</loc>
-    <lastmod>2025-11-08T00:43:32+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc_highspeed_sar_dspic/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc_hs_12b/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc_same5x/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/adc_samrh707x/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/adc/afec_sam7x/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/user_functions/c_function_call/</loc>
-    <lastmod>2025-11-08T00:43:32+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -93,25 +93,25 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/can/can_config/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/can/can_rx/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/can/can_tx/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/encoders/change_notification/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -140,12 +140,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/</loc>
-    <lastmod>2025-11-05T23:26:03+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/user_guide/compiler_setup/</loc>
     <lastmod>2025-11-08T00:43:32+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -153,37 +147,37 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/compiler_options/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/digital_io/digital_input/</loc>
-    <lastmod>2025-11-05T01:52:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/digital_io/digital_output/</loc>
-    <lastmod>2025-11-05T01:52:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/digital_io/digital_output_read/</loc>
-    <lastmod>2025-11-05T01:52:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/digital_io/digital_output_write/</loc>
-    <lastmod>2025-11-05T01:52:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/doc/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -219,73 +213,73 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/input_capture/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/idle_task/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/interrupt/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/master/</loc>
-    <lastmod>2025-11-08T00:43:32+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/dac_samx/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/comparator_opamps_volt_ref/highspeed_analogcomparator/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/comparator_opamps_volt_ref/highspeed_analogcomparator_wslope/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/comparator_opamps_volt_ref/op_amp/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/comparator_opamps_volt_ref/pga/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/mcpwm/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/mcu_load/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/mcu_overload/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -297,13 +291,13 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/installation/</loc>
-    <lastmod>2025-11-08T02:34:41+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/msi/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -315,19 +309,19 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_hw/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/capture_compare/output_compare_sw/</loc>
-    <lastmod>2025-11-08T00:43:32+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/encoders/pdec/</loc>
-    <lastmod>2025-11-05T23:26:03+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -339,13 +333,13 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/port_info/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/pwm/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -357,49 +351,49 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/pwm_highspeed/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/pwm_highspeed_override/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/pwm_hs_fep/</loc>
-    <lastmod>2025-11-30T23:44:25+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/pwm_sam7x/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/pwm_sam7x_override/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/encoders/qdec_samx/</loc>
-    <lastmod>2025-11-05T23:26:03+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/encoders/qei/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/release_notes/</loc>
-    <lastmod>2025-11-05T16:38:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -465,19 +459,19 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/scheduler_options/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/secondary_core/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/simulink_reset_config/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -495,31 +489,31 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/system_configuration/tasks_state/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/pwm_io/tcc_pwm/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_config/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/timer_pil_profiling/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/timer_info/</loc>
-    <lastmod>2025-11-05T12:20:44+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -537,31 +531,31 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/uart/uart_break_and_autobaud/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/uart/uart_config/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/uart/uart_rx/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/uart/uart_tx/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/uart/uart_txmatlab/</loc>
-    <lastmod>2025-11-05T15:09:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -574,6 +568,12 @@
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/videos/</loc>
     <lastmod>2025-11-05T21:01:09+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/comparator_opamps_volt_ref/comparator1/</loc>
+    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -602,6 +602,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/</loc>
+    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/</loc>
     <lastmod>2025-11-05T15:09:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -609,7 +615,7 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/i2c/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -626,6 +632,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/encoders/qdec_calibration/</loc>
+    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/timers/</loc>
     <lastmod>2025-11-30T23:48:28+01:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -633,7 +645,7 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/board_templates/</loc>
-    <lastmod>2025-11-05T16:38:59+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -645,7 +657,13 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/spi/</loc>
-    <lastmod>2025-11-30T23:48:28+01:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/utility/chip_webpage/</loc>
+    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -663,13 +681,19 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/analog_io/acc_samx/</loc>
-    <lastmod>2025-10-16T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-23T16:31:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/getting_started/motor_control_examples/</loc>
     <lastmod>2025-11-08T00:43:32+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/block/communication/uart/picgui/</loc>
+    <lastmod>2026-01-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -777,7 +801,7 @@
   </url>
   <url>
     <loc>https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/categories/</loc>
-    <lastmod>2026-01-23T09:53:20+01:00</lastmod>
+    <lastmod>2026-02-03T15:37:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

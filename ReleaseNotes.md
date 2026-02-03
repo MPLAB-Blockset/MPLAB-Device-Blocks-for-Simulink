@@ -4,7 +4,39 @@ Complete release history for MPLAB Device Blocks for Simulink.
 
 ---
 
-## v3.63 (December 2025)
+## v3.63.03 (January 2026)
+
+### PWM High Speed
+- **Fixed**: PWM peripheral block for dsPIC33EP/EV (PWM High Speed) fails to open and generate code
+
+### MATLAB Compatibility
+- **Fixed**: Microchip Menu bar not showing up with recent matlab release
+- **Improved**: MATLAB backward compatibility (ongoing improvements)
+
+---
+
+## v3.63.02 (January 2026)
+
+### Board Templates
+- **Added**: Curiosity Nano board template for dsPIC33AK512MPS506 (EV17P63A)
+
+### MPLAB X Project
+- **Added**: Portable MPLAB X project (.Xi) support for complex projects using internal MathWorks resources
+  Cross-platform portability with zero external dependencies
+  Automatic creation when -save-temps generates .i files
+
+### MATLAB Compatibility
+- **Fixed**: MATLAB R2025b Update 2 compatibility (FcnComputeClockTickOffset function rename)
+
+### PIL (Processor-in-the-Loop)
+- **Fixed**: Stack analysis code compatibility for MATLAB versions prior to 2022b
+
+### Build System
+- **Improved**: DFP validation to ensure compatibility with newer compilers
+
+---
+
+## v3.63.01 (December 2025)
 
 ### PWM HS FEP Improvements
 - **Added**: Hi-Resolution (FEP) support for dsPIC 33A and 33C families

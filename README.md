@@ -233,7 +233,10 @@ Pre-configured models for popular development boards:
 ## 📝 Recent Release Notes
 
 ### v3.63.03
+### PWM High Speed
 - **Fixed**: PWM peripheral block for dsPIC33EP/EV (PWM High Speed) fails to open and generate code
+- **Fixed**: Microchip Menu bar not showing up with recent matlab release
+- **Improved**: MATLAB backward compatibility (ongoing improvements)
 
 ### v3.63.02
 - **Fixed**: Compatibility issue with MATLAB R2025b Update 2 and other recent MATLAB updates - compatible with all MATLAB releases (R2017b to R2025b)
