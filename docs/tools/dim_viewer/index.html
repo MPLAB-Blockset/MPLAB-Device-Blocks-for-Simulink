@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>MCHP Motor Control DIM Connection Viewer</title>
+<style>
+  :root {
+    --pwm-bg: #c8e6c9;
+    --ana-bg: #ffccbc;
+    --qei-bg: #b3e5fc;
+    --hal-bg: #d1c4e9;
+    --flt-bg: #ffcdd2;
+    --dbg-bg: #cfd8dc;
+    --pwr-bg: #eeeeee;
+    --nc-bg:  #fafafa;
+    --xpr-bg: #e1bee7;
+    --pfc-bg: #fff9c4;
+    --com-bg: #b2dfdb;
+    --oth-bg: #f5f5f5;
+    --primary: #1f4e79;
+    --accent:  #0d6efd;
+    --alt-border: #9c27b0;
+    --mc-border: #d32f2f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    color: #212121;
+    font-size: 14px;
+  }
+  header {
+    background: var(--primary);
+    color: white;
+    padding: 14px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  header h1 { margin: 0; font-size: 18px; font-weight: 600; }
+  header .subtitle { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+  .controls {
+    background: white;
+    padding: 12px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .control-group { display: flex; flex-direction: column; gap: 4px; }
+  .control-group label { font-weight: 600; font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 0.5px; }
+  select, button {
+    padding: 6px 10px;
+    border: 1px solid #bdbdbd;
+    border-radius: 4px;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 0;
+  }
+  .toggle input { cursor: pointer; }
+  .stats {
+    margin-left: auto;
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    gap: 14px;
+  }
+  .stats b { color: var(--primary); }
+
+  .legend {
+    padding: 8px 20px;
+    background: #f5f7fa;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 11px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 4px; }
+  .legend-swatch {
+    width: 14px; height: 14px;
+    border: 1px solid #999;
+    border-radius: 2px;
+    display: inline-block;
+  }
+
+  .grid-wrap { padding: 14px 18px; }
+  /* Grouped: JS masonry layout (absolute positioning). Sections pack into shortest column. */
+  .grid.grouped {
+    position: relative;
+    /* JS sets section.style.position=absolute; width/left/top. Fallback grid below if JS off. */
+  }
+  .grid.grouped > .section {
+    position: absolute;
+  }
+  .grid.flat {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    gap: 6px;
+  }
+
+  /* Grouped-by-category sections -- each section is one grid cell */
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+  }
+  .section-pins {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    margin-bottom: 6px;
+    border-left: 4px solid var(--primary);
+    background: #f0f4f8;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--primary);
+    border-radius: 0 4px 4px 0;
+  }
+  .section-header .count {
+    background: var(--primary);
+    color: white;
+    font-size: 11px;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .section-header .desc {
+    color: #666;
+    font-weight: 400;
+    font-size: 11px;
+    margin-left: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .section.cat-PWM .section-header { border-left-color: #2e7d32; background: #e8f5e9; color: #1b5e20; }
+  .section.cat-PWM .section-header .count { background: #2e7d32; }
+  .section.cat-ANA .section-header { border-left-color: #e64a19; background: #fbe9e7; color: #bf360c; }
+  .section.cat-ANA .section-header .count { background: #e64a19; }
+  .section.cat-QEI .section-header { border-left-color: #0277bd; background: #e1f5fe; color: #01579b; }
+  .section.cat-QEI .section-header .count { background: #0277bd; }
+  .section.cat-HAL .section-header { border-left-color: #512da8; background: #ede7f6; color: #311b92; }
+  .section.cat-HAL .section-header .count { background: #512da8; }
+  .section.cat-FLT .section-header { border-left-color: #c62828; background: #ffebee; color: #b71c1c; }
+  .section.cat-FLT .section-header .count { background: #c62828; }
+  .section.cat-PFC .section-header { border-left-color: #f9a825; background: #fffde7; color: #795700; }
+  .section.cat-PFC .section-header .count { background: #f9a825; }
+  .section.cat-DBG .section-header { border-left-color: #546e7a; background: #eceff1; color: #263238; }
+  .section.cat-DBG .section-header .count { background: #546e7a; }
+  .section.cat-COM .section-header { border-left-color: #00897b; background: #e0f2f1; color: #004d40; }
+  .section.cat-COM .section-header .count { background: #00897b; }
+  .section.cat-XPR .section-header { border-left-color: #8e24aa; background: #f3e5f5; color: #4a148c; }
+  .section.cat-XPR .section-header .count { background: #8e24aa; }
+  .section.cat-PWR .section-header { border-left-color: #616161; background: #f5f5f5; color: #212121; }
+  .section.cat-PWR .section-header .count { background: #616161; }
+  .section.cat-NC  .section-header { border-left-color: #bdbdbd; background: #fafafa; color: #616161; }
+  .section.cat-NC  .section-header .count { background: #bdbdbd; }
+  .section.cat-OTH .section-header { border-left-color: #9e9e9e; background: #eeeeee; color: #424242; }
+  .section.cat-OTH .section-header .count { background: #9e9e9e; }
+  body.highlight-mc .section:not(.section-mc) { opacity: 0.4; }
+  body.highlight-mc .section:not(.section-mc):hover { opacity: 1; }
+  .pin {
+    background: var(--nc-bg);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 7px;
+    font-size: 12px;
+    line-height: 1.25;
+    position: relative;
+    transition: transform 0.1s;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 7px;
+    min-height: 0;
+  }
+  .pin:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 2;
+  }
+
+  /* Left column: active function + port + other functions */
+  .pin-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1px;
+    min-width: 0;
+  }
+  .pin-row-fn {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pin .fn-active {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--mc-border);
+    letter-spacing: 0.2px;
+  }
+  .pin .fn-active.empty {
+    color: #bbb;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 13px;
+  }
+  .pin .port {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 0.2px;
+  }
+  .pin .fn-other {
+    font-size: 10.5px;
+    color: #888;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+  }
+
+  /* Right column: baseboard, DIM, MCU pin -- compact, right-aligned */
+  .pin-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1px;
+    text-align: right;
+    background: rgba(255,255,255,0.55);
+    border-left: 1px dashed #bbb;
+    padding: 0 4px 0 6px;
+    margin: -5px -7px -5px 0;
+    border-radius: 0 3px 3px 0;
+    min-width: 70px;
+  }
+  .pin-right .bb {
+    font-size: 12px;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .pin-right .bb.empty { color: #bbb; font-weight: 400; font-style: italic; }
+  .pin-right .dim-row {
+    font-size: 10px;
+    color: #666;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-weight: 600;
+  }
+  .pin-right .mcu-row {
+    font-size: 10px;
+    color: var(--primary);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-weight: 600;
+  }
+  .pin-right .mcu-row b { font-size: 12px; }
+
+  .pin .alts {
+    grid-column: 1 / -1;
+    margin-top: 3px;
+    font-size: 10.5px;
+    color: #6a1b9a;
+    border-top: 1px dashed #c5a4d4;
+    padding-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pin .alts-hidden { display: none; }
+  .pin.unmapped { opacity: 0.55; }
+  .pin.unmapped .pin-right { background: transparent; }
+
+  /* Category colors */
+  .cat-PWM { background: var(--pwm-bg); }
+  .cat-ANA { background: var(--ana-bg); }
+  .cat-QEI { background: var(--qei-bg); }
+  .cat-HAL { background: var(--hal-bg); }
+  .cat-FLT { background: var(--flt-bg); }
+  .cat-DBG { background: var(--dbg-bg); }
+  .cat-PWR { background: var(--pwr-bg); }
+  .cat-NC  { background: var(--nc-bg); }
+  .cat-XPR { background: var(--xpr-bg); }
+  .cat-PFC { background: var(--pfc-bg); }
+  .cat-COM { background: var(--com-bg); }
+  .cat-OTH { background: var(--oth-bg); }
+
+  .pin.mc-essential {
+    border: 2px solid var(--mc-border);
+    box-shadow: 0 0 0 1px white inset;
+  }
+
+  body.highlight-mc .pin:not(.mc-essential) { opacity: 0.35; }
+  body.highlight-mc .pin:not(.mc-essential):hover { opacity: 1; }
+
+  .tooltip {
+    position: fixed;
+    background: rgba(33, 33, 33, 0.96);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: "SFMono-Regular", Consolas, monospace;
+    max-width: 420px;
+    z-index: 100;
+    pointer-events: none;
+    white-space: pre-wrap;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    line-height: 1.6;
+  }
+  .tooltip b { color: #ffc107; }
+  .tooltip .alt { color: #ce93d8; }
+
+  footer {
+    padding: 14px 20px;
+    background: #eceff1;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+    border-top: 1px solid #cfd8dc;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>MCHP Motor Control DIM Connection Viewer</h1>
+  <div class="subtitle">Interactive map of the 120-pin MCS DIM connector across 10 DIMs</div>
+</header>
+
+<div class="controls">
+  <div class="control-group">
+    <label for="chipSel">DIM</label>
+    <div style="display:flex; align-items:center; gap:6px;">
+      <select id="chipSel"></select>
+      <a id="chipLink" href="#" target="_blank" rel="noopener"
+         title="Open Microchip product page for this DIM"
+         style="text-decoration:none; font-size:13px; color:var(--accent);">↗</a>
+    </div>
+  </div>
+  <div class="control-group">
+    <label for="baseSel">Baseboard</label>
+    <div style="display:flex; align-items:center; gap:6px;">
+      <select id="baseSel"></select>
+      <a id="baseLink" href="#" target="_blank" rel="noopener"
+         title="Open Microchip product page for this baseboard"
+         style="text-decoration:none; font-size:13px; color:var(--accent);">↗</a>
+    </div>
+  </div>
+  <div class="control-group">
+    <label for="sortSel">Sort within category</label>
+    <select id="sortSel">
+      <option value="function" selected>by Function (PWM1H, PWM1L, …)</option>
+      <option value="dim">by DIM pin</option>
+      <option value="mcu">by MCU pin</option>
+    </select>
+  </div>
+  <div class="control-group">
+    <label>Options</label>
+    <div style="display:flex; gap:14px; flex-wrap: wrap;">
+      <label class="toggle"><input type="checkbox" id="groupToggle" checked/> Group by function</label>
+      <label class="toggle"><input type="checkbox" id="altToggle"/> Show alternate (0R) routings</label>
+      <label class="toggle"><input type="checkbox" id="mcToggle" checked/> Highlight motor-control-essential</label>
+    </div>
+  </div>
+  <div class="stats">
+    <span><b id="mappedCount">0</b>/120 mapped</span>
+    <span><b id="altCount">0</b> with alts</span>
+    <span><b id="mcCount">0</b> motor-control</span>
+  </div>
+</div>
+
+<div class="legend" id="legend"></div>
+
+<div class="grid-wrap">
+  <div class="grid" id="grid"></div>
+</div>
+
+<div class="tooltip" id="tooltip" style="display:none"></div>
+
+<footer>
+  Data sourced from Pin-DIM / DIM-Pin / Alternates tabs of <i>Motor Control DIM-Pin Mapping.xlsx</i>.
+  DIM info sheets on Confluence space MCU16APP. Self-contained &mdash; works offline.
+</footer>
+
+<script>
+/* ==== EMBEDDED DATA ==== */
+const DATA = {"chips":[{"nickname":"Sagitta","part":"dsPIC33CK256MP508","ds":"DS50003063B","pinCount":80,"primaryByDim":{"1":[[1,"RP46/PWM1H/PMD5/RB14"]],"82":[[2,"AN20/RE0"]],"3":[[3,"RP47/PWM1L/PMD6/RB15"]],"84":[[4,"AN21/RE1"]],"91":[[5,"RP60/PWM8H/PMD7/RC12"]],"92":[[6,"RP61/PWM8L/PMA5/RC13"]],"89":[[7,"RP62/PWM6H/PMA4/RC14"]],"90":[[8,"RP63/PWM6L/PMA3/RC15"]],"47":[[9,"MCLR"]],"80":[[10,"RP79/PCI22/PMA2/RD15"]],"52":[[13,"RP78/PCI21/RD14"]],"54":[[14,"ANN2/RP77/RD13"]],"22":[[15,"AN12/ANN0/RP48/RC0"]],"33":[[16,"OA1OUT/AN0/CMP1A/IBIAS0/RA0"]],"81":[[17,"AN22/RE2"]],"83":[[19,"AN23/RE3"]],"96":[[22,"RE4"]],"25":[[23,"OA3OUT/AN4/CMP3B/IBIAS3/RA4"]],"28":[[30,"AN17/ANN1/IBIAS1/RP54/PMD12/PMA12/RC6"]],"39":[[33,"AN15/CMP2A/IBIAS2/RP51/PMD11/PMA11/RC3"]],"71":[[35,"OSCO/CLKO/AN6/RP33/PMA1/PMALH/PSA1/RB1"]],"85":[[37,"RE6"]],"24":[[38,"AN18/CMP3C/ISRC3/RP74/PMD9/PMA9/RD10"]],"20":[[40,"AN16/ISRC2/RP55/PMD8/PMA8/RC7"]],"17":[[41,"OA2OUT/AN1/AN7/ANA0/CMP1D/CMP2D/CMP3D/RP34/SCL3/INT0/RB2"]],"56":[[42,"RE8"]],"106":[[44,"RE9"]],"112":[[46,"RP56/ASDA1/SCK2/RC8"]],"110":[[47,"RP57/ASCL1/SDI2/RC9"]],"41":[[48,"RP73/PCI20/RD9"]],"108":[[49,"RP72/SDO2/PCI19/RD8"]],"70":[[52,"RP71/PMD15/RD7"]],"68":[[53,"RP70/PMD14/RD6"]],"66":[[54,"RP69/PMA15/PMCS2/RD5"]],"49":[[55,"PGD3/RP37/SDA2/PMA14/PMCS1/PSCS/RB5"]],"51":[[56,"PGC3/RP38/SCL2/RB6"]],"34":[[57,"RE10"]],"36":[[59,"RE11"]],"9":[[60,"PGD1/AN10/RP40/SCL1/RB8"]],"11":[[61,"PGC1/AN11/RP41/SDA1/RB9"]],"30":[[62,"RE12"]],"42":[[63,"RP52/PWM5H/ASDA2/RC4"]],"32":[[64,"RE13"]],"44":[[65,"RP53/PWM5L/ASCL2/PMWR/PMENB/PSWR/RC5"]],"102":[[66,"RP58/PWM7H/PMRD/PMWR/PSRD/RC10"]],"104":[[67,"RP59/PWM7L/RC11"]],"98":[[68,"RP68/ASDA3/RD4"]],"100":[[69,"RP67/ASCL3/RD3"]],"64":[[70,"VSS"]],"60":[[71,"VDD"]],"46":[[72,"RP66/RD2"]],"6":[[73,"RP65/PWM4H/RD1"]],"8":[[74,"RP64/PWM4L/PMD0/RD0"]],"2":[[75,"TMS/RP42/PWM3H/PMD1/RB10"]],"4":[[76,"TCK/RP43/PWM3L/PMD2/RB11"]],"86":[[77,"RE14"]],"5":[[78,"TDI/RP44/PWM2H/PMD3/RB12"]],"88":[[79,"RE15"]],"7":[[80,"RP45/PWM2L/PMD4/RB13"]]},"altByDim":{"10":[[16,"OA1OUT/AN0/CMP1A/IBIAS0/RA0"]],"35":[[16,"OA1OUT/AN0/CMP1A/IBIAS0/RA0"]],"95":[[16,"OA1OUT/AN0/CMP1A/IBIAS0/RA0"]],"27":[[23,"OA3OUT/AN4/CMP3B/IBIAS3/RA4"]],"65":[[24,"RE5"]],"67":[[27,"RP76/RD12"]],"94":[[36,"AN19/CMP2C/RP75/PMA0/PMALL/PSA0/RD11"]],"87":[[39,"RE7"]],"19":[[41,"OA2OUT/AN1/AN7/ANA0/CMP1D/CMP2D/CMP3D/RP34/SCL3/INT0/RB2"]],"105":[[58,"TDO/AN2/CMP3A/RP39/SDA3/RB7"]]},"dnpNotes":{"16":"DIM:10 (DNP, ext-OA via R5); DIM:35 (DNP, ext-OA via R10); DIM:95 (DNP, ext-OA via R7)","23":"DIM:27 (DNP, ext-OA via R25)","24":"DIM:38 (DNP, ext-OA via R27)","27":"DIM:67 (DNP, ext-OA via R38)","36":"DIM:94 (DNP, ext-OA via R33)","39":"DIM:87 (DNP, ext-OA via R40)","41":"DIM:19 (DNP, ext-OA via R6)","58":"DIM:105 (DNP, ext-OA via R26)"},"orderCode":"EV62P66A","productUrl":"https://www.microchip.com/en-us/development-tool/EV62P66A"},{"nickname":"Andromeda","part":"dsPIC33CK64MC105","ds":"(?)","pinCount":48,"primaryByDim":{"1":[[1,"RP46/PWM1H/RB14"]],"3":[[2,"RP47/PWM1L/RB15"]],"52":[[3,"RP60/RC12"]],"54":[[4,"RP61/RC13"]],"47":[[5,"MCLR"]],"36":[[6,"ANN0/RP77/RD13"]],"10":[[7,"AN12/RP48/RC0"]],"17":[[8,"OA1OUT/AN0/CMP1A/IBIAS0/RA0"]],"11":[[11,"DACOUT/AN3/CMP1C/RA3"]],"33":[[12,"OA3OUT/AN4/IBIAS3/RA4"]],"46":[[17,"IBIAS1/RP54/RC6"]],"12":[[20,"AN15/IBIAS2/RP51/RC3"]],"30":[[23,"ISRC3/RP74/RD10"]],"32":[[24,"ISRC2/RP55/RC7"]],"25":[[25,"OA2OUT/AN1/AN7/CMP1D/RP34/INT0/RB2"]],"102":[[28,"RP56/ASDA1/SCK2/RC8"]],"104":[[29,"RP57/ASCL1/SDI2/RC9"]],"49":[[33,"PGD3/RP37/RB5"]],"51":[[34,"PGC3/RP38/RB6"]],"9":[[35,"TDO/AN2/RP39/RB7"]],"39":[[36,"PGD1/AN10/RP40/SCL1/RB8"]],"28":[[37,"PGC1/AN11/RP41/SDA1/RB9"]],"42":[[38,"RP52/RC4"]],"44":[[39,"RP53/RC5"]],"34":[[40,"RP58/RC10"]],"8":[[41,"RP59/RC11"]],"64":[[42,"VSS"]],"60":[[43,"VDD"]],"6":[[44,"RP65/PWM4H/RD1"]],"2":[[45,"TMS/RP42/PWM3H/RB10"]],"4":[[46,"TCK/RP43/PWM3L/RB11"]],"5":[[47,"TDI/RP44/PWM2H/RB12"]],"7":[[48,"RP45/PWM2L/RB13"]]},"altByDim":{},"dnpNotes":{},"orderCode":null,"productUrl":"https://www.microchip.com/en-us/product/dsPIC33CK64MC105"},{"nickname":"Andromeda+ Value Line","part":"dsPIC33CK256MC006","ds":"DS70005642A","pinCount":64,"primaryByDim":{"1":[[1,"RP46/PWM1H/RB14"]],"3":[[2,"RP47/PWM1L/RB15"]],"52":[[3,"RP60/RC12"]],"54":[[4,"RP61/RC13"]],"34":[[5,"RP62/RC14"]],"36":[[6,"RP63/RC15"]],"47":[[7,"MCLR"]],"40":[[8,"RP79/PCI22/RD15"]],"64":[[9,"VSS"]],"30":[[12,"ANN0/RP77/RD13"]],"81":[[13,"AN12/RP48/RC0"]],"19":[[14,"AN0/CMP1A/RA0"]],"82":[[15,"AN16/RA1"]],"22":[[16,"AN9/RA2"]],"35":[[18,"AN4/RA4"]],"32":[[21,"RP76/RD12"]],"39":[[22,"AN13/CMP1B/RP49/RC1"]],"28":[[23,"AN14/RP50/RC2"]],"24":[[24,"AN19/RP54/RC6"]],"84":[[27,"AN15/RP51/RC3"]],"56":[[30,"RP75/RD11"]],"26":[[31,"AN18/RP74/RD10"]],"9":[[32,"AN7/RP55/RC7"]],"27":[[33,"AN1/CMP1D/RP34/INT0/RB2"]],"11":[[34,"PGD2/AN8/RP35/RB3"]],"98":[[36,"RP56/ASDA1/SCK2/RC8"]],"100":[[37,"RP57/ASCL1/SDI2/RC9"]],"112":[[38,"RP73/PCI20/RD9"]],"110":[[39,"RP72/SDO2/PCI19/RD8"]],"108":[[42,"RP71/RD7"]],"106":[[43,"RP70/RD6"]],"65":[[44,"RP69/RD5"]],"49":[[45,"PGD3/RP37/RB5"]],"51":[[46,"PGC3/RP38/RB6"]],"20":[[47,"TDO/AN2/RP39/RB7"]],"10":[[48,"PGD1/AN10/RP40/SCL1/RB8"]],"12":[[49,"PGC1/AN11/RP41/SDA1/RB9"]],"104":[[50,"RP52/RC4"]],"102":[[51,"RP53/RC5"]],"92":[[52,"RP58/RC10"]],"90":[[53,"RP59/RC11"]],"70":[[54,"RP68/RD4"]],"68":[[55,"RP67/RD3"]],"60":[[57,"VDD"]],"66":[[58,"RP66/RD2"]],"6":[[59,"RP65/PWM4H/RD1"]],"8":[[60,"RP64/PWM4L/RD0"]],"2":[[61,"TMS/RP42/PWM3H/RB10"]],"4":[[62,"TCK/RP43/PWM3L/RB11"]],"5":[[63,"TDI/RP44/PWM2H/RB12"]],"7":[[64,"RP45/PWM2L/RB13"]]},"altByDim":{"43":[[11,"RP78/PCI21/RD14"]],"71":[[35,"PGC2/AN17/RP36/RB4"]]},"dnpNotes":{"11":"DIM:41 (DNP, ext-OA via R7)","35":"DIM:67 (DNP, ext-OA via R10)"},"orderCode":"EV19U29A","productUrl":"https://www.microchip.com/en-us/search?searchQuery=EV19U29A"},{"nickname":"Perseus","part":"dsPIC33AK128MC106","ds":"DS70005527E","pinCount":64,"primaryByDim":{"39":[[2,"AD1AN6/RP8/IOMF1/RA7"]],"28":[[6,"AD1AN10/RP12/RA11"]],"24":[[8,"AD1ANN3/AD1AN9/RP10/RA9"]],"22":[[9,"AD2ANN3/AD2AN7/RP11/RA10"]],"17":[[12,"OA1OUT/AD1AN0/CMP1A/RP3/RA2"]],"33":[[15,"OA3OUT/AD1AN3/CMP3A/RP6/RA5"]],"25":[[20,"OA2OUT/AD2AN1/CMP2A/RP17/INT0/RB0"]],"11":[[23,"AD1AN11/RP25/RB8"]],"9":[[24,"AD2AN10/RP26/RB9"]],"49":[[27,"PGD1/AD1AN5/CMP1C/ISRC0/IBIAS0/RP20/SDA1/RB3"]],"51":[[28,"PGC1/AD2AN5/CMP2C/ISRC1/IBIAS1/RP21/SCL1/RB4"]],"12":[[29,"AD1ANN2/AD1AN8/RP23/RB6"]],"10":[[30,"AD2ANN2/AD2AN8/RP24/IOMF0/RB7"]],"40":[[32,"RP28/SDI2/RB11"]],"46":[[33,"RP41/IOMD11/IOMF11/PCI20/RC8"]],"32":[[34,"RP42/IOMD10/SDO2/IOMF10/PCI19/RC9"]],"42":[[35,"RP39/RC6"]],"44":[[36,"RP40/RC7"]],"6":[[41,"PGC3/RP35/PWM4H/RC2"]],"8":[[42,"RP38/PWM4L/RC5"]],"2":[[43,"PGD3/RP36/PWM3H/IOMD0/RC3"]],"4":[[44,"RP37/PWM3L/IOMD1/RC4"]],"52":[[45,"RP43/IOMD9/IOMF9/RC10"]],"54":[[46,"RP44/IOMD8/IOMF8/RC11"]],"34":[[49,"RP58/IOMF7/RD9"]],"36":[[50,"RP59/RD10"]],"5":[[51,"RP49/PWM2H/IOMD2/RD0"]],"7":[[52,"TCK/RP50/PWM2L/IOMD3/RD1"]],"1":[[53,"TDO/RP51/PWM1H/IOMD4/RD2"]],"3":[[54,"TDI/RP52/PWM1L/IOMD5/RD3"]],"30":[[55,"RP54/ASCL1/RD5"]],"112":[[56,"RP55/ASDA1/RD6"]],"110":[[57,"RP56/ASCL2/IOMD7/IOMF4/RD7"]],"108":[[58,"RP57/ASDA2/IOMD6/IOMF3/RD8"]],"64":[[59,"VSS"]],"60":[[60,"VDD"]],"104":[[62,"RP60/RD11"]],"102":[[63,"RP61/PCI21/RD12"]],"47":[[64,"MCLR"]]},"altByDim":{"71":[[1,"PGD2/AD2AN6/CMP3C/ISRC2/IBIAS2/RP1/SDA2/IOMF2/RA0"]],"26":[[7,"AD2AN9/ISRC3/IBIAS3/RP9/RA8"]],"19":[[12,"OA1OUT/AD1AN0/CMP1A/RP3/RA2"]],"35":[[15,"OA3OUT/AD1AN3/CMP3A/RP6/RA5"]],"27":[[20,"OA2OUT/AD2AN1/CMP2A/RP17/INT0/RB0"]],"43":[[31,"RP27/SCK2/RB10"]],"106":[[61,"RP53/PCI22/RD4"]]},"dnpNotes":{"7":"DIM:26 (DNP, ext-OA via R34)","12":"DIM:19 (DNP, ext-OA via R17)","20":"DIM:27 (DNP, ext-OA via R30)","31":"DIM:43 (DNP, ext-OA via R23)","61":"DIM:106 (DNP, ext-OA via R33)"},"orderCode":"EV68M17A","productUrl":"https://www.microchip.com/en-us/development-tool/EV68M17A"},{"nickname":"Pegasus","part":"dsPIC33AK512MC510","ds":"DS70005553C","pinCount":100,"primaryByDim":{"40":[[1,"CVDTX19/RP65/RE0"]],"36":[[2,"CVDTX20/RP66/RE1"]],"34":[[3,"CVDAN12/RP13/RA12"]],"49":[[4,"PGD2/AD3AN5/CVDAN0/RP1/SCL2/IOMAF2/RA0"]],"12":[[5,"AD5ANN1/AD5AN0/CVDAN7/RP8/SDA2/IOMAF1/RA7"]],"32":[[6,"CVDTX22/RP68/RE3"]],"51":[[7,"PGC2/DACOUT1/AD5AN1/CVDAN1/CMP4D/RP2/RA1"]],"60":[[9,"VDD"]],"30":[[10,"CVDTX21/RP67/RE2"]],"112":[[11,"CVDAN13/RP14/RA13"]],"10":[[12,"AD5ANN2/AD5AN2/CVDAN11/CMPFN/RP12/RA11"]],"9":[[14,"UREF/AD1AN3/CVDAN9/IBIAS2/ISRC2/RP10/RA9"]],"11":[[15,"AD1ANN1/AD1AN4/CVDAN10/CMPEN/RP11/RA10"]],"110":[[16,"CVDTX23/RP69/RE4"]],"108":[[17,"CVDAN15/RP16/RA15"]],"106":[[20,"CVDAN14/CMP1D/RP15/RA14"]],"17":[[21,"OA1OUT/AD1AN0/CVDAN2/CMP1A/RP3/RA2"]],"33":[[24,"OA3OUT/AD3AN0/CVDAN5/CMP3A/RP6/INT0/RA5"]],"25":[[31,"OA2OUT/AD2AN0/CVDAN16/CVDTX0/CMP2A/RP17/RB0"]],"22":[[34,"AD2AN4/CVDAN24/CVDTX8/CMP2D/RP25/RB8"]],"24":[[35,"AD2ANN1/AD2AN3/CVDAN25/CVDTX9/RP26/RB9"]],"28":[[36,"AD2AN5/CVDAN31/CVDTX15/RP32/RB15"]],"39":[[37,"AD3AN4/CVDTX29/RP81/RF0"]],"111":[[39,"CVDTX31/RP83/RF2"]],"93":[[42,"CVDAN30/CVDTX14/RP31/RB14"]],"98":[[43,"PGD1/AD4AN3/CVDAN19/CVDTX3/CMP4A/RP20/SDA1/RB3"]],"84":[[46,"AD4ANN1/AD4AN2/CVDAN23/CVDTX7/CMP4C/IBIAS1/ISRC1/RP24/IOMAF0/RB7"]],"82":[[47,"AD4AN4/CVDAN26/CVDTX10/RP27/SCK2/IOMAF11/IOMBF11/RB10"]],"103":[[48,"CVDAN27/CVDTX11/RP28/IOMAF10/IOMBF10/SDI2/RB11"]],"87":[[49,"RP84/RF3"]],"101":[[51,"RP97/RG0"]],"85":[[52,"RP98/APWM4H/IOMBD11/RG1"]],"80":[[53,"RP99/APWM4L/IOMBD10/RG2"]],"67":[[56,"RP41/APWM1L/IOMAD8/IOMBF3/RC8"]],"65":[[57,"RP42/SDO2/IOMBF2/RC9"]],"99":[[58,"RP39/SCL3/RC6"]],"97":[[59,"RP40/SDA3/IOMAF7/RC7"]],"6":[[64,"PGC3/RP35/PWM4H/IOMAD7/RC2"]],"8":[[65,"PGD3/RP38/PWM4L/IOMAD6/RC5"]],"2":[[66,"RP36/PWM3H/IOMAD5/RC3"]],"4":[[67,"RP37/PWM3L/IOMAD4/RC4"]],"102":[[68,"RP43/PWM7H/IOMBD5/IOMBF1/RC10"]],"104":[[69,"RP44/PWM7L/IOMBD4/IOMBF0/RC11"]],"92":[[71,"RP46/PWM8L/IOMBD6/RC13"]],"54":[[74,"RP47/APWM3H/IOMBD9/RC14"]],"52":[[75,"RP48/APWM3L/IOMBD8/RC15"]],"90":[[77,"RP59/PWM6L/IOMBD2/IOMAF9/IOMBF9/RD10"]],"5":[[78,"RP49/PWM2H/IOMAD3/RD0"]],"7":[[79,"TCK/RP50/PWM2L/IOMAD2/RD1"]],"1":[[82,"TDO/RP51/PWM1H/IOMAD1/RD2"]],"3":[[83,"TDI/RP52/PWM1L/IOMAD0/RD3"]],"64":[[88,"VSS"]],"68":[[90,"RP54/PWM5H/ASCL1/IOMBD1/RD5"]],"70":[[91,"RP55/PWM5L/ASDA1/IOMBD0/RD6"]],"66":[[92,"CVDTX16/RP53/ASCL3/IOMBF6/RD4"]],"56":[[93,"RP60/APWM1H/IOMAD9/IOMAF8/IOMBF8/RD11"]],"46":[[94,"RP61/ASDA3/RD12"]],"44":[[95,"RP62/IOMBF4/RD13"]],"42":[[96,"RP63/APWM2H/IOMAD11/RD14"]],"45":[[97,"RP64/APWM2L/IOMAD10/IOMBF5/RD15"]],"43":[[98,"CVDTX17/RP56/ASCL2/IOMAF4/RD7"]],"41":[[99,"CVDTX18/RP57/ASDA2/IOMAF3/RD8"]],"47":[[100,"MCLR"]]},"altByDim":{"94":[[12,"AD5ANN2/AD5AN2/CVDAN11/CMPFN/RP12/RA11"]],"105":[[13,"DACOUT2/AD5AN3/CVDAN8/IBIAS3/ISRC3/RP9/RA8"]],"33":[[23,"OA1IN+/AD1AN1/AD5AN4/CVDAN4/CMP1B/RP5/RA4"]],"100":[[43,"PGD1/AD4AN3/CVDAN19/CVDTX3/CMP4A/RP20/SDA1/RB3"]],"96":[[44,"PGC1/AD4AN0/CVDAN20/CVDTX4/CMP4B/RP21/SCL1/RB4"]],"88":[[69,"RP44/PWM7L/IOMBD4/IOMBF0/RC11"]],"86":[[75,"RP48/APWM3L/IOMBD8/RC15"]]},"dnpNotes":{"13":"DIM:71 (DNP, ext-OA via R27); DIM:105 (DNP, ext-OA via R24)","21":"DIM:19 (DNP, ext-OA via R16)","24":"DIM:35 (DNP, ext-OA via R13)","30":"DIM:26 (DNP, ext-OA via R22)","31":"DIM:27 (DNP, ext-OA via R35)","44":"DIM:83 (DNP, ext-OA via R43)","70":"DIM:91 (DNP, ext-OA via R41)","76":"DIM:89 (DNP, ext-OA via R39)"},"orderCode":"EV67N21A","productUrl":"https://www.microchip.com/en-us/development-tool/EV67N21A"},{"nickname":"Blue Ridge","part":"dsPIC33AK256MPS306","ds":"DS70005612B","pinCount":64,"primaryByDim":{"28":[[1,"PGD2/AD1ANN1/AD1AN4/CVDAN0/RP1/SCL2/IOMAF2/RA0"]],"35":[[8,"AD1AN3/CVDAN9/CMP5B/IBIAS2/ISRC2/RP10/RA9"]],"39":[[13,"OA1IN-/AD1ANN2/AD1AN2/CVDAN3/CMPCN/CMP1C/RP4/RA3"]],"17":[[15,"OA3OUT/CVDAN5/CMP3A/RP6/INT0/RA5"]],"25":[[20,"OA2OUT/AD2AN0/CVDAN16/CVDTX0/CMP2A/RP17/RB0"]],"92":[[23,"CVDAN24/CVDTX8/CMP2D/RP25/RB8"]],"90":[[24,"CVDAN25/CVDTX9/RP26/RB9"]],"8":[[25,"RP29/RB12"]],"6":[[26,"RP30/RB13"]],"12":[[27,"PGD1/AD2ANN1/AD2AN3/CVDAN19/CVDTX3/CMP4A/RP20/SDA1/RB3"]],"10":[[28,"PGC1/AD2AN4/CVDAN20/CVDTX4/CMP4B/RP21/SCL1/RB4"]],"102":[[30,"CVDAN23/CVDTX7/CMP4C/IBIAS1/ISRC1/RP24/I3CASDA1/IOMAF0/RB7"]],"40":[[32,"CVDAN27/CVDTX11/RP28/SDI2/RB11"]],"36":[[33,"RP41/RC8"]],"34":[[34,"RP42/SDO2/RC9"]],"100":[[35,"RP39/ASCL1/RC6"]],"98":[[36,"RP40/ASDA1/IOMAF7/RC7"]],"51":[[41,"PGC3/RP35/PWM4H/IOMAD7/SS2/FSYNC2/RC2"]],"49":[[42,"PGD3/RP38/I3CSCL1/PWM4L/IOMAD6/RC5"]],"2":[[43,"RP36/PWM3H/IOMAD5/RC3"]],"4":[[44,"RP37/I3CSDA1/PWM3L/IOMAD4/RC4"]],"30":[[45,"RP43/RC10"]],"32":[[46,"RP44/RC11"]],"5":[[49,"RP49/PWM2H/IOMAD3/RD0"]],"7":[[50,"TCK/RP50/PWM2L/IOMAD2/RD1"]],"1":[[51,"TDO/RP51/PWM1H/IOMAD1/RD2"]],"3":[[52,"TDI/RP52/PWM1L/IOMAD0/RD3"]],"64":[[57,"VSS"]],"60":[[58,"VDD"]],"54":[[62,"CVDTX17/RP56/ASCL2/IOMAF4/RD7"]],"52":[[63,"CVDTX18/RP57/ASDA2/IOMAF3/RD8"]],"47":[[64,"MCLR"]]},"altByDim":{"84":[[2,"AD3AN1/CVDAN7/RP8/SDA2/IOMAF1/RA7"]],"26":[[3,"PGC2/DACOUT1/AD3ANN1/AD3AN0/CVDAN1/CMP4D/RP2/RA1"]],"82":[[3,"PGC2/DACOUT1/AD3ANN1/AD3AN0/CVDAN1/CMP4D/RP2/RA1"]],"43":[[6,"CVDAN11/CMPFN/RP12/RA11"]],"24":[[7,"AD3AN3/CVDAN8/CMP5A/IBIAS3/ISRC3/RP9/RA8"]],"22":[[12,"OA1OUT/AD1AN0/CVDAN2/CMP1A/RP3/RA2"]],"19":[[14,"UREF/OA1IN+/AD1AN1/AD2AN5/AD3AN4/CVDAN4/CMP1B/RP5/RA4"]],"27":[[20,"OA2OUT/AD2AN0/CVDAN16/CVDTX0/CMP2A/RP17/RB0"]],"68":[[59,"RP54/RD5"]],"66":[[60,"RP55/RD6"]],"70":[[61,"CVDTX16/RP53/RD4"]]},"dnpNotes":{"3":"DIM:26 (DNP, ext-OA via R10)","6":"DIM:43 (DNP, ext-OA via R18)","12":"DIM:20 (DNP, ext-OA via R5); DIM:22 (DNP, ext-OA via R9)","14":"DIM:19 (DNP, ext-OA via R41)","20":"DIM:27 (DNP, ext-OA via R39)","31":"DIM:104 (DNP, ext-OA via R45)","39":"DIM:56 (DNP, ext-OA via R25)","59":"DIM:68 (DNP, ext-OA via R7)","60":"DIM:66 (DNP, ext-OA via R17)","61":"DIM:70 (DNP, ext-OA via R23)"},"orderCode":"EV22K90A","productUrl":"https://www.microchip.com/en-us/development-tool/EV22K90A"},{"nickname":"Sagittarius","part":"dsPIC33CH512MP508","ds":"DS50003069A","pinCount":80,"primaryByDim":{"52":[[1,"RP46/PWM1H/PMD5/RB14"]],"38":[[2,""]],"54":[[3,"RP47/PWM1L/PMD6/RB15"]],"8":[[4,""]],"6":[[5,"RP60/PWM4H/RC12"]],"80":[[6,"RP61/PWM4L/RC13"]],"102":[[7,"RP62/RC14"]],"104":[[8,"RP63/RC15"]],"47":[[9,"MCLR"]],"40":[[10,"PCI22/RD15"]],"61":[[11,"VSS"],[26,"AVSS"],[32,"VSS"],[50,"VSS"],[70,"VSS"]],"59":[[12,"VDD"],[71,"VDD"]],"68":[[13,"PCI21/RD14"]],"70":[[14,""]],"39":[[15,"AN12/IBIAS3/RP48/RC0"]],"10":[[16,"AN0/CMP1A/RA0"]],"30":[[17,""]],"28":[[18,"AN1/RA1"]],"32":[[19,""]],"82":[[20,"AN2/RA2"]],"19":[[21,"AN3/IBIAS0/RA3"]],"34":[[22,""]],"27":[[23,"AN4/IBIAS1/RA4"]],"36":[[24,""]],"57":[[25,""],[31,"VDD"],[51,"VDD"]],"9":[[27,""]],"103":[[28,"AN13/ISRC0/RP49/RC1"]],"95":[[29,"AN14/ISRC1/RP50/RC2"]],"11":[[30,"RP54/RC6"]],"24":[[33,"CMP1B/RP51/RC3"]],"67":[[35,"OSCO/CLKO/AN6/IBIAS2/RP33/RB1"]],"22":[[36,""]],"86":[[37,""]],"35":[[38,"ISRC3/RD10"],[41,"DACOUT1/AN7/CMP1D/RP34/INT0/RB2"]],"88":[[39,""]],"84":[[40,"AN15/ISRC2/RP55/RC7"]],"66":[[42,""]],"94":[[43,"PGD2/AN8/RP35/RB3"]],"45":[[44,""]],"20":[[45,"PGC2/RP36/RB4"]],"98":[[46,"RP56/ASDA1/SCK2/RC8"]],"100":[[47,"RP57/ASCL1/SDI2/RC9"]],"93":[[48,"PCI20/RD9"]],"41":[[49,"SDO2/PCI19/RD8"]],"91":[[52,"RP71/RD7"]],"89":[[53,"RP70/RD6"]],"90":[[54,"RP69/RD5"]],"49":[[55,"PGD3/RP37/SDA2/RB5"]],"51":[[56,"PGC3/RP38/SCL2/RB6"]],"56":[[57,""]],"81":[[58,"TDO/AN9/RP39/RB7"]],"65":[[59,""]],"83":[[60,"PGD1/AN10/RP40/SCL1/RB8"]],"12":[[61,"PGC1/AN11/RP41/SDA1/RB9"]],"97":[[62,"ASCL2/RE12"]],"5":[[63,"RP52/RC4"]],"99":[[64,"ASDA2/RE13"]],"7":[[65,"RP53/RC5"]],"1":[[66,"RP58/RC10"]],"3":[[67,"RP59/RC11"]],"2":[[68,"RP68/RD4"]],"4":[[69,"RP67/RD3"]],"92":[[72,"RP66/RD2"]],"42":[[73,"RP65/RD1"]],"44":[[74,"RP64/RD0"]],"46":[[75,"TMS/RP42/PWM3H/RB10"]],"108":[[76,"TCK/RP43/PWM3L/RB11"]],"96":[[77,""]],"110":[[78,"TDI/RP44/PWM2H/RB12"]],"106":[[79,""]],"112":[[80,"RP45/PWM2L/RB13"]]},"altByDim":{"105":[[28,"AN13/ISRC0/RP49/RC1"]],"101":[[29,"AN14/ISRC1/RP50/RC2"]],"26":[[33,"CMP1B/RP51/RC3"]],"71":[[35,"OSCO/CLKO/AN6/IBIAS2/RP33/RB1"]],"85":[[42,""]],"87":[[44,""]]},"dnpNotes":{},"orderCode":"EV76L31A","productUrl":"https://www.microchip.com/en-us/development-tool/EV76L31A"},{"nickname":"Centaurus","part":"dsPIC33CH1024MP710","ds":"DS70005558A","pinCount":100,"primaryByDim":{"34":[[1,"RP46/PWM1H/RB14"]],"36":[[2,"RP80/RE0"]],"108":[[3,"RP47/PWM1L/RB15"]],"110":[[6,"RP60/PWM4H/RC12"]],"112":[[7,"RP61/PWM4L/RC13"]],"102":[[8,"RP62/RC14"]],"104":[[9,"RP63/RC15"]],"47":[[10,"MCLR"]],"61":[[13,"VSS"],[34,"AVSS"],[40,"VSS"],[63,"VSS"],[90,"VSS"]],"57":[[14,"VDD"],[33,""],[39,"VDD"],[64,"VDD"],[91,"VDD"]],"39":[[17,"AN12/IBIAS3/RP48/RC0"]],"10":[[21,"AN1/RA1"]],"88":[[22,"RP83/RE3"]],"12":[[24,"AN2/RA2"]],"87":[[26,"AN16/RP101/RF5"]],"19":[[27,"AN3/IBIAS0/RA3"]],"80":[[28,"RP84/RE4"]],"94":[[29,"AN18/RP102/RF6"]],"27":[[30,"AN4/IBIAS1/RA4"]],"86":[[31,"RP85/RE5"]],"83":[[32,"AN20/RP103/RF7"]],"84":[[35,""]],"95":[[36,"AN13/CMP2A/ISRC0/RP49/RC1"]],"105":[[37,"AN14/ISRC1/RP50/RC2"]],"82":[[38,"RP54/RC6"]],"96":[[41,"CMP1B/RP51/RC3"]],"71":[[43,"OSCO/CLKO/AN6/IBIAS2/RP33/RB1"]],"81":[[44,"AN17/RD11"]],"28":[[45,"AN19/RP86/RE6"]],"79":[[46,"AN21/RP104/RF8"]],"24":[[47,"ISRC3/RD10"]],"85":[[48,"RP87/RE7"]],"22":[[49,"AN23/RP105/RF9"]],"35":[[50,"DACOUT2/AN15/CMP2D/ISRC2/RP55/RC7"],[51,"DACOUT1/AN7/CMP1D/RP34/INT0/RB2"]],"106":[[52,"RP88/RE8"]],"20":[[53,"AN22/RP106/RF10"]],"11":[[54,"PGD2/AN8/RP35/RB3"]],"67":[[55,"RP89/RE9"]],"65":[[56,"RP107/RF11"]],"9":[[57,"PGC2/RP36/RB4"]],"98":[[58,"RP56/ASDA1/SCK2/RC8"]],"100":[[59,"RP57/ASCL1/SDI2/RC9"]],"43":[[60,"RP108/RF12"]],"40":[[61,"PCI20/RD9"]],"41":[[62,"SDO2/PCI19/RD8"]],"91":[[65,"RP71/RD7"]],"89":[[66,"RP70/RD6"]],"90":[[67,"RP69/RD5"]],"49":[[68,"PGD3/RP37/SDA2/RB5"]],"51":[[69,"PGC3/RP38/SCL2/RB6"]],"70":[[70,"RP90/RE10"]],"54":[[71,"RP109/RF13"]],"68":[[73,"RP91/RE11"]],"52":[[74,"RP110/RF14"]],"26":[[75,"PGD1/AN10/RP40/SCL1/RB8"]],"56":[[76,"RP111/RF15"]],"66":[[78,"RP92/ASCL2/RE12"]],"5":[[79,"RP52/RC4"]],"45":[[80,"RP93/ASDA2/RE13"]],"7":[[81,"RP53/RC5"]],"1":[[82,"RP58/RC10"]],"3":[[83,"RP59/RC11"]],"2":[[84,"RP68/RD4"]],"4":[[85,"RP67/RD3"]],"92":[[92,"RP66/RD2"]],"6":[[93,"RP65/RD1"]],"8":[[94,"RP64/RD0"]],"42":[[96,"TCK/RP43/PWM3L/RB11"]],"32":[[97,"RP94/RE14"]],"44":[[98,"TDI/RP44/PWM2H/RB12"]],"30":[[99,"RP95/RE15"]],"46":[[100,"RP45/PWM2L/RB13"]]},"altByDim":{},"dnpNotes":{},"orderCode":"EV44A73A","productUrl":"https://www.microchip.com/en-us/search?searchQuery=EV44A73A"},{"nickname":"Pegasus+","part":"dsPIC33AK1024MPS610","ds":"DS50003936A","pinCount":100,"primaryByDim":{"40":[[1,"CVDTX19/CMP7C/RP65/I3C2EPUR/RE0"]],"36":[[2,"CVDTX20/CMP8C/RP66/RE1"]],"34":[[3,"AD5AN4/CVDAN12/RP13/RA12"]],"49":[[4,"PGD2/AD3AN5/CVDAN0/CMP6A/RP1/I2C2SCL/IOMAF2/RA0"]],"12":[[5,"DACOUT3/AD5ANN1/AD5AN0/CVDAN7/CMP6B/RP8/I2C2SDA/IOMAF1/RA7"]],"32":[[6,"CVDTX22/RP68/RE3"]],"51":[[7,"PGC2/DACOUT1/AD5AN1/CVDAN1/CMP4D/RP2/RA1"]],"61":[[8,""],[18,""],[28,""],[40,""],[54,""],[60,""],[72,""],[80,""],[88,""]],"57":[[9,""],[19,""],[29,"AD3ANN1/AD3AN3/CVDAN29/"],[41,""],[55,""],[61,""],[73,""],[81,""],[89,""]],"30":[[10,"CVDTX21/RP67/RE2"]],"112":[[11,"CVDAN13/CMP5D/RP14/RA13"]],"10":[[12,"AD5ANN2/AD5AN2/CVDAN11/CMPFN/CMP6C/RP12/RA11"]],"71":[[13,"IBIAS3/ISRC3/RP9/RA8"]],"9":[[14,"UREF/AD1AN3/CVDAN9/CMP5B/CMP7A/IBIAS2/ISRC2/RP10/RA9"]],"11":[[15,"AD1ANN1/AD1AN4/CVDAN10/CMPEN/CMP5C/RP11/RA10"]],"110":[[16,"CVDTX23/RP69/RE4"]],"83":[[17,"AD4AN5/CVDAN15/RP16/RA15"]],"106":[[20,"CVDAN14/CMP1D/RP15/RA14"]],"17":[[21,"CMP1A/RP3/RA2"]],"15":[[22,"OA1IN-/AD1ANN2/AD1AN2/CVDAN3/CMPCN/CMP1C/RP4/RA3"]],"13":[[23,"OA1IN+/AD1AN1/CVDAN4/CMP1B/RP5/RA4"]],"33":[[24,"CMP3A/RP6/INT0/RA5"]],"31":[[25,"TCK/OA3IN-/AD3ANN2/AD3AN2/CVDAN6/CMPDN/CMP3C/RP7/I3C2SCL/RA6"]],"29":[[26,"TDO/OA3IN+/AD3AN1/CVDAN21/CVDTX5/CMP3B/RP22/I3C2SDA/RB5"]],"35":[[27,"CVDAN28/CVDTX12/CMP3D/RP29/I3C1EPUR/RB12"]],"26":[[30,"OA2OUT/AD2AN0/CVDAN16/CVDTX0/"]],"25":[[31,"CMP2A/RP17/RB0"]],"23":[[32,"TDI/OA2IN-/AD2ANN2/AD2AN2/CVDAN17/CVDTX1/CMP2C/RP18/RB1"]],"21":[[33,"TMS/OA2IN+/AD2AN1/CVDAN18/CVDTX2/CMP2B/RP19/RB2"]],"22":[[34,"AD2AN4/CVDAN24/CVDTX8/CMP2D/RP25/I3C1ASCL/RB8"]],"24":[[35,"AD2ANN1/AD2AN3/CVDAN25/CVDTX9/CMP8D/RP26/I3C1ASDA/RB9"]],"28":[[36,"AD2AN5/CVDAN31/CVDTX15/RP32/RB15"]],"39":[[37,"AD3AN4/CVDTX29/RP81/RF0"]],"95":[[38,"AD5AN5/CVDTX30/RP82/RF1"]],"105":[[39,"AD5AN6/CVDTX31/RP83/RF2"]],"93":[[42,"CVDAN30/CVDTX14/CMP8B/RP31/RB14"]],"98":[[43,"PGD1/AD4AN3/CVDAN19/CVDTX3/CMP4A/RP20/I2C1SDA/RB3"],[59,"RP40/I3C2ASDA/I2C3SDA/IOMAF7/RC7"]],"100":[[44,"PGC1/AD4AN0/CVDAN20/CVDTX4/CMP4B/RP21/I2C1SCL/RB4"],[58,"RP39/I3C2ASCL/I2C3SCL/RC6"]],"96":[[45,"AD4ANN2/AD4AN1/CVDAN22/CVDTX6/CMP/CMP7D/IBIAS0/ISRC0/RP23/I3C1SCL/RB6"]],"84":[[46,"AD4ANN1/AD4AN2/CVDAN23/CVDTX7/CMP4C/IBIAS1/ISRC1/RP24/I3C1SDA/IOMAF0/RB7"]],"82":[[47,"AD4AN4/CVDAN26/CVDTX10/CMP8A/RP27/SCK2/IOMAF11/IOMBF11/RB10"]],"103":[[48,"CVDAN27/CVDTX11/CMP7B/RP28/IOMAF10/IOMBF10/SDI2/RB11"]],"87":[[49,"RP84/ET1SED/EMDIO/RF3"]],"101":[[51,"RP97/ET1STXD/ERXD1/RG0"]],"85":[[52,"RP98/APWM4H/ERXD0/IOMBD11/RG1"]],"80":[[53,"RP99/APWM4L/ECRSDV/IOMBD10/RG2"]],"67":[[56,"RP41/APWM1L/IOMAD8/IOMBF3/RC8"]],"65":[[57,"RP42/SDO2/IOMBF2/RC9"]],"6":[[64,"PGC3/RP35/PWM4H/IOMAD7/SS2/FSYNC2/RC2"]],"8":[[65,"PGD3/RP38/PWM4L/IOMAD6/RC5"]],"2":[[66,"RP36/PWM3H/IOMAD5/RC3"]],"4":[[67,"RP37/PWM3L/IOMAD4/RC4"]],"102":[[68,"RP43/PWM7H/IOMBD5/IOMBF1/RC10"]],"104":[[69,"RP44/PWM7L/IOMBD4/IOMBF0/RC11"]],"91":[[70,"RP45/PWM8H/IOMBD7/RC12"]],"92":[[71,"RP46/PWM8L/IOMBD6/RC13"]],"54":[[74,"RP47/APWM3H/IOMBD9/RC14"]],"52":[[75,"RP48/APWM3L/IOMBD8/RC15"]],"89":[[76,"RP58/PWM6H/IOMBD3/IOMBF7/RD9"]],"90":[[77,"RP59/PWM6L/IOMBD2/IOMAF9/IOMBF9/RD10"]],"5":[[78,"RP49/PWM2H/IOMAD3/RD0"]],"7":[[79,"RP50/PWM2L/IOMAD2/RD1"]],"1":[[82,"RP51/PWM1H/IOMAD1/RD2"]],"3":[[83,"RP52/PWM1L/IOMAD0/RD3"]],"68":[[90,"RP54/PWM5H/I2C1ASCL/ET1SCLK/EREFCLK/IOMBD1/RD5"]],"70":[[91,"RP55/PWM5L/I2C1ASDA/ERXER/IOMBD0/RD6"]],"66":[[92,"CVDTX16/RP53/I2C3ASCL/ETXEN/IOMBF6/RD4"]],"56":[[93,"RP60/APWM1H/ETXD0/IOMAD9/IOMAF8/IOMBF8/RD11"]],"46":[[94,"RP61/I2C3ASDA/ETXD1/RD12"]],"44":[[95,"TRDATA3/RP62/IOMBF4/RD13"]],"42":[[96,"TRDATA2/RP63/APWM2H/IOMAD11/RD14"]],"45":[[97,"TRDATA1/RP64/APWM2L/IOMAD10/IOMBF5/RD15"]],"43":[[98,"TRDATA0/CVDTX17/RP56/I2C2ASCL/IOMAF4/RD7"]],"41":[[99,"TRCLKO/CVDTX18/RP57/I2C2ASDA/IOMAF3/RD8"]],"47":[[100,"MCLR"]]},"altByDim":{"94":[[12,"AD5ANN2/AD5AN2/CVDAN11/CMPFN/CMP6C/RP12/RA11"]],"108":[[16,"CVDTX23/RP69/RE4"]],"17":[[20,"CVDAN14/CMP1D/RP15/RA14"]],"33":[[23,"OA1IN+/AD1AN1/CVDAN4/CMP1B/RP5/RA4"]],"25":[[30,"OA2OUT/AD2AN0/CVDAN16/CVDTX0/"]],"99":[[57,"RP42/SDO2/IOMBF2/RC9"]],"97":[[58,"RP39/I3C2ASCL/I2C3SCL/RC6"]],"88":[[69,"RP44/PWM7L/IOMBD4/IOMBF0/RC11"]],"86":[[75,"RP48/APWM3L/IOMBD8/RC15"]]},"dnpNotes":{"13":"DIM:71 (DNP, ext-OA via R27)","17":"DIM:83 (DNP, ext-OA via R43)","21":"DIM:19 (DNP, ext-OA via R16)","24":"DIM:35 (DNP, ext-OA via R13)","30":"DIM:26 (DNP, ext-OA via R22)","31":"DIM:27 (DNP, ext-OA via R35)","43":"DIM:98 (DNP, ext-OA via R44)","44":"DIM:100 (DNP, ext-OA via R47)","70":"DIM:91 (DNP, ext-OA via R41)","76":"DIM:89 (DNP, ext-OA via R39)"},"orderCode":"EV73R98A","productUrl":"https://www.microchip.com/en-us/search?searchQuery=EV73R98A"},{"nickname":"Serpens","part":"dsPIC33AKV512GMS510","ds":"DS70005595A","pinCount":100,"primaryByDim":{"34":[[1,"CVD2TX19/RP65/RE0"]],"36":[[2,"CVD2TX20/RP66/RE1"]],"22":[[3,"AD2AN24/CVD2TX14/CVD1TX14/RP13/RA12"]],"49":[[4,"PGED2/AD2AN0/AD1AN0/RP1/SCL2/IOMAF2/RA0"]],"12":[[5,"AD2AN7/AD2ANN1/AD1AN7/AD1ANN1/RP8/SDA2/IOMAF1/RA7"]],"32":[[6,"CVD2TX22/RP68/RE3"]],"51":[[7,"PGEC2/TSCK/DACOUT1/AD2AN1/AD1AN1/CMP4D/RP2/RA1"]],"61":[[8,""],[18,""],[28,""],[40,""],[54,""],[60,""],[72,""],[80,""],[88,""]],"57":[[9,""],[19,""],[29,""],[41,""],[55,""],[61,""],[73,""],[81,""],[89,""]],"30":[[10,"CVD2TX21/RP67/RE2"]],"20":[[11,"AD2AN25/CVD2TX15/CVD1TX15/RP14/RA13"]],"10":[[12,"AD2AN19/AD2ANN4/CVD2TX9/CVD1TX9/CMPNF/RP12/RA11"]],"71":[[13,"DACOUT2/AD2AN8/AD1AN8/ISRC3/RP9/RA8"]],"9":[[14,"UREF/AD2AN9/AD1AN9/ISRC2/RP10/RA9"]],"11":[[15,"AD2AN18/CVD2TX8/AD1ANN3/CVD1TX8/CMPNE/RP11/RA10"]],"45":[[16,"CVD2TX23/RP69/RE4"]],"39":[[17,"AD2AN27/RP16/RA15"]],"24":[[20,"AD2AN26/CMP1D/RP15/RA14"]],"17":[[21,"OA1OUT/AD2AN2/AD1AN2/CMP1A/RP3/RA2"]],"15":[[22,"OA1IN-/AD2AN3/AD1AN3/CMPNC/CMP1C/RP4/RA3"]],"13":[[23,"OA1IN+/AD2AN4/AD1AN4/CMP1B/RP5/RA4"]],"33":[[24,"OA3OUT/AD2AN5/AD1AN5/CMP3A/RP6/INT0/RA5"]],"31":[[25,"TCK/OA3IN-/AD2AN6/AD1AN6/AD1ANN2/CMPND/CMP3C/RP7/RA6"]],"29":[[26,"TDO/OA3IN+/AD2AN15/CVD2TX5/AD1AN15/CVD1TX5/CMP3B/RP22/RB5"]],"35":[[27,"AD2AN28/CMP3D/RP29/RB12"]],"28":[[30,"AD2AN29/AD1ANN4/RP30/RB13"]],"25":[[31,"OA2OUT/AD2AN10/CVD2TX0/AD1AN10/CVD1TX0/CMP2A/RP17/RB0"]],"23":[[32,"TDI/OA2IN-/AD2AN11/AD2ANN2/CVD2TX1/AD1AN11/CVD1TX1/CMP2C/RP18/RB1"]],"21":[[33,"TMS/OA2IN+/AD2AN12/CVD2TX2/AD1AN12/CVD1TX2/CMP2B/RP19/RB2"]],"96":[[34,"AD2AN20/CVD2TX10/CVD1TX10/CMP2D/RP25/RB8"]],"94":[[35,"AD2AN21/AD2ANN3/CVD2TX11/CVD1TX11/RP26/RB9"]],"112":[[36,"AD2AN31/RP32/RB15"]],"110":[[37,"CVD2TX24/RP81/RF0"]],"108":[[38,"CVD2TX25/RP82/RF1"]],"106":[[39,"CVD2TX26/RP83/RF2"]],"84":[[42,"AD2AN30/RP31/RB14"]],"98":[[43,"PGED1/AD2AN13/CVD2TX3/AD1AN13/CVD1TX3/CMP4A/RP20/SDA1/RB3"]],"100":[[44,"PGEC1/AD2AN14/CVD2TX4/AD1AN14/CVD1TX4/CMP4B/RP21/SCL1/RB4"]],"83":[[45,"TRD3/AD2AN16/CVD2TX6/CVD1TX6/CMPP/ISRC0/RP23/RB6"]],"82":[[46,"TRD2/AD2AN17/CVD2TX7/CVD1TX7/CMP4C/ISRC1/RP24/IOMAF0/RB7"]],"81":[[47,"AD2AN22/CVD2TX12/CVD1TX12/RP27/SCK2/IOMAF11/IOMBF11/RB10"]],"79":[[48,"AD2AN23/CVD2TX13/CVD1TX13/RP28/IOMAF10/IOMBF10/SDI2/RB11"]],"87":[[49,"CVD2TX27/RP84/RF3"]],"103":[[50,"CVD2TX28/RP85/RF4"]],"101":[[51,"CVD2TX29/RP97/RG0"]],"85":[[52,"CVD1CAP/CVD2TX30/RP98/IOMBD11/RG1"]],"80":[[53,"CVD2CAP/CVD2TX31/RP99/IOMBD10/RG2"]],"67":[[56,"RP41/IOMAD8/IOMBF3/RC8"]],"65":[[57,"RP42/SDO2/IOMBF2/RC9"]],"99":[[58,"TRD1/RP39/SCL3/RC6"]],"97":[[59,"TRD0/RP40/SDA3/IOMAF7/RC7"]],"6":[[64,"PGEC3/RP35/PWM4H/IOMAD7/SS2/RC2"]],"8":[[65,"PGED3/RP38/PWM4L/IOMAD6/RC5"]],"2":[[66,"RP36/PWM3H/IOMAD5/RC3"]],"4":[[67,"RP37/PWM3L/IOMAD4/RC4"]],"102":[[68,"RP43/PWM7H/IOMBD5/IOMBF1/RC10"]],"104":[[69,"RP44/PWM7L/IOMBD4/IOMBF0/RC11"]],"88":[[70,"RP45/PWM8H/IOMBD7/RC12"]],"92":[[71,"RP46/PWM8L/IOMBD6/RC13"]],"54":[[74,"RP47/IOMBD9/RC14"]],"52":[[75,"RP48/IOMBD8/RC15"]],"86":[[76,"RP58/PWM6H/IOMBD3/IOMBF7/RD9"]],"90":[[77,"RP59/PWM6L/IOMBD2/IOMAF9/IOMBF9/RD10"]],"5":[[78,"RP49/PWM2H/IOMAD3/RD0"]],"7":[[79,"RP50/PWM2L/IOMAD2/RD1"]],"1":[[82,"RP51/PWM1H/IOMAD1/RD2"]],"3":[[83,"RP52/PWM1L/IOMAD0/RD3"]],"68":[[90,"RP54/PWM5H/ASCL1/IOMBD1/RD5"]],"70":[[91,"TRCLK/RP55/PWM5L/ASDA1/IOMBD0/RD6"]],"66":[[92,"CVD2TX16/RP53/ASCL3/IOMBF6/RD4"]],"56":[[93,"RP60/IOMAD9/IOMAF8/IOMBF8/RD11"]],"46":[[94,"RP61/ASDA3/RD12"]],"44":[[95,"RP62/IOMBF4/RD13"]],"42":[[96,"RP63/IOMAD11/RD14"]],"40":[[97,"RP64/IOMAD10/IOMBF5/RD15"]],"43":[[98,"CVD2TX17/RP56/ASCL2/IOMAF4/RD7"]],"41":[[99,"CVD2TX18/RP57/ASDA2/IOMAF3/RD8"]],"47":[[100,"MCLR"]]},"altByDim":{"26":[[11,"AD2AN25/CVD2TX15/CVD1TX15/RP14/RA13"]],"19":[[21,"OA1OUT/AD2AN2/AD1AN2/CMP1A/RP3/RA2"]],"35":[[24,"OA3OUT/AD2AN5/AD1AN5/CMP3A/RP6/INT0/RA5"]],"27":[[31,"OA2OUT/AD2AN10/CVD2TX0/AD1AN10/CVD1TX0/CMP2A/RP17/RB0"]],"105":[[43,"PGED1/AD2AN13/CVD2TX3/AD1AN13/CVD1TX3/CMP4A/RP20/SDA1/RB3"]],"95":[[44,"PGEC1/AD2AN14/CVD2TX4/AD1AN14/CVD1TX4/CMP4B/RP21/SCL1/RB4"]],"91":[[70,"RP45/PWM8H/IOMBD7/RC12"]],"89":[[76,"RP58/PWM6H/IOMBD3/IOMBF7/RD9"]]},"dnpNotes":{"11":"DIM:26 (DNP, ext-OA via R27)","16":"DIM:45 (DNP, ext-OA via R22)","21":"DIM:19 (DNP, ext-OA via R16)","24":"DIM:35 (DNP, ext-OA via R13)","31":"DIM:27 (DNP, ext-OA via R35)","43":"DIM:105 (DNP, ext-OA via R41)","44":"DIM:95 (DNP, ext-OA via R39)","70":"DIM:91 (DNP, ext-OA via R43)","76":"DIM:89 (DNP, ext-OA via R45)"},"orderCode":"EV65Y82A","productUrl":"https://www.microchip.com/en-us/search?searchQuery=EV65Y82A"}],"baseboards":{"MCLV":{"1":"[PWM] M1_PWM_AH","2":"[PWM] M1_PWM_CH","3":"[PWM] M1_PWM_AL","4":"[PWM] M1_PWM_CL","5":"[PWM] M1_PWM_BH","6":"[NC] NC","7":"[PWM] M1_PWM_BL","8":"[NC] NC","9":"[ANA] M1_VA","10":"[NC] NC","11":"[ANA] M1_VB","12":"[NC] NC","13":"[OTH] M1_SHUNT_IA_P","14":"[OTH] M1_SHUNT_IC_P","15":"[OTH] M1_SHUNT_IA_N","16":"[OTH] M1_SHUNT_IC_N","17":"[ANA] M1_IA","18":"[ANA] M1_IC","19":"[ANA] M1_IA_EXT","20":"[ANA] M1_IC_EXT","21":"[OTH] M1_SHUNT_IB_P","22":"[ANA] M1_VC","23":"[OTH] M1_SHUNT_IB_N","24":"[ANA] M1_TEMP_FET","25":"[ANA] M1_IB","26":"[ANA] AN_EXT1","27":"[ANA] M1_IB_EXT","28":"[ANA] M1_POT1","29":"[OTH] M1_SHUNT_IBUS_P","30":"[OTH] M1_LED1","31":"[OTH] M1_SHUNT_IBUS_N","32":"[OTH] M1_LED2","33":"[ANA] M1_IBUS","34":"[OTH] M1_BUTTON1","35":"[ANA] M1_IBUS_EXT","36":"[OTH] M1_BUTTON2","37":"[PWR] VREF","38":"[NC] NC","39":"[ANA] M1_VBUS","40":"[FLT] M1_FLTLAT_OC_OV","41":"[FLT] M1_FAULT_OC_OV","42":"[QEI] M1_QEI_A","43":"[FLT] M1_FAULT_OC","44":"[QEI] M1_QEI_B","45":"[FLT] M1_FAULT_RESET","46":"[QEI] M1_QEI_INDEX","47":"[DBG] DIM_MCLR","48":"[DBG] DIM_TDI","49":"[DBG] DIM_PGD","50":"[DBG] DIM_TMS","51":"[DBG] DIM_PGC","52":"[DBG] DEBUG_TX","53":"[DBG] DIM_AUX","54":"[DBG] DEBUG_RX","55":"[OTH] VCC_SELECT","56":"[DBG] DEBUG_GPIO1","57":"[PWR] VCC","58":"[PWR] VCC","59":"[PWR] VCC","60":"[PWR] VCC","61":"[PWR] VSS","62":"[PWR] VSS","63":"[PWR] VSS","64":"[PWR] VSS","65":"[COM] EEPROM_CS","66":"[HAL] M1_HALL_A","67":"[PWM] BRAKE_PWM","68":"[HAL] M1_HALL_B","69":"[OTH] M1_REC_NEUTRAL","70":"[HAL] M1_HALL_C","71":"[NC] NC","72":"[NC] DIM_072","73":"[NC] DIM_073","74":"[NC] DIM_074","75":"[NC] DIM_075","76":"[NC] DIM_076","77":"[NC] DIM_077","78":"[NC] DIM_078","79":"[XPR] XPRO2_ID","80":"[XPR] XPRO1_ID","81":"[XPR] XPRO2_ADC(+)","82":"[XPR] XPRO1_ADC(+)","83":"[XPR] XPRO2_ADC(-)","84":"[XPR] XPRO1_ADC(-)","85":"[XPR] XPRO2_GPIO1","86":"[XPR] XPRO1_GPIO1","87":"[XPR] XPRO2_GPIO2","88":"[XPR] XPRO1_GPIO2","89":"[XPR] XPRO2_PWM(+)","90":"[XPR] XPRO1_PWM(+)","91":"[XPR] XPRO2_PWM(-)","92":"[XPR] XPRO1_PWM(-)","93":"[XPR] XPRO2_IRQ","94":"[XPR] XPRO1_IRQ","95":"[XPR] XPRO2_SPI_SS_B","96":"[XPR] XPRO1_SPI_SS_B","97":"[XPR] XPRO2_I2C_SDA","98":"[XPR] XPRO1_I2C_SDA","99":"[XPR] XPRO2_I2C_SCL","100":"[XPR] XPRO1_I2C_SCL","101":"[XPR] XPRO2_UART_RX","102":"[XPR] XPRO1_UART_RX","103":"[XPR] XPRO2_UART_TX","104":"[XPR] XPRO1_UART_TX","105":"[XPR] XPRO2_SPI_SS_A","106":"[XPR] XPRO1_SPI_SS_A","107":"[XPR] XPRO2_SPI_MOSI","108":"[XPR] XPRO1_SPI_MOSI","109":"[XPR] XPRO2_SPI_MISO","110":"[XPR] XPRO1_SPI_MISO","111":"[XPR] XPRO2_SPI_SCK","112":"[XPR] XPRO1_SPI_SCK","113":"[PWR] VCC","114":"[PWR] VCC","115":"[PWR] VCC","116":"[PWR] VCC","117":"[PWR] VSS","118":"[PWR] VSS","119":"[PWR] VSS","120":"[PWR] VSS"},"MCHV":{"1":"[PWM] M1_PWM_AH","2":"[PWM] M1_PWM_CH","3":"[PWM] M1_PWM_AL","4":"[PWM] M1_PWM_CL","5":"[PWM] M1_PWM_BH","6":"[PWM] PFC_PWM","7":"[PWM] M1_PWM_BL","8":"[PFC] PFC_EN","9":"[ANA] M1_VA","10":"[PFC] PFC_VAC","11":"[ANA] M1_VB","12":"[PFC] PFC_IL_EXT","13":"[OTH] M1_SHUNT_IA_P","14":"[OTH] M1_SHUNT_IC_P","15":"[OTH] M1_SHUNT_IA_N","16":"[OTH] M1_SHUNT_IC_N","17":"[ANA] M1_IA","18":"[ANA] M1_IC","19":"[ANA] M1_IA_EXT","20":"[ANA] M1_IC_EXT","21":"[OTH] M1_SHUNT_IB_P","22":"[ANA] M1_VC","23":"[OTH] M1_SHUNT_IB_N","24":"[ANA] M1_TEMP_IPM","25":"[ANA] M1_IB","26":"[NC] NC","27":"[ANA] M1_IB_EXT","28":"[ANA] M1_POT1","29":"[OTH] M1_SHUNT_IBUS_P","30":"[OTH] M1_LED1","31":"[OTH] M1_SHUNT_IBUS_N","32":"[OTH] M1_LED2","33":"[ANA] M1_IBUS","34":"[OTH] M1_BUTTON1","35":"[ANA] M1_IBUS_EXT","36":"[OTH] M1_BUTTON2","37":"[PWR] VREF","38":"[NC] NC","39":"[ANA] M1_VBUS","40":"[FLT] M1_FAULT_IPM","41":"[FLT] PFC_FAULT","42":"[QEI] M1_QEI_A","43":"[NC] NC","44":"[QEI] M1_QEI_B","45":"[NC] NC","46":"[QEI] M1_QEI_INDEX","47":"[DBG] DIM_MCLR","48":"[NC] NC","49":"[DBG] DIM_PGD","50":"[DBG] DIM_TMS","51":"[DBG] DIM_PGC","52":"[DBG] DEBUG_TX","53":"[DBG] DIM_AUX","54":"[DBG] DEBUG_RX","55":"[OTH] VCC_SELECT","56":"[NC] NC","57":"[PWR] VCC","58":"[PWR] VCC","59":"[PWR] VCC","60":"[PWR] VCC","61":"[PWR] VSS","62":"[PWR] VSS","63":"[PWR] VSS","64":"[PWR] VSS","65":"[NC] NC","66":"[HAL] M1_HALL_A","67":"[PWM] BRAKE_PWM","68":"[HAL] M1_HALL_B","69":"[NC] NC","70":"[HAL] M1_HALL_C","71":"[NC] NC","72":"[NC] NC","73":"[NC] NC","74":"[NC] NC","75":"[NC] NC","76":"[NC] NC","77":"[NC] NC","78":"[NC] NC","79":"[NC] NC","80":"[XPR] XPRO1_ID","81":"[PFC] PFC_VBUS","82":"[XPR] XPRO1_ADC(+)","83":"[NC] NC","84":"[XPR] XPRO1_ADC(-)","85":"[PFC] IPFC_ENB","86":"[XPR] XPRO1_GPIO1","87":"[NC] NC","88":"[XPR] XPRO1_GPIO2","89":"[PWM] IPFC_PWMA","90":"[XPR] XPRO1_PWM(+)","91":"[PWM] IPFC_PWMB","92":"[XPR] XPRO1_PWM(-)","93":"[NC] NC","94":"[XPR] XPRO1_IRQ","95":"[PFC] IPFC_IA_EXT","96":"[XPR] XPRO1_SPI_SS_B","97":"[NC] NC","98":"[XPR] XPRO1_I2C_SDA","99":"[NC] NC","100":"[XPR] XPRO1_I2C_SCL","101":"[NC] NC","102":"[XPR] XPRO1_UART_RX","103":"[NC] NC","104":"[XPR] XPRO1_UART_TX","105":"[PFC] IPFC_IB_EXT","106":"[XPR] XPRO1_SPI_SS_A","107":"[NC] NC","108":"[XPR] XPRO1_SPI_MOSI","109":"[NC] NC","110":"[XPR] XPRO1_SPI_MISO","111":"[NC] NC","112":"[XPR] XPRO1_SPI_SCK","113":"[PWR] VCC","114":"[PWR] VCC","115":"[PWR] VCC","116":"[PWR] VCC","117":"[PWR] VSS","118":"[PWR] VSS","119":"[PWR] VSS","120":"[PWR] VSS"}},"baseboardsInfo":{"MCLV":{"name":"MCLV-48V-300W","orderCode":"EV18H47A","productUrl":"https://www.microchip.com/en-us/development-tool/EV18H47A"},"MCHV":{"name":"MCHV-230VAC-1.5kW","orderCode":"EV78U65A","productUrl":"https://www.microchip.com/en-us/development-tool/EV78U65A"}}};
+
+function cat(bb) {
+  if (!bb) return "NC";
+  const m = bb.match(/^\[([A-Z]{2,4})\]/);
+  return m ? m[1] : "OTH";
+}
+
+function isMCEssential(bb) {
+  if (!bb) return false;
+  const l = bb.toUpperCase();
+  const pats = [
+    /M1_PWM_[ABC][HL]/,
+    /M1_I[ABC](?![A-Z])/, /M1_IBUS/, /M1_VBUS/, /M1_VDC/,
+    /M1_HALL_[ABC]/, /M1_QEI_[ABI]/, /M1_INDEX/,
+    /M1_FAULT/, /M1_FLT/, /M1_POT/, /M1_TEMP/,
+    /PFC_/, /IPFC_/
+  ];
+  return pats.some(p => p.test(l));
+}
+
+function bbDisplay(bb) {
+  if (!bb) return "";
+  return bb.replace(/^\[[A-Z]{2,4}\]\s*/, "");
+}
+
+function truncSig(s, maxLen) {
+  if (!s) return "";
+  if (s.length <= maxLen) return s;
+  return s.slice(0, maxLen - 1) + "\u2026";
+}
+
+const $ = (id) => document.getElementById(id);
+const chipSel = $("chipSel");
+const baseSel = $("baseSel");
+const altToggle = $("altToggle");
+const mcToggle = $("mcToggle");
+const grid = $("grid");
+const tooltip = $("tooltip");
+
+/* Populate DIM dropdown: official MCU part + Microchip order code (EV-code).
+   Internal codenames (Sagitta, Andromeda, ...) are intentionally NOT shown. */
+DATA.chips.forEach((chip, idx) => {
+  const opt = document.createElement("option");
+  opt.value = idx;
+  const suffix = chip.orderCode ? " (" + chip.orderCode + ")" : "";
+  opt.textContent = chip.part + suffix;
+  chipSel.appendChild(opt);
+});
+
+/* Populate Baseboard dropdown from DATA.baseboardsInfo so the label and the
+   product link stay in sync with the data file. */
+const BB_INFO = DATA.baseboardsInfo || {
+  MCLV: {name: "MCLV-48V-300W",      orderCode: "", productUrl: "#"},
+  MCHV: {name: "MCHV-230VAC-1.5kW",  orderCode: "", productUrl: "#"},
+};
+Object.keys(BB_INFO).forEach(key => {
+  const info = BB_INFO[key];
+  const opt = document.createElement("option");
+  opt.value = key;
+  const suffix = info.orderCode ? " (" + info.orderCode + ")" : "";
+  opt.textContent = info.name + suffix;
+  baseSel.appendChild(opt);
+});
+
+/* Keep the two ↗ external-link anchors pointing at the current selection. */
+const chipLink = $("chipLink");
+const baseLink = $("baseLink");
+function updateProductLinks() {
+  const chip = DATA.chips[chipSel.value | 0];
+  if (chip) chipLink.href = chip.productUrl || "#";
+  const bb = BB_INFO[baseSel.value];
+  if (bb) baseLink.href = bb.productUrl || "#";
+}
+chipSel.addEventListener("change", updateProductLinks);
+baseSel.addEventListener("change", updateProductLinks);
+updateProductLinks();
+
+const LEGEND_ITEMS = [
+  ["PWM", "Phase PWM outputs"],
+  ["ANA", "Analog (current, voltage, pot)"],
+  ["QEI", "Quadrature encoder"],
+  ["HAL", "Hall sensors"],
+  ["FLT", "Faults / IPM"],
+  ["DBG", "Debug / ICSP"],
+  ["PWR", "Power rails"],
+  ["XPR", "XPRO extension"],
+  ["PFC", "Power factor correction"],
+  ["COM", "I2C / SPI / UART"],
+  ["NC",  "Not connected"],
+  ["OTH", "Other"],
+];
+const legend = $("legend");
+LEGEND_ITEMS.forEach(([tag, label]) => {
+  const item = document.createElement("div");
+  item.className = "legend-item";
+  item.innerHTML = '<span class="legend-swatch cat-' + tag + '"></span><span>' + tag + ' \u2014 ' + label + '</span>';
+  legend.appendChild(item);
+});
+const mcItem = document.createElement("div");
+mcItem.className = "legend-item";
+mcItem.innerHTML = '<span class="legend-swatch" style="background:white;border:2px solid var(--mc-border)"></span><span>motor-control-essential</span>';
+legend.appendChild(mcItem);
+
+/* Category metadata in motor-control priority order */
+const CATEGORY_ORDER = [
+  ["PWM", "Phase PWM outputs",        true],
+  ["ANA", "Analog sensing (current, voltage, pot, temp)", true],
+  ["QEI", "Quadrature encoder",       true],
+  ["HAL", "Hall-effect sensors",      true],
+  ["FLT", "Fault / IPM signals",      true],
+  ["PFC", "Power factor correction",  true],
+  ["DBG", "Debug / ICSP / programming", false],
+  ["COM", "I2C / SPI / UART / EEPROM", false],
+  ["XPR", "XPRO extension headers",   false],
+  ["PWR", "Power rails",              false],
+  ["NC",  "Not connected / pass-through", false],
+  ["OTH", "Other (LED / Button / Brake / misc)", false],
+];
+
+/* Parse an MCU signal string into (port_id, active_fn, other_tokens) */
+function parseSignal(sig, bb) {
+  if (!sig) return { port: null, active: null, others: [] };
+  const tokens = sig.split('/').map(s => s.trim()).filter(Boolean);
+  /* Port ID: last token matching R[A-F]\d+ OR a special single-name pin */
+  let port = null;
+  const portRe = /^R[A-F]\d+$/;
+  for (let i = tokens.length - 1; i >= 0; i--) {
+    if (portRe.test(tokens[i])) { port = tokens[i]; break; }
+  }
+  if (!port) {
+    /* Special pins: VSS, VDD, MCLR, AVDD, AVSS, ~{MCLR} etc. */
+    for (const t of tokens) {
+      if (/^(MCLR|VSS|VDD|AVDD|AVSS|AVCC|VDDCORE|SWVDD|SWVSS|VREF|AVCAP|LX)$/.test(t)) { port = t; break; }
+    }
+  }
+  /* Active function based on baseboard label */
+  const active = inferActiveFunction(bb || '', tokens);
+  /* Others = all tokens except port and active */
+  const others = tokens.filter(t => t !== port && t !== active);
+  return { port, active, others };
+}
+
+function inferActiveFunction(bb, tokens) {
+  const b = (bb || '').toUpperCase();
+  const first = (re) => tokens.find(t => re.test(t));
+  /* PWM */
+  if (/PWM_[ABC][HL]|XPRO\d?_PWM|PFC_PWM|IPFC_PWM/.test(b))
+    return first(/^A?PWM\d+[HL]$/) || first(/^PWM\d+/);
+  /* Current/voltage analog */
+  if (/M1_I[ABC](?![A-Z])|M1_IBUS|M1_V|M1_POT|M1_TEMP|AN_EXT|XPRO\d?_ADC|M1_VBUS/.test(b))
+    return first(/^OA\d+OUT$/) || first(/^AD\d?AN\d+$/) || first(/^AN\d+$/) ||
+           first(/^CVDAN\d+$/) || first(/^ANN\d+$/) || first(/^AD\d?ANN/);
+  /* Hall sensors -- input capture or GPIO */
+  if (/HALL/.test(b)) return first(/^RP\d+$/);
+  /* QEI */
+  if (/QEI|M1_INDEX/.test(b)) return first(/QEI/);
+  /* Fault / IPM */
+  if (/FAULT|FLT|FLTLAT|OC$|OV$/.test(b))
+    return first(/^CMP\d+[A-Z]?$/) || first(/^INT\d+$/) || first(/^PCI\d+$/);
+  /* Debug / ICSP */
+  if (/MCLR/.test(b)) return 'MCLR';
+  if (/_PGC(?!\w)/.test(b)) return first(/^(PGEC|PGC)\d+$/);
+  if (/_PGD(?!\w)/.test(b)) return first(/^(PGED|PGD)\d+$/);
+  if (/_TDI/.test(b)) return 'TDI';
+  if (/_TDO/.test(b)) return 'TDO';
+  if (/_TMS/.test(b)) return 'TMS';
+  if (/_TCK/.test(b)) return 'TCK';
+  if (/DEBUG_(TX|RX)|UART_TX|UART_RX|XPRO\d?_UART/.test(b)) return first(/^RP\d+$/);
+  /* Comm */
+  if (/SDA|I2C_SDA|_SDA/.test(b)) return first(/SDA/);
+  if (/SCL|I2C_SCL|_SCL/.test(b)) return first(/SCL/);
+  if (/MOSI|SPI.*MOSI/.test(b))   return first(/SDO|MOSI/);
+  if (/MISO|SPI.*MISO/.test(b))   return first(/SDI|MISO/);
+  if (/SCK|SPI.*SCK/.test(b))     return first(/SCK/);
+  if (/_SS|SPI_SS|_CS/.test(b))   return first(/^SS\d*/) || first(/^RP\d+/);
+  /* Power */
+  if (/^VSS|GND/.test(b)) return 'VSS';
+  if (/^VDD|VCC/.test(b)) return 'VDD';
+  if (/VREF/.test(b))     return first(/VREF/);
+  return null;
+}
+
+function escHTML(s) {
+  return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+/* Build a single pin card element.
+   2-col grid layout:
+     Left column (grows, main focus):
+       row 1: ACTIVE_FN   PORT_REF        (bold "PWM1L RB15" -- THE key info)
+       row 2: other/pass-through funcs    (small grey)
+     Right column (compact, context):
+       row 1: baseboard signal            (e.g. M1_PWM_AH, bold)
+       row 2: DIM:NNN                     (small grey)
+       row 3: MCU pin number              (small with pin #)
+     Optional bottom row (full width): alt routings
+*/
+function buildPinCard(pin, bb, c, isMC, primary, alts, showAlts) {
+  const el = document.createElement("div");
+  const unmapped = !primary;
+  el.className = "pin cat-" + c + (isMC ? " mc-essential" : "") + (unmapped ? " unmapped" : "");
+
+  const bbText = bbDisplay(bb);
+
+  /* Left column: active fn + port, other funcs */
+  let left = '';
+  if (primary) {
+    const sig = primary[1] || '';
+    const { port, active, others } = parseSignal(sig, bb);
+    left += '<div class="pin-row-fn">';
+    if (active) left += '<span class="fn-active">' + escHTML(active) + '</span>';
+    else       left += '<span class="fn-active empty">—</span>';
+    if (port)   left += '<span class="port">' + escHTML(port) + '</span>';
+    left += '</div>';
+    if (others.length) {
+      left += '<div class="fn-other" title="' + escHTML(others.join('/')) + '">' + escHTML(others.join(' / ')) + '</div>';
+    }
+  } else {
+    left += '<div class="pin-row-fn"><span class="fn-active empty">unmapped</span></div>';
+  }
+
+  /* Right column: baseboard, DIM:NNN, MCU pin */
+  let right = '';
+  if (bbText) {
+    right += '<div class="bb" title="' + escHTML(bb) + '">' + escHTML(bbText) + '</div>';
+  } else {
+    right += '<div class="bb empty">(unassigned)</div>';
+  }
+  right += '<div class="dim-row">DIM:' + String(pin).padStart(3,'0') + '</div>';
+  if (primary) {
+    right += '<div class="mcu-row">pin <b>' + primary[0] + '</b></div>';
+  } else {
+    right += '<div class="mcu-row" style="color:#bbb">pin —</div>';
+  }
+
+  let html = '<div class="pin-left">' + left + '</div><div class="pin-right">' + right + '</div>';
+
+  if (alts.length) {
+    const altsText = alts.map(a => 'MCU ' + a[0]).join(", ");
+    html += '<div class="alts' + (showAlts ? '' : ' alts-hidden') + '">alt: ' + altsText + '</div>';
+  }
+
+  el.innerHTML = html;
+  el.dataset.pin = pin;
+  el.dataset.bb = bb;
+  if (primary) el.dataset.primary = JSON.stringify(primary);
+  if (alts.length) el.dataset.alts = JSON.stringify(alts);
+  return el;
+}
+
+/* Natural comparator: splits string into alternating digit/non-digit runs, */
+/* lets 'PWM2H' < 'PWM10H', and puts empty/null at the end.               */
+function naturalKey(s) {
+  if (!s) return null;
+  return (s.match(/\d+|\D+/g) || []).map(p => /^\d/.test(p) ? parseInt(p, 10) : p);
+}
+function natCmp(a, b) {
+  const ka = naturalKey(a), kb = naturalKey(b);
+  if (ka == null && kb == null) return 0;
+  if (ka == null) return 1;   // empty last
+  if (kb == null) return -1;
+  for (let i = 0; i < Math.max(ka.length, kb.length); i++) {
+    if (ka[i] === undefined) return -1;
+    if (kb[i] === undefined) return 1;
+    const na = typeof ka[i] === 'number', nb = typeof kb[i] === 'number';
+    if (na && !nb) return -1;
+    if (!na && nb) return 1;
+    if (ka[i] < kb[i]) return -1;
+    if (ka[i] > kb[i]) return 1;
+  }
+  return 0;
+}
+
+function sortRecords(records, mode) {
+  const arr = records.slice();
+  if (mode === 'mcu') {
+    arr.sort((a, b) => {
+      const aa = a.primary ? a.primary[0] : Infinity;
+      const bb = b.primary ? b.primary[0] : Infinity;
+      return aa - bb || a.pin - b.pin;
+    });
+  } else if (mode === 'function') {
+    arr.sort((a, b) => {
+      const af = a.primary ? parseSignal(a.primary[1] || '', a.bb).active : null;
+      const bf = b.primary ? parseSignal(b.primary[1] || '', b.bb).active : null;
+      const c = natCmp(af, bf);
+      if (c !== 0) return c;
+      // tiebreak: DIM pin
+      return a.pin - b.pin;
+    });
+  } else {
+    // default: DIM pin
+    arr.sort((a, b) => a.pin - b.pin);
+  }
+  return arr;
+}
+
+function render() {
+  const chip = DATA.chips[+chipSel.value];
+  const baseKey = baseSel.value;
+  const showAlts = altToggle.checked;
+  const mcMode = mcToggle.checked;
+  const grouped = groupToggle.checked;
+  const sortMode = sortSel.value;
+  document.body.classList.toggle("highlight-mc", mcMode);
+
+  grid.innerHTML = "";
+  let mapped = 0, altN = 0, mcN = 0;
+
+  /* Prepare per-pin records */
+  const records = [];
+  for (let pin = 1; pin <= 120; pin++) {
+    const bb = DATA.baseboards[baseKey][pin] || "";
+    const c = cat(bb);
+    const isMC = isMCEssential(bb);
+    const primary = (chip.primaryByDim[pin] || [])[0];
+    const alts = chip.altByDim[pin] || [];
+    if (primary) mapped++;
+    if (alts.length) altN++;
+    if (isMC) mcN++;
+    records.push({ pin, bb, c, isMC, primary, alts });
+  }
+
+  if (grouped) {
+    /* Masonry-ish layout: each section is a column-item, content fills below shorter sections */
+    grid.className = "grid grouped";
+    grid.style.cssText = "";
+    for (const [catTag, catDesc, isMCCat] of CATEGORY_ORDER) {
+      const pinsInCat = sortRecords(records.filter(r => r.c === catTag), sortMode);
+      if (pinsInCat.length === 0) continue;
+      const section = document.createElement("div");
+      section.className = "section cat-" + catTag + (isMCCat ? " section-mc" : "");
+      const hdr = document.createElement("div");
+      hdr.className = "section-header";
+      hdr.innerHTML =
+        '<span>' + catTag + '</span>' +
+        '<span class="count">' + pinsInCat.length + '</span>' +
+        '<span class="desc">' + catDesc + '</span>';
+      section.appendChild(hdr);
+      const sub = document.createElement("div");
+      sub.className = "section-pins";
+      for (const r of pinsInCat) {
+        sub.appendChild(buildPinCard(r.pin, r.bb, r.c, r.isMC, r.primary, r.alts, showAlts));
+      }
+      section.appendChild(sub);
+      grid.appendChild(section);
+    }
+  } else {
+    /* Flat layout (no categories) — apply the same sort globally */
+    grid.className = "grid flat";
+    grid.style.cssText = "";
+    for (const r of sortRecords(records, sortMode)) {
+      grid.appendChild(buildPinCard(r.pin, r.bb, r.c, r.isMC, r.primary, r.alts, showAlts));
+    }
+  }
+
+  $("mappedCount").textContent = mapped;
+  $("altCount").textContent = altN;
+  $("mcCount").textContent = mcN;
+
+  /* Apply masonry layout for grouped view (after DOM is populated) */
+  if (grouped) {
+    requestAnimationFrame(() => layoutMasonry(grid));
+  } else {
+    /* Reset any leftover absolute positioning from a previous grouped render */
+    grid.style.height = "";
+    grid.style.position = "";
+  }
+}
+
+grid.addEventListener("mouseover", (e) => {
+  const el = e.target.closest(".pin");
+  if (!el) return;
+  const pin = el.dataset.pin;
+  const bb = el.dataset.bb;
+  const primary = el.dataset.primary ? JSON.parse(el.dataset.primary) : null;
+  const alts = el.dataset.alts ? JSON.parse(el.dataset.alts) : [];
+
+  let lines = [];
+  lines.push('<b>DIM:' + String(pin).padStart(3, '0') + '</b>');
+  lines.push('Baseboard: ' + (bb || "(none)"));
+  if (primary) {
+    lines.push('');
+    lines.push('Primary: <b>MCU ' + primary[0] + '</b>');
+    lines.push('Signal:  ' + (primary[1] || "(unnamed)"));
+  } else {
+    lines.push('');
+    lines.push('Primary: (none)');
+  }
+  if (alts.length) {
+    lines.push('');
+    lines.push('<span class="alt">Alternates via 0R:</span>');
+    alts.forEach(a => {
+      lines.push('<span class="alt">  \u2022 MCU ' + a[0] + ' \u2014 ' + (a[1] || "") + '</span>');
+    });
+  }
+  tooltip.innerHTML = lines.join('<br>');
+  tooltip.style.display = "block";
+});
+
+grid.addEventListener("mousemove", (e) => {
+  const r = 14;
+  let x = e.clientX + r, y = e.clientY + r;
+  const tw = tooltip.offsetWidth, th = tooltip.offsetHeight;
+  if (x + tw > window.innerWidth - 10) x = e.clientX - tw - r;
+  if (y + th > window.innerHeight - 10) y = e.clientY - th - r;
+  tooltip.style.left = x + "px";
+  tooltip.style.top = y + "px";
+});
+
+grid.addEventListener("mouseout", (e) => {
+  if (!e.relatedTarget || !e.relatedTarget.closest(".pin")) tooltip.style.display = "none";
+});
+
+const groupToggle = $("groupToggle");
+const sortSel = $("sortSel");
+[chipSel, baseSel, altToggle, mcToggle, groupToggle, sortSel].forEach(el => el.addEventListener("change", render));
+
+/* ======== Masonry layout ======== */
+function layoutMasonry(container) {
+  const sections = Array.from(container.children);
+  if (sections.length === 0) return;
+  const containerWidth = container.clientWidth;
+  const minColWidth = 215;
+  const gap = 12;
+  const numCols = Math.max(1, Math.floor((containerWidth + gap) / (minColWidth + gap)));
+  const colWidth = (containerWidth - (numCols - 1) * gap) / numCols;
+  const colHeights = new Array(numCols).fill(0);
+
+  /* Set width first so sections measure their height correctly */
+  sections.forEach(sec => { sec.style.width = colWidth + "px"; });
+  /* Force a reflow before measuring */
+  void container.offsetHeight;
+
+  sections.forEach(sec => {
+    /* Pick shortest column; ties break to leftmost */
+    let minH = Infinity, minCol = 0;
+    for (let c = 0; c < numCols; c++) {
+      if (colHeights[c] < minH - 0.5) { minH = colHeights[c]; minCol = c; }
+    }
+    sec.style.left = (minCol * (colWidth + gap)) + "px";
+    sec.style.top = colHeights[minCol] + "px";
+    colHeights[minCol] = colHeights[minCol] + sec.offsetHeight + gap;
+  });
+
+  container.style.height = (Math.max.apply(null, colHeights)) + "px";
+}
+
+let resizeTimer = null;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (grid.classList.contains("grouped")) layoutMasonry(grid);
+  }, 120);
+});
+render();
+</script>
+</body>
+</html>
