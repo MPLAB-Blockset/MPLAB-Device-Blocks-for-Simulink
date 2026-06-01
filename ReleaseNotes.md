@@ -2,6 +2,91 @@
 
 Complete release history for MPLAB Device Blocks for Simulink.
 
+📖 **Online documentation:** [mplab-blockset.github.io](https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/)
+
+---
+
+## v3.63.18 (June 2026)
+
+### ⚡ Faster Workflow
+- **Up to 8.2× faster** opening of block dialogs on large models
+- **Up to 2.5× faster** code generation turnaround
+
+### 🌗 Dark-Mode-Friendly GUIs
+- Improvements on UI for I²C, SPI, Comparator, External-Mode, PIL and picgui dialogs to remain readable when MATLAB is set to Dark Mode
+
+### 🎛️ New — Tunable Parameters Toolkit
+- **Promote any numeric block parameter to a calibratable variable** reachable via External Mode / XCP, while keeping everything else inlined in the generated C
+- Four toolstrip buttons: *Tunable param* / *Bind slider* / *Audit* / *Tunable…*
+- **XCP access-path hint** in the audit dialog (`<model>_P.name`)
+- Visual highlight of tunable blocks in the model (XCP-reachable vs. C-only)
+
+### 🆕 New — Register Access Block
+- **Direct read / write of dsPIC peripheral registers from Simulink**
+- Bit-field editor, delay, atomic sequence, floating to integer calibration gain for block input/output
+
+### 🧰 Toolstrip & Menu
+- Improvements on UI: top-level Microchip shortcuts, empty-state *Get Started* flow, new *Sim-Only*, *Insert Peripheral*, *Board Template*, *View Code* and *Generate Code Only* actions
+- **Monitor & Tune** redesigned as a vertical popup with *Target execution* (Connect / Start / Stop) listed before *Build / Deploy / Restart*
+- Always-on *Build / Deploy* buttons on the Microchip tab
+- Microchip ribbon tab now refreshes is robust after install
+
+### 🔧 PWM HS FEP
+- **PWM Event tab (EVTA–EVTF)** with per-event polarity, pulse-stretch and clock-sync options
+- **New output modes**: Independent PMOD, One-Pulse trigger
+- **12-channel support**, hardware-validated on dsPIC33AK and dsPIC33CK
+- **PPS-based event enable** — selecting a pin in the dialog both enables the event and routes PPS automatically
+- **Fixed silent UPDREQ failure** when 2+ blocks set MSTEN=1 (MCU16CS-3053): non-broadcaster blocks demoted to per-channel UPDREQ in DISI
+- code generation warnings when mode-incompatible options (CAHALF / PHASE / STEER) are used
+- various bug fixes
+
+### 📡 Communication
+- **New UART Rx Circular DMA driver** — zero CPU-side Rx ISR on dsPIC33CK / CH / AK / AKV
+- **Chip-aware UART baud-rate popup** — caps standard bauds at min(datasheet F<sub>BAUD</sub>, F<sub>CY</sub>/4); dsPIC33CK MC00x / MP4xx / MP7xx reach 40 Mbps
+- **UART Tx idle-time glitch** closed (LAT / TRIS preloaded at configuration time)
+- **UART COM-port handling** — more reliable detection on Windows and Linux
+- Improvements on UI for I²C / SPI dialogs
+
+### 🔌 ADC
+- **dsPIC33CK HS-SAR settling time**: per-chip CHOLD table t was under-estimating settling on shared-core 33CK
+- Fine-tuned ADC internal resistor for dsPIC33AK chip variants
+
+### 🕹️ Master Block
+- **FRC / BFRC oscillator tuning** exposed as a 64-step popup with Custom override
+- Unified `MCHP_Help` entry point for every block's *Help* button
+- **Auto-sync** of Master + Compiler Options masks into the Custom Toolchain at save / build
+
+### 🧪 Board Templates
+- **All 14 `.sltx` templates refreshed**: dual-variant pinout (internal / external Op-Amp), semantic gain names, curated title + description on every card
+- **Fixed**: greyed Build-&-Flash probe chain after loading a template
+- **Fixed**: broken BOARD→Probe_BusSelector wiring on MCHP_MCDB_dsPIC33CDVL64MC106
+
+### 🧭 Help & Add-On Integration
+- **Microchip entry restored** under *MATLAB Help → Supplemental Software / 3P Toolbox*
+- **Online documentation website launched** → [mplab-blockset.github.io](https://mplab-blockset.github.io/MPLAB-Device-Blocks-for-Simulink/)
+  - Getting-Started guide and tutorials
+  - Full block reference (PWM / ADC / UART / SPI / I²C / QEI / CAN / Timer / GPIO …)
+  - Video tutorials, External-Mode & PIL guides, motor-control examples
+
+### 🔁 Live Tool Refresh
+- **New *Update compiler list* button** next to *Update DFP list*
+- Newly installed **XC-DSC** compilers or **DFP** packs are picked up **without restarting MATLAB**
+
+### 🛠️ Programming Interface (picflash)
+- **Soft-restart MDB JVM** on cross-family switch (33CK ↔ 33AK): 2-4× speedup; HIL-validated
+- **Erase chip** action exposed in *MICROCHIP > Build & Program* and as a *picflash_gui* button (slave-aware label, 33CH whole-die strip)
+
+### 🧩 dsPIC33CH Dual-Core
+- **Fixed**: Main / Secondary build under the new Target Compiler flow
+- **Fixed**: relative `MasterModelReference` path resolved at build time
+
+### 🛠️ Other Fixes
+- **Fixed**: Change Notification data-type mismatch (u16 / u32) on dsPIC33A
+- **Fixed**: misleading *base vs. mask workspace* mismatch warning
+- **Fixed**: PIL now warns (instead of aborting the build) when no COM port is available
+- **Fixed**: fresh-install path leaks in MATLAB's path list
+- **Fixed**: builds mixing C and hand-written assembly (`.s` recipes now receive the DFP include path)
+
 ---
 
 ## v3.63.03 (January 2026)
